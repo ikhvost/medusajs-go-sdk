@@ -1,0 +1,319 @@
+openapi: 3.0.0
+info:
+  version: 2.0.0
+  title: Medusa Admin API
+  license:
+    name: MIT
+    url: https://github.com/medusajs/medusa/blob/master/LICENSE
+servers:
+  - url: http://localhost:9000
+  - url: https://api.medusa-commerce.com
+tags:
+  - name: Api Keys
+  - name: Campaigns
+  - name: Collections
+  - name: Currencies
+    description: >
+      A store can use unlimited currencies, and each region must be associated
+      with at least one currency.
+
+      Currencies are defined within the Medusa backend. Currency API Routes
+      allow admins to list and update currencies.
+    externalDocs:
+      description: How to manage currencies
+      url: >-
+        https://docs.medusajs.com/modules/regions-and-currencies/admin/manage-currencies
+  - name: Customer Groups
+  - name: Customers
+    description: >
+      Customers can either be created when they register through the Store APIs,
+      or created by the admin using the Admin APIs.
+    externalDocs:
+      description: How to manage customers
+      url: https://docs.medusajs.com/modules/customers/admin/manage-customers
+  - name: Draft Orders
+  - name: Fulfillment Providers
+  - name: Fulfillment Sets
+  - name: Fulfillments
+  - name: Inventory Items
+  - name: Invites
+    description: >
+      An admin can invite new users to manage their team. This would allow new
+      users to authenticate as admins and perform admin functionalities.
+    externalDocs:
+      description: How to manage invites
+      url: https://docs.medusajs.com/modules/users/admin/manage-invites
+  - name: Orders
+  - name: Payments
+  - name: Price Lists
+  - name: Pricing
+  - name: Product Categories
+  - name: Product Types
+  - name: Products
+  - name: Promotions
+    x-associatedSchema:
+      $ref: ./components/schemas/Promotion.yaml
+  - name: Regions
+    description: >
+      Regions are different countries or geographical regions that the commerce
+      store serves customers in.
+
+      Admins can manage these regions, their providers, and more.
+    externalDocs:
+      description: How to manage regions
+      url: >-
+        https://docs.medusajs.com/modules/regions-and-currencies/admin/manage-regions
+  - name: Reservations
+  - name: Sales Channels
+    description: >
+      A sales channel indicates a channel where products can be sold in. For
+      example, a webshop or a mobile app.
+
+      Admins can manage sales channels and the products available in them.
+    externalDocs:
+      description: How to manage sales channels
+      url: https://docs.medusajs.com/modules/sales-channels/admin/manage
+  - name: Shipping Options
+  - name: Shipping Profiles
+  - name: Stock Locations
+  - name: Stores
+  - name: Tax Rates
+  - name: Tax Regions
+  - name: Uploads
+  - name: Users
+  - name: Workflows Executions
+paths:
+  /admin/api-keys:
+    $ref: paths/admin_api-keys.yaml
+  /admin/api-keys/{id}:
+    $ref: paths/admin_api-keys_{id}.yaml
+  /admin/api-keys/{id}/revoke:
+    $ref: paths/admin_api-keys_{id}_revoke.yaml
+  /admin/api-keys/{id}/sales-channels:
+    $ref: paths/admin_api-keys_{id}_sales-channels.yaml
+  /admin/campaigns:
+    $ref: paths/admin_campaigns.yaml
+  /admin/campaigns/{id}:
+    $ref: paths/admin_campaigns_{id}.yaml
+  /admin/collections:
+    $ref: paths/admin_collections.yaml
+  /admin/collections/{id}:
+    $ref: paths/admin_collections_{id}.yaml
+  /admin/collections/{id}/products:
+    $ref: paths/admin_collections_{id}_products.yaml
+  /admin/currencies:
+    $ref: paths/admin_currencies.yaml
+  /admin/currencies/{code}:
+    $ref: paths/admin_currencies_{code}.yaml
+  /admin/customer-groups:
+    $ref: paths/admin_customer-groups.yaml
+  /admin/customer-groups/{id}:
+    $ref: paths/admin_customer-groups_{id}.yaml
+  /admin/customer-groups/{id}/customers:
+    $ref: paths/admin_customer-groups_{id}_customers.yaml
+  /admin/customers:
+    $ref: paths/admin_customers.yaml
+  /admin/customers/{id}:
+    $ref: paths/admin_customers_{id}.yaml
+  /admin/customers/{id}/addresses:
+    $ref: paths/admin_customers_{id}_addresses.yaml
+  /admin/customers/{id}/addresses/{address_id}:
+    $ref: paths/admin_customers_{id}_addresses_{address_id}.yaml
+  /admin/draft-orders:
+    $ref: paths/admin_draft-orders.yaml
+  /admin/draft-orders/{id}:
+    $ref: paths/admin_draft-orders_{id}.yaml
+  /admin/fulfillment-providers:
+    $ref: paths/admin_fulfillment-providers.yaml
+  /admin/fulfillment-sets/{id}:
+    $ref: paths/admin_fulfillment-sets_{id}.yaml
+  /admin/fulfillment-sets/{id}/service-zones:
+    $ref: paths/admin_fulfillment-sets_{id}_service-zones.yaml
+  /admin/fulfillment-sets/{id}/service-zones/{zone_id}:
+    $ref: paths/admin_fulfillment-sets_{id}_service-zones_{zone_id}.yaml
+  /admin/fulfillments:
+    $ref: paths/admin_fulfillments.yaml
+  /admin/fulfillments/{id}/cancel:
+    $ref: paths/admin_fulfillments_{id}_cancel.yaml
+  /admin/fulfillments/{id}/shipment:
+    $ref: paths/admin_fulfillments_{id}_shipment.yaml
+  /admin/inventory-items:
+    $ref: paths/admin_inventory-items.yaml
+  /admin/inventory-items/{id}:
+    $ref: paths/admin_inventory-items_{id}.yaml
+  /admin/inventory-items/{id}/location-levels:
+    $ref: paths/admin_inventory-items_{id}_location-levels.yaml
+  /admin/inventory-items/{id}/location-levels/batch:
+    $ref: paths/admin_inventory-items_{id}_location-levels_batch.yaml
+  /admin/inventory-items/{id}/location-levels/{location_id}:
+    $ref: paths/admin_inventory-items_{id}_location-levels_{location_id}.yaml
+  /admin/invites:
+    $ref: paths/admin_invites.yaml
+  /admin/invites/accept:
+    $ref: paths/admin_invites_accept.yaml
+  /admin/invites/{id}:
+    $ref: paths/admin_invites_{id}.yaml
+  /admin/invites/{id}/resend:
+    $ref: paths/admin_invites_{id}_resend.yaml
+  /admin/orders:
+    $ref: paths/admin_orders.yaml
+  /admin/orders/{id}:
+    $ref: paths/admin_orders_{id}.yaml
+  /admin/payments:
+    $ref: paths/admin_payments.yaml
+  /admin/payments/payment-providers:
+    $ref: paths/admin_payments_payment-providers.yaml
+  /admin/payments/{id}:
+    $ref: paths/admin_payments_{id}.yaml
+  /admin/payments/{id}/capture:
+    $ref: paths/admin_payments_{id}_capture.yaml
+  /admin/payments/{id}/refund:
+    $ref: paths/admin_payments_{id}_refund.yaml
+  /admin/price-lists:
+    $ref: paths/admin_price-lists.yaml
+  /admin/price-lists/{id}:
+    $ref: paths/admin_price-lists_{id}.yaml
+  /admin/price-lists/{id}/prices/batch:
+    $ref: paths/admin_price-lists_{id}_prices_batch.yaml
+  /admin/price-lists/{id}/products:
+    $ref: paths/admin_price-lists_{id}_products.yaml
+  /admin/pricing/rule-types:
+    $ref: paths/admin_pricing_rule-types.yaml
+  /admin/pricing/rule-types/{id}:
+    $ref: paths/admin_pricing_rule-types_{id}.yaml
+  /admin/product-categories:
+    $ref: paths/admin_product-categories.yaml
+  /admin/product-categories/{id}:
+    $ref: paths/admin_product-categories_{id}.yaml
+  /admin/product-categories/{id}/products:
+    $ref: paths/admin_product-categories_{id}_products.yaml
+  /admin/product-types:
+    $ref: paths/admin_product-types.yaml
+  /admin/product-types/{id}:
+    $ref: paths/admin_product-types_{id}.yaml
+  /admin/products:
+    $ref: paths/admin_products.yaml
+  /admin/products/batch:
+    $ref: paths/admin_products_batch.yaml
+  /admin/products/{id}:
+    $ref: paths/admin_products_{id}.yaml
+  /admin/products/{id}/options:
+    $ref: paths/admin_products_{id}_options.yaml
+  /admin/products/{id}/options/{option_id}:
+    $ref: paths/admin_products_{id}_options_{option_id}.yaml
+  /admin/products/{id}/variants:
+    $ref: paths/admin_products_{id}_variants.yaml
+  /admin/products/{id}/variants/batch:
+    $ref: paths/admin_products_{id}_variants_batch.yaml
+  /admin/products/{id}/variants/{variant_id}:
+    $ref: paths/admin_products_{id}_variants_{variant_id}.yaml
+  /admin/promotions:
+    $ref: paths/admin_promotions.yaml
+  /admin/promotions/rule-attribute-options/{rule_type}:
+    $ref: paths/admin_promotions_rule-attribute-options_{rule_type}.yaml
+  /admin/promotions/rule-operator-options:
+    $ref: paths/admin_promotions_rule-operator-options.yaml
+  /admin/promotions/rule-value-options/{rule_type}/{rule_attribute_id}:
+    $ref: >-
+      paths/admin_promotions_rule-value-options_{rule_type}_{rule_attribute_id}.yaml
+  /admin/promotions/{id}:
+    $ref: paths/admin_promotions_{id}.yaml
+  /admin/promotions/{id}/buy-rules/batch:
+    $ref: paths/admin_promotions_{id}_buy-rules_batch.yaml
+  /admin/promotions/{id}/rules/batch:
+    $ref: paths/admin_promotions_{id}_rules_batch.yaml
+  /admin/promotions/{id}/target-rules/batch:
+    $ref: paths/admin_promotions_{id}_target-rules_batch.yaml
+  /admin/promotions/{id}/{rule_type}:
+    $ref: paths/admin_promotions_{id}_{rule_type}.yaml
+  /admin/regions:
+    $ref: paths/admin_regions.yaml
+  /admin/regions/{id}:
+    $ref: paths/admin_regions_{id}.yaml
+  /admin/reservations:
+    $ref: paths/admin_reservations.yaml
+  /admin/reservations/{id}:
+    $ref: paths/admin_reservations_{id}.yaml
+  /admin/sales-channels:
+    $ref: paths/admin_sales-channels.yaml
+  /admin/sales-channels/{id}:
+    $ref: paths/admin_sales-channels_{id}.yaml
+  /admin/sales-channels/{id}/products:
+    $ref: paths/admin_sales-channels_{id}_products.yaml
+  /admin/shipping-options:
+    $ref: paths/admin_shipping-options.yaml
+  /admin/shipping-options/{id}:
+    $ref: paths/admin_shipping-options_{id}.yaml
+  /admin/shipping-options/{id}/rules/batch:
+    $ref: paths/admin_shipping-options_{id}_rules_batch.yaml
+  /admin/shipping-profiles:
+    $ref: paths/admin_shipping-profiles.yaml
+  /admin/shipping-profiles/{id}:
+    $ref: paths/admin_shipping-profiles_{id}.yaml
+  /admin/stock-locations:
+    $ref: paths/admin_stock-locations.yaml
+  /admin/stock-locations/{id}:
+    $ref: paths/admin_stock-locations_{id}.yaml
+  /admin/stock-locations/{id}/fulfillment-sets:
+    $ref: paths/admin_stock-locations_{id}_fulfillment-sets.yaml
+  /admin/stock-locations/{id}/sales-channels:
+    $ref: paths/admin_stock-locations_{id}_sales-channels.yaml
+  /admin/stores:
+    $ref: paths/admin_stores.yaml
+  /admin/stores/{id}:
+    $ref: paths/admin_stores_{id}.yaml
+  /admin/tax-rates:
+    $ref: paths/admin_tax-rates.yaml
+  /admin/tax-rates/{id}:
+    $ref: paths/admin_tax-rates_{id}.yaml
+  /admin/tax-rates/{id}/rules:
+    $ref: paths/admin_tax-rates_{id}_rules.yaml
+  /admin/tax-rates/{id}/rules/{rule_id}:
+    $ref: paths/admin_tax-rates_{id}_rules_{rule_id}.yaml
+  /admin/tax-regions:
+    $ref: paths/admin_tax-regions.yaml
+  /admin/tax-regions/{id}:
+    $ref: paths/admin_tax-regions_{id}.yaml
+  /admin/uploads:
+    $ref: paths/admin_uploads.yaml
+  /admin/uploads/{id}:
+    $ref: paths/admin_uploads_{id}.yaml
+  /admin/users:
+    $ref: paths/admin_users.yaml
+  /admin/users/me:
+    $ref: paths/admin_users_me.yaml
+  /admin/users/{id}:
+    $ref: paths/admin_users_{id}.yaml
+  /admin/workflows-executions:
+    $ref: paths/admin_workflows-executions.yaml
+  /admin/workflows-executions/{id}:
+    $ref: paths/admin_workflows-executions_{id}.yaml
+  /admin/workflows-executions/{workflow_id}/run:
+    $ref: paths/admin_workflows-executions_{workflow_id}_run.yaml
+  /admin/workflows-executions/{workflow_id}/steps/failure:
+    $ref: paths/admin_workflows-executions_{workflow_id}_steps_failure.yaml
+  /admin/workflows-executions/{workflow_id}/steps/success:
+    $ref: paths/admin_workflows-executions_{workflow_id}_steps_success.yaml
+  /admin/workflows-executions/{workflow_id}/subscribe:
+    $ref: paths/admin_workflows-executions_{workflow_id}_subscribe.yaml
+  /admin/workflows-executions/{workflow_id}/{transaction_id}:
+    $ref: paths/admin_workflows-executions_{workflow_id}_{transaction_id}.yaml
+  /admin/workflows-executions/{workflow_id}/{transaction_id}/{step_id}/subscribe:
+    $ref: >-
+      paths/admin_workflows-executions_{workflow_id}_{transaction_id}_{step_id}_subscribe.yaml
+components:
+  securitySchemes:
+    api_token:
+      type: apiKey
+      x-displayName: API Token
+      in: header
+      name: x-medusa-access-token
+    jwt_token:
+      type: http
+      x-displayName: JWT Token
+      scheme: bearer
+    cookie_auth:
+      type: apiKey
+      in: cookie
+      name: connect.sid
+      x-displayName: Cookie Session ID

@@ -1,0 +1,177 @@
+get:
+  operationId: GetSalesChannels
+  summary: List Sales Channels
+  description: >-
+    Retrieve a list of sales channels. The sales channels can be filtered by
+    fields such as `id`. The sales channels can also be sorted or paginated.
+  x-authenticated: true
+  parameters:
+    - name: expand
+      in: query
+      description: Comma-separated relations that should be expanded in the returned data.
+      required: false
+      schema:
+        type: string
+        title: expand
+        description: >-
+          Comma-separated relations that should be expanded in the returned
+          data.
+    - name: fields
+      in: query
+      description: Comma-separated fields that should be included in the returned data.
+      required: false
+      schema:
+        type: string
+        title: fields
+        description: Comma-separated fields that should be included in the returned data.
+    - name: offset
+      in: query
+      description: The number of items to skip when retrieving a list.
+      required: false
+      schema:
+        type: number
+        title: offset
+        description: The number of items to skip when retrieving a list.
+    - name: limit
+      in: query
+      description: Limit the number of items returned in the list.
+      required: false
+      schema:
+        type: number
+        title: limit
+        description: Limit the number of items returned in the list.
+    - name: order
+      in: query
+      description: Field to sort items in the list by.
+      required: false
+      schema:
+        type: string
+        title: order
+        description: Field to sort items in the list by.
+  security:
+    - api_token: []
+    - cookie_auth: []
+    - jwt_token: []
+  x-codeSamples:
+    - lang: Shell
+      label: cURL
+      source:
+        $ref: ../code_samples/Shell/admin_sales-channels/get.sh
+  tags:
+    - Sales Channels
+  responses:
+    '400':
+      $ref: ../components/responses/400_error.yaml
+    '401':
+      $ref: ../components/responses/unauthorized.yaml
+    '404':
+      $ref: ../components/responses/not_found_error.yaml
+    '409':
+      $ref: ../components/responses/invalid_state_error.yaml
+    '422':
+      $ref: ../components/responses/invalid_request_error.yaml
+    '500':
+      $ref: ../components/responses/500_error.yaml
+  requestBody:
+    content:
+      application/json:
+        schema: {}
+post:
+  operationId: PostSalesChannels
+  summary: Create Sales Channel
+  description: Create a sales channel.
+  x-authenticated: true
+  parameters:
+    - name: expand
+      in: query
+      description: Comma-separated relations that should be expanded in the returned data.
+      required: false
+      schema:
+        type: string
+        title: expand
+        description: >-
+          Comma-separated relations that should be expanded in the returned
+          data.
+    - name: fields
+      in: query
+      description: Comma-separated fields that should be included in the returned data.
+      required: false
+      schema:
+        type: string
+        title: fields
+        description: Comma-separated fields that should be included in the returned data.
+    - name: offset
+      in: query
+      description: The number of items to skip when retrieving a list.
+      required: false
+      schema:
+        type: number
+        title: offset
+        description: The number of items to skip when retrieving a list.
+    - name: limit
+      in: query
+      description: Limit the number of items returned in the list.
+      required: false
+      schema:
+        type: number
+        title: limit
+        description: Limit the number of items returned in the list.
+    - name: order
+      in: query
+      description: Field to sort items in the list by.
+      required: false
+      schema:
+        type: string
+        title: order
+        description: Field to sort items in the list by.
+  security:
+    - api_token: []
+    - cookie_auth: []
+    - jwt_token: []
+  x-codeSamples:
+    - lang: Shell
+      label: cURL
+      source:
+        $ref: ../code_samples/Shell/admin_sales-channels/post.sh
+  tags:
+    - Sales Channels
+  responses:
+    '400':
+      $ref: ../components/responses/400_error.yaml
+    '401':
+      $ref: ../components/responses/unauthorized.yaml
+    '404':
+      $ref: ../components/responses/not_found_error.yaml
+    '409':
+      $ref: ../components/responses/invalid_state_error.yaml
+    '422':
+      $ref: ../components/responses/invalid_request_error.yaml
+    '500':
+      $ref: ../components/responses/500_error.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - name
+            - description
+            - is_disabled
+            - metadata
+          properties:
+            name:
+              type: string
+              title: name
+              description: The sales channel's name.
+            description:
+              type: string
+              title: description
+              description: The sales channel's description.
+            is_disabled:
+              type: boolean
+              title: is_disabled
+              description: The sales channel's is disabled.
+            metadata:
+              type: object
+              description: The sales channel's metadata.
+              properties: {}
