@@ -1,0 +1,7 @@
+package: medusa
+generate:
+  models: true
+  client: true
+output: medusa/main.gen.go
+output-options:
+  skip-prune: true
