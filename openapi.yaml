@@ -35069,11 +35069,15 @@ components:
             - modules
           properties:
             payment_providers:
+              type: array
               description: The store's payment providers.
-              $ref: '#/components/schemas/PaymentProvider'
+              items:
+                $ref: '#/components/schemas/PaymentProvider'
             fulfillment_providers:
+              type: array
               description: The store's fulfillment providers.
-              $ref: '#/components/schemas/FulfillmentProvider'
+              items:
+                $ref: '#/components/schemas/FulfillmentProvider'
             feature_flags:
               description: The feature flags enabled in the store's backend.
               $ref: '#/components/schemas/FeatureFlagsResponse'

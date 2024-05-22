@@ -5562,8 +5562,8 @@ type ExtendedStoreDTO struct {
 	DefaultSalesChannelId *string              `json:"default_sales_channel_id"`
 	FeatureFlags          FeatureFlagsResponse `json:"feature_flags"`
 
-	// FulfillmentProviders A fulfillment provider represents a fulfillment service installed in the Medusa backend, either through a plugin or backend customizations. It holds the fulfillment service's installation status.
-	FulfillmentProviders FulfillmentProvider `json:"fulfillment_providers"`
+	// FulfillmentProviders The store's fulfillment providers.
+	FulfillmentProviders []FulfillmentProvider `json:"fulfillment_providers"`
 
 	// Id The store's ID
 	Id string `json:"id"`
@@ -5581,8 +5581,8 @@ type ExtendedStoreDTO struct {
 	// PaymentLinkTemplate A template to generate Payment links from. Use {{cart_id}} to include the payment's `cart_id` in the link.
 	PaymentLinkTemplate *string `json:"payment_link_template"`
 
-	// PaymentProviders A payment provider represents a payment service installed in the Medusa backend, either through a plugin or backend customizations. It holds the payment service's installation status.
-	PaymentProviders PaymentProvider `json:"payment_providers"`
+	// PaymentProviders The store's payment providers.
+	PaymentProviders []PaymentProvider `json:"payment_providers"`
 
 	// SwapLinkTemplate A template to generate Swap links from. Use {{cart_id}} to include the Swap's `cart_id` in the link.
 	SwapLinkTemplate *string `json:"swap_link_template"`
