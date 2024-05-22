@@ -161,13 +161,6 @@ const (
 	AdminPostShippingOptionsReqRequirementsTypeMinSubtotal AdminPostShippingOptionsReqRequirementsType = "min_subtotal"
 )
 
-// Defines values for AdminPostShippingProfilesReqType.
-const (
-	AdminPostShippingProfilesReqTypeCustom   AdminPostShippingProfilesReqType = "custom"
-	AdminPostShippingProfilesReqTypeDefault  AdminPostShippingProfilesReqType = "default"
-	AdminPostShippingProfilesReqTypeGiftCard AdminPostShippingProfilesReqType = "gift_card"
-)
-
 // Defines values for AdminUpdateUserRequestRole.
 const (
 	AdminUpdateUserRequestRoleAdmin     AdminUpdateUserRequestRole = "admin"
@@ -203,10 +196,10 @@ const (
 
 // Defines values for ClaimItemReason.
 const (
-	ClaimItemReasonMissingItem       ClaimItemReason = "missing_item"
-	ClaimItemReasonOther             ClaimItemReason = "other"
-	ClaimItemReasonProductionFailure ClaimItemReason = "production_failure"
-	ClaimItemReasonWrongItem         ClaimItemReason = "wrong_item"
+	MissingItem       ClaimItemReason = "missing_item"
+	Other             ClaimItemReason = "other"
+	ProductionFailure ClaimItemReason = "production_failure"
+	WrongItem         ClaimItemReason = "wrong_item"
 )
 
 // Defines values for ClaimOrderFulfillmentStatus.
@@ -3637,11 +3630,8 @@ type AdminPostShippingProfilesReq struct {
 	Name string `json:"name"`
 
 	// Type The type of the Shipping Profile
-	Type AdminPostShippingProfilesReqType `json:"type"`
+	Type string `json:"type"`
 }
-
-// AdminPostShippingProfilesReqType The type of the Shipping Profile
-type AdminPostShippingProfilesReqType string
 
 // AdminPostStockLocationsLocationReq The details to update of the stock location.
 type AdminPostStockLocationsLocationReq struct {

@@ -31787,10 +31787,6 @@ components:
         type:
           description: The type of the Shipping Profile
           type: string
-          enum:
-            - default
-            - gift_card
-            - custom
         metadata:
           description: An optional set of key-value pairs with additional information.
           type: object
