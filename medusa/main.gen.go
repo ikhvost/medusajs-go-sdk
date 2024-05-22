@@ -4913,7 +4913,7 @@ type Country struct {
 	DisplayName string `json:"display_name"`
 
 	// Id The country's ID
-	Id string `json:"id"`
+	Id int `json:"id"`
 
 	// Iso2 The 2 character ISO code of the country in lower case
 	Iso2 string `json:"iso_2"`
@@ -4925,7 +4925,7 @@ type Country struct {
 	Name string `json:"name"`
 
 	// NumCode The numerical ISO code for the country.
-	NumCode string `json:"num_code"`
+	NumCode int `json:"num_code"`
 
 	// Region The details of the region the country is associated with.
 	Region *map[string]interface{} `json:"region"`
