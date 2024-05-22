@@ -31768,10 +31768,6 @@ components:
         type:
           description: The type of the Shipping Profile
           type: string
-          enum:
-            - default
-            - gift_card
-            - custom
         products:
           description: product IDs to associate with the Shipping Profile
           type: array
@@ -39337,10 +39333,6 @@ components:
         type:
           description: The type of the Shipping Profile, may be `default`, `gift_card` or `custom`.
           type: string
-          enum:
-            - default
-            - gift_card
-            - custom
           example: default
         products:
           description: The details of the products that the Shipping Profile defines Shipping Options for. Available if the relation `products` is expanded.

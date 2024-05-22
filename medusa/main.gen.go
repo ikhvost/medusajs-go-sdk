@@ -161,13 +161,6 @@ const (
 	AdminPostShippingOptionsReqRequirementsTypeMinSubtotal AdminPostShippingOptionsReqRequirementsType = "min_subtotal"
 )
 
-// Defines values for AdminPostShippingProfilesProfileReqType.
-const (
-	AdminPostShippingProfilesProfileReqTypeCustom   AdminPostShippingProfilesProfileReqType = "custom"
-	AdminPostShippingProfilesProfileReqTypeDefault  AdminPostShippingProfilesProfileReqType = "default"
-	AdminPostShippingProfilesProfileReqTypeGiftCard AdminPostShippingProfilesProfileReqType = "gift_card"
-)
-
 // Defines values for AdminPostShippingProfilesReqType.
 const (
 	AdminPostShippingProfilesReqTypeCustom   AdminPostShippingProfilesReqType = "custom"
@@ -210,10 +203,10 @@ const (
 
 // Defines values for ClaimItemReason.
 const (
-	MissingItem       ClaimItemReason = "missing_item"
-	Other             ClaimItemReason = "other"
-	ProductionFailure ClaimItemReason = "production_failure"
-	WrongItem         ClaimItemReason = "wrong_item"
+	ClaimItemReasonMissingItem       ClaimItemReason = "missing_item"
+	ClaimItemReasonOther             ClaimItemReason = "other"
+	ClaimItemReasonProductionFailure ClaimItemReason = "production_failure"
+	ClaimItemReasonWrongItem         ClaimItemReason = "wrong_item"
 )
 
 // Defines values for ClaimOrderFulfillmentStatus.
@@ -442,13 +435,6 @@ const (
 const (
 	MaxSubtotal ShippingOptionRequirementType = "max_subtotal"
 	MinSubtotal ShippingOptionRequirementType = "min_subtotal"
-)
-
-// Defines values for ShippingProfileType.
-const (
-	ShippingProfileTypeCustom   ShippingProfileType = "custom"
-	ShippingProfileTypeDefault  ShippingProfileType = "default"
-	ShippingProfileTypeGiftCard ShippingProfileType = "gift_card"
 )
 
 // Defines values for SwapFulfillmentStatus.
@@ -3639,11 +3625,8 @@ type AdminPostShippingProfilesProfileReq struct {
 	ShippingOptions *[]interface{} `json:"shipping_options,omitempty"`
 
 	// Type The type of the Shipping Profile
-	Type *AdminPostShippingProfilesProfileReqType `json:"type,omitempty"`
+	Type *string `json:"type,omitempty"`
 }
-
-// AdminPostShippingProfilesProfileReqType The type of the Shipping Profile
-type AdminPostShippingProfilesProfileReqType string
 
 // AdminPostShippingProfilesReq The details of the shipping profile to create.
 type AdminPostShippingProfilesReq struct {
@@ -8320,14 +8303,11 @@ type ShippingProfile struct {
 	ShippingOptions *[]map[string]interface{} `json:"shipping_options,omitempty"`
 
 	// Type The type of the Shipping Profile, may be `default`, `gift_card` or `custom`.
-	Type ShippingProfileType `json:"type"`
+	Type string `json:"type"`
 
 	// UpdatedAt The date with timezone at which the resource was updated.
 	UpdatedAt time.Time `json:"updated_at"`
 }
-
-// ShippingProfileType The type of the Shipping Profile, may be `default`, `gift_card` or `custom`.
-type ShippingProfileType string
 
 // ShippingTaxRate This represents the tax rates applied on a shipping option.
 type ShippingTaxRate struct {
