@@ -2,7 +2,7 @@
 This repository contains the go sdk for the MedusaJS Admin API.
 
 ## Compatibility
-Please note that this SDK is specifically designed to be compatible with MedusaJS **v1.20.6** and is not intended for use with MedusaJS v2 or any later versions.
+Please note that this SDK is specifically designed to be compatible with MedusaJS **v2.0.0** and is not intended for use with MedusaJS v1.x.
 
 ## Installation
 
