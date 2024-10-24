@@ -98,6 +98,12 @@ const (
 	AdminCreatePromotionRuleOperatorNe  AdminCreatePromotionRuleOperator = "ne"
 )
 
+// Defines values for AdminCreateShippingOptionPriceType.
+const (
+	AdminCreateShippingOptionPriceTypeCalculated AdminCreateShippingOptionPriceType = "calculated"
+	AdminCreateShippingOptionPriceTypeFlat       AdminCreateShippingOptionPriceType = "flat"
+)
+
 // Defines values for AdminCreateShippingOptionRuleOperator.
 const (
 	AdminCreateShippingOptionRuleOperatorEq  AdminCreateShippingOptionRuleOperator = "eq"
@@ -398,14 +404,6 @@ const (
 	BaseOrderPaymentStatusRequiresAction      BaseOrderPaymentStatus = "requires_action"
 )
 
-// Defines values for BaseOrderChangeActionReference.
-const (
-	BaseOrderChangeActionReferenceClaim               BaseOrderChangeActionReference = "claim"
-	BaseOrderChangeActionReferenceExchange            BaseOrderChangeActionReference = "exchange"
-	BaseOrderChangeActionReferenceOrderShippingMethod BaseOrderChangeActionReference = "order_shipping_method"
-	BaseOrderChangeActionReferenceReturn              BaseOrderChangeActionReference = "return"
-)
-
 // Defines values for BaseOrderTransactionReference.
 const (
 	BaseOrderTransactionReferenceCapture BaseOrderTransactionReference = "capture"
@@ -437,17 +435,6 @@ const (
 	BaseProductStatusProposed  BaseProductStatus = "proposed"
 	BaseProductStatusPublished BaseProductStatus = "published"
 	BaseProductStatusRejected  BaseProductStatus = "rejected"
-)
-
-// Defines values for BasePromotionRuleOperator.
-const (
-	BasePromotionRuleOperatorEq  BasePromotionRuleOperator = "eq"
-	BasePromotionRuleOperatorGt  BasePromotionRuleOperator = "gt"
-	BasePromotionRuleOperatorGte BasePromotionRuleOperator = "gte"
-	BasePromotionRuleOperatorIn  BasePromotionRuleOperator = "in"
-	BasePromotionRuleOperatorLt  BasePromotionRuleOperator = "lt"
-	BasePromotionRuleOperatorLte BasePromotionRuleOperator = "lte"
-	BasePromotionRuleOperatorNe  BasePromotionRuleOperator = "ne"
 )
 
 // Defines values for CampaignResponseBudgetType.
@@ -536,62 +523,16 @@ const (
 	OrderChangeActionReferenceReturn              OrderChangeActionReference = "return"
 )
 
-// Defines values for OrderClaimFulfillmentStatus.
+// Defines values for OrderClaimType.
 const (
-	OrderClaimFulfillmentStatusCanceled           OrderClaimFulfillmentStatus = "canceled"
-	OrderClaimFulfillmentStatusDelivered          OrderClaimFulfillmentStatus = "delivered"
-	OrderClaimFulfillmentStatusFulfilled          OrderClaimFulfillmentStatus = "fulfilled"
-	OrderClaimFulfillmentStatusNotFulfilled       OrderClaimFulfillmentStatus = "not_fulfilled"
-	OrderClaimFulfillmentStatusPartiallyDelivered OrderClaimFulfillmentStatus = "partially_delivered"
-	OrderClaimFulfillmentStatusPartiallyFulfilled OrderClaimFulfillmentStatus = "partially_fulfilled"
-	OrderClaimFulfillmentStatusPartiallyShipped   OrderClaimFulfillmentStatus = "partially_shipped"
-	OrderClaimFulfillmentStatusShipped            OrderClaimFulfillmentStatus = "shipped"
-)
-
-// Defines values for OrderClaimPaymentStatus.
-const (
-	OrderClaimPaymentStatusAuthorized          OrderClaimPaymentStatus = "authorized"
-	OrderClaimPaymentStatusAwaiting            OrderClaimPaymentStatus = "awaiting"
-	OrderClaimPaymentStatusCanceled            OrderClaimPaymentStatus = "canceled"
-	OrderClaimPaymentStatusCaptured            OrderClaimPaymentStatus = "captured"
-	OrderClaimPaymentStatusNotPaid             OrderClaimPaymentStatus = "not_paid"
-	OrderClaimPaymentStatusPartiallyAuthorized OrderClaimPaymentStatus = "partially_authorized"
-	OrderClaimPaymentStatusPartiallyCaptured   OrderClaimPaymentStatus = "partially_captured"
-	OrderClaimPaymentStatusPartiallyRefunded   OrderClaimPaymentStatus = "partially_refunded"
-	OrderClaimPaymentStatusRefunded            OrderClaimPaymentStatus = "refunded"
-	OrderClaimPaymentStatusRequiresAction      OrderClaimPaymentStatus = "requires_action"
-)
-
-// Defines values for OrderExchangeFulfillmentStatus.
-const (
-	OrderExchangeFulfillmentStatusCanceled           OrderExchangeFulfillmentStatus = "canceled"
-	OrderExchangeFulfillmentStatusDelivered          OrderExchangeFulfillmentStatus = "delivered"
-	OrderExchangeFulfillmentStatusFulfilled          OrderExchangeFulfillmentStatus = "fulfilled"
-	OrderExchangeFulfillmentStatusNotFulfilled       OrderExchangeFulfillmentStatus = "not_fulfilled"
-	OrderExchangeFulfillmentStatusPartiallyDelivered OrderExchangeFulfillmentStatus = "partially_delivered"
-	OrderExchangeFulfillmentStatusPartiallyFulfilled OrderExchangeFulfillmentStatus = "partially_fulfilled"
-	OrderExchangeFulfillmentStatusPartiallyShipped   OrderExchangeFulfillmentStatus = "partially_shipped"
-	OrderExchangeFulfillmentStatusShipped            OrderExchangeFulfillmentStatus = "shipped"
-)
-
-// Defines values for OrderExchangePaymentStatus.
-const (
-	OrderExchangePaymentStatusAuthorized          OrderExchangePaymentStatus = "authorized"
-	OrderExchangePaymentStatusAwaiting            OrderExchangePaymentStatus = "awaiting"
-	OrderExchangePaymentStatusCanceled            OrderExchangePaymentStatus = "canceled"
-	OrderExchangePaymentStatusCaptured            OrderExchangePaymentStatus = "captured"
-	OrderExchangePaymentStatusNotPaid             OrderExchangePaymentStatus = "not_paid"
-	OrderExchangePaymentStatusPartiallyAuthorized OrderExchangePaymentStatus = "partially_authorized"
-	OrderExchangePaymentStatusPartiallyCaptured   OrderExchangePaymentStatus = "partially_captured"
-	OrderExchangePaymentStatusPartiallyRefunded   OrderExchangePaymentStatus = "partially_refunded"
-	OrderExchangePaymentStatusRefunded            OrderExchangePaymentStatus = "refunded"
-	OrderExchangePaymentStatusRequiresAction      OrderExchangePaymentStatus = "requires_action"
+	OrderClaimTypeRefund  OrderClaimType = "refund"
+	OrderClaimTypeReplace OrderClaimType = "replace"
 )
 
 // Defines values for OrderTransactionReference.
 const (
-	OrderTransactionReferenceCapture OrderTransactionReference = "capture"
-	OrderTransactionReferenceRefund  OrderTransactionReference = "refund"
+	Capture OrderTransactionReference = "capture"
+	Refund  OrderTransactionReference = "refund"
 )
 
 // Defines values for ReturnStatus.
@@ -626,6 +567,30 @@ const (
 	StoreOrderPaymentStatusPartiallyRefunded   StoreOrderPaymentStatus = "partially_refunded"
 	StoreOrderPaymentStatusRefunded            StoreOrderPaymentStatus = "refunded"
 	StoreOrderPaymentStatusRequiresAction      StoreOrderPaymentStatus = "requires_action"
+)
+
+// Defines values for StoreOrderLineItemAdjustmentsItemProductStatus.
+const (
+	StoreOrderLineItemAdjustmentsItemProductStatusDraft     StoreOrderLineItemAdjustmentsItemProductStatus = "draft"
+	StoreOrderLineItemAdjustmentsItemProductStatusProposed  StoreOrderLineItemAdjustmentsItemProductStatus = "proposed"
+	StoreOrderLineItemAdjustmentsItemProductStatusPublished StoreOrderLineItemAdjustmentsItemProductStatus = "published"
+	StoreOrderLineItemAdjustmentsItemProductStatusRejected  StoreOrderLineItemAdjustmentsItemProductStatus = "rejected"
+)
+
+// Defines values for StoreOrderLineItemDetailItemProductStatus.
+const (
+	StoreOrderLineItemDetailItemProductStatusDraft     StoreOrderLineItemDetailItemProductStatus = "draft"
+	StoreOrderLineItemDetailItemProductStatusProposed  StoreOrderLineItemDetailItemProductStatus = "proposed"
+	StoreOrderLineItemDetailItemProductStatusPublished StoreOrderLineItemDetailItemProductStatus = "published"
+	StoreOrderLineItemDetailItemProductStatusRejected  StoreOrderLineItemDetailItemProductStatus = "rejected"
+)
+
+// Defines values for StoreOrderLineItemTaxLinesItemProductStatus.
+const (
+	StoreOrderLineItemTaxLinesItemProductStatusDraft     StoreOrderLineItemTaxLinesItemProductStatus = "draft"
+	StoreOrderLineItemTaxLinesItemProductStatusProposed  StoreOrderLineItemTaxLinesItemProductStatus = "proposed"
+	StoreOrderLineItemTaxLinesItemProductStatusPublished StoreOrderLineItemTaxLinesItemProductStatus = "published"
+	StoreOrderLineItemTaxLinesItemProductStatusRejected  StoreOrderLineItemTaxLinesItemProductStatus = "rejected"
 )
 
 // Defines values for StorePaymentCollectionStatus.
@@ -746,10 +711,10 @@ const (
 
 // Defines values for PostProductsIdJSONBodyStatus.
 const (
-	PostProductsIdJSONBodyStatusDraft     PostProductsIdJSONBodyStatus = "draft"
-	PostProductsIdJSONBodyStatusProposed  PostProductsIdJSONBodyStatus = "proposed"
-	PostProductsIdJSONBodyStatusPublished PostProductsIdJSONBodyStatus = "published"
-	PostProductsIdJSONBodyStatusRejected  PostProductsIdJSONBodyStatus = "rejected"
+	Draft     PostProductsIdJSONBodyStatus = "draft"
+	Proposed  PostProductsIdJSONBodyStatus = "proposed"
+	Published PostProductsIdJSONBodyStatus = "published"
+	Rejected  PostProductsIdJSONBodyStatus = "rejected"
 )
 
 // Defines values for PostPromotionsJSONBodyApplicationMethodAllocation.
@@ -801,13 +766,13 @@ const (
 
 // Defines values for PostPromotionsJSONBodyRulesOperator.
 const (
-	Eq  PostPromotionsJSONBodyRulesOperator = "eq"
-	Gt  PostPromotionsJSONBodyRulesOperator = "gt"
-	Gte PostPromotionsJSONBodyRulesOperator = "gte"
-	In  PostPromotionsJSONBodyRulesOperator = "in"
-	Lt  PostPromotionsJSONBodyRulesOperator = "lt"
-	Lte PostPromotionsJSONBodyRulesOperator = "lte"
-	Ne  PostPromotionsJSONBodyRulesOperator = "ne"
+	PostPromotionsJSONBodyRulesOperatorEq  PostPromotionsJSONBodyRulesOperator = "eq"
+	PostPromotionsJSONBodyRulesOperatorGt  PostPromotionsJSONBodyRulesOperator = "gt"
+	PostPromotionsJSONBodyRulesOperatorGte PostPromotionsJSONBodyRulesOperator = "gte"
+	PostPromotionsJSONBodyRulesOperatorIn  PostPromotionsJSONBodyRulesOperator = "in"
+	PostPromotionsJSONBodyRulesOperatorLt  PostPromotionsJSONBodyRulesOperator = "lt"
+	PostPromotionsJSONBodyRulesOperatorLte PostPromotionsJSONBodyRulesOperator = "lte"
+	PostPromotionsJSONBodyRulesOperatorNe  PostPromotionsJSONBodyRulesOperator = "ne"
 )
 
 // Defines values for PostPromotionsJSONBodyType.
@@ -914,8 +879,8 @@ const (
 
 // Defines values for PostShippingOptionsIdJSONBodyPriceType.
 const (
-	Calculated PostShippingOptionsIdJSONBodyPriceType = "calculated"
-	Flat       PostShippingOptionsIdJSONBodyPriceType = "flat"
+	PostShippingOptionsIdJSONBodyPriceTypeCalculated PostShippingOptionsIdJSONBodyPriceType = "calculated"
+	PostShippingOptionsIdJSONBodyPriceTypeFlat       PostShippingOptionsIdJSONBodyPriceType = "flat"
 )
 
 // Defines values for GetTaxRatesParamsIsDefault.
@@ -1620,7 +1585,7 @@ type AdminCreateProduct struct {
 	MidCode *string `json:"mid_code,omitempty"`
 
 	// Options The product's options.
-	Options *[]AdminCreateProductOption `json:"options,omitempty"`
+	Options []AdminCreateProductOption `json:"options"`
 
 	// OriginCountry The product's origin country.
 	OriginCountry *string `json:"origin_country,omitempty"`
@@ -1943,14 +1908,58 @@ type AdminCreateShipment struct {
 
 // AdminCreateShippingOption The shipping option's details.
 type AdminCreateShippingOption struct {
-	// Code The type's code.
-	Code string `json:"code"`
+	// Data The shipping option's data, useful for the fulfillment provider handling its processing.
+	Data *map[string]interface{} `json:"data,omitempty"`
 
-	// Description The type's description.
-	Description string `json:"description"`
+	// Name The shipping option's name.
+	Name string `json:"name"`
 
-	// Label The type's label.
-	Label string `json:"label"`
+	// PriceType The shipping option's price type. If `flat`, the shipping option has a fixed price set in `prices`. Otherwise, the shipping option's price is calculated by the fulfillment provider.
+	PriceType AdminCreateShippingOptionPriceType `json:"price_type"`
+
+	// Prices The shipping option's prices.
+	Prices []AdminCreateShippingOption_Prices_Item `json:"prices"`
+
+	// ProviderId The ID of the fulfillment provider handling this shipping option.
+	ProviderId string `json:"provider_id"`
+
+	// Rules The shipping option's rules.
+	Rules *[]AdminCreateShippingOptionRule `json:"rules,omitempty"`
+
+	// ServiceZoneId The ID of the associated service zone.
+	ServiceZoneId string `json:"service_zone_id"`
+
+	// ShippingProfileId The ID of the associated shipping profile.
+	ShippingProfileId string `json:"shipping_profile_id"`
+
+	// Type The shipping option type's details.
+	Type AdminCreateShippingOptionType `json:"type"`
+}
+
+// AdminCreateShippingOptionPriceType The shipping option's price type. If `flat`, the shipping option has a fixed price set in `prices`. Otherwise, the shipping option's price is calculated by the fulfillment provider.
+type AdminCreateShippingOptionPriceType string
+
+// AdminCreateShippingOptionPrices0 The price's details.
+type AdminCreateShippingOptionPrices0 struct {
+	// Amount The price's amount.
+	Amount float32 `json:"amount"`
+
+	// CurrencyCode The price's currency code.
+	CurrencyCode string `json:"currency_code"`
+}
+
+// AdminCreateShippingOptionPrices1 The price's details.
+type AdminCreateShippingOptionPrices1 struct {
+	// Amount The price's amount.
+	Amount float32 `json:"amount"`
+
+	// RegionId The ID of the region this price is used in.
+	RegionId string `json:"region_id"`
+}
+
+// AdminCreateShippingOption_Prices_Item defines model for AdminCreateShippingOption.prices.Item.
+type AdminCreateShippingOption_Prices_Item struct {
+	union json.RawMessage
 }
 
 // AdminCreateShippingOptionRule The details of the shipping option rule.
@@ -1975,6 +1984,18 @@ type AdminCreateShippingOptionRuleValue1 = []string
 // AdminCreateShippingOptionRule_Value defines model for AdminCreateShippingOptionRule.Value.
 type AdminCreateShippingOptionRule_Value struct {
 	union json.RawMessage
+}
+
+// AdminCreateShippingOptionType The shipping option type's details.
+type AdminCreateShippingOptionType struct {
+	// Code The type's code.
+	Code string `json:"code"`
+
+	// Description The type's description.
+	Description string `json:"description"`
+
+	// Label The type's label.
+	Label string `json:"label"`
 }
 
 // AdminCreateShippingProfile The shipping profile's details.
@@ -2763,7 +2784,7 @@ type AdminExchange struct {
 	NoNotification *bool `json:"no_notification,omitempty"`
 
 	// Order The order's details.
-	Order *AdminOrder `json:"order,omitempty"`
+	Order *BaseOrder `json:"order,omitempty"`
 
 	// OrderId The ID of the order the exchange is created for.
 	OrderId string `json:"order_id"`
@@ -3612,8 +3633,8 @@ type AdminOrderChange struct {
 	// Metadata The order change's metadata, can hold custom key-value pairs.
 	Metadata map[string]interface{} `json:"metadata"`
 
-	// Order The order change's order.
-	Order string `json:"order"`
+	// Order The order's details.
+	Order AdminOrder `json:"order"`
 
 	// OrderId The ID of the order this change applies on.
 	OrderId string `json:"order_id"`
@@ -3669,8 +3690,8 @@ type AdminOrderChangeAction struct {
 	// InternalNote A note that's viewed only by admin users.
 	InternalNote string `json:"internal_note"`
 
-	// Order The order change's order.
-	Order       string                 `json:"order"`
+	// Order The order's details.
+	Order       AdminOrder             `json:"order"`
 	OrderChange map[string]interface{} `json:"order_change"`
 
 	// OrderChangeId The ID of the order change that the action belongs to.
@@ -3756,6 +3777,33 @@ type AdminOrderFulfillment struct {
 
 	// UpdatedAt The date the fulfillment was updated.
 	UpdatedAt time.Time `json:"updated_at"`
+}
+
+// AdminOrderItem The order item's details.
+type AdminOrderItem struct {
+	// History The order item's history.
+	History struct {
+		// Version The version changes of the item.
+		Version struct {
+			// From The original version.
+			From float32 `json:"from"`
+
+			// To The new version.
+			To float32 `json:"to"`
+		} `json:"version"`
+	} `json:"history"`
+
+	// Item The item's details.
+	Item AdminOrderLineItem `json:"item"`
+
+	// ItemId The ID of the associated line item.
+	ItemId string `json:"item_id"`
+
+	// OrderId The ID of the order this item belongs to.
+	OrderId string `json:"order_id"`
+
+	// Version The order item's version.
+	Version float32 `json:"version"`
 }
 
 // AdminOrderLineItem The item's details.
@@ -4803,6 +4851,9 @@ type AdminPostOrderEditsAddItemsReqSchema struct {
 		// AllowBackorder Whether the item can be added even if there's no available invenotory quantity of the variant.
 		AllowBackorder *bool `json:"allow_backorder,omitempty"`
 
+		// CompareAtUnitPrice The original price of the item before a promotion or sale.
+		CompareAtUnitPrice *float32 `json:"compare_at_unit_price,omitempty"`
+
 		// InternalNote A note viewed only by admin users.
 		InternalNote *string `json:"internal_note,omitempty"`
 
@@ -4822,11 +4873,17 @@ type AdminPostOrderEditsAddItemsReqSchema struct {
 
 // AdminPostOrderEditsItemsActionReqSchema The details to update in the item.
 type AdminPostOrderEditsItemsActionReqSchema struct {
+	// CompareAtUnitPrice The original price of the item before a promotion or sale.
+	CompareAtUnitPrice *float32 `json:"compare_at_unit_price,omitempty"`
+
 	// InternalNote A note viewed only by admin users.
 	InternalNote *string `json:"internal_note,omitempty"`
 
 	// Quantity The item's quantity.
 	Quantity *float32 `json:"quantity,omitempty"`
+
+	// UnitPrice The item's unit price.
+	UnitPrice *float32 `json:"unit_price,omitempty"`
 }
 
 // AdminPostOrderEditsReqSchema The order edit's details.
@@ -4876,11 +4933,17 @@ type AdminPostOrderEditsShippingReqSchema struct {
 
 // AdminPostOrderEditsUpdateItemQuantityReqSchema The order item's details to update.
 type AdminPostOrderEditsUpdateItemQuantityReqSchema struct {
+	// CompareAtUnitPrice The original price of the item before a promotion or sale.
+	CompareAtUnitPrice *float32 `json:"compare_at_unit_price,omitempty"`
+
 	// InternalNote A note viewed only by admin users.
 	InternalNote *string `json:"internal_note,omitempty"`
 
 	// Quantity The item's quantity.
 	Quantity float32 `json:"quantity"`
+
+	// UnitPrice The item's unit price.
+	UnitPrice *float32 `json:"unit_price,omitempty"`
 }
 
 // AdminPostOrderExchangesReqSchema The exchange's details.
@@ -7321,6 +7384,15 @@ type AdminUpdateTaxRate struct {
 	} `json:"rules,omitempty"`
 }
 
+// AdminUpdateTaxRegion The details to update in a tax region.
+type AdminUpdateTaxRegion struct {
+	// Metadata The tax region's metadata, can hold custom key-value pairs.
+	Metadata *map[string]interface{} `json:"metadata,omitempty"`
+
+	// ProvinceCode The tax region's province code.
+	ProvinceCode *string `json:"province_code,omitempty"`
+}
+
 // AdminUpdateUser The properties to update in a user.
 type AdminUpdateUser struct {
 	// AvatarUrl The URL of the user's avatar.
@@ -7331,6 +7403,9 @@ type AdminUpdateUser struct {
 
 	// LastName The user's last name.
 	LastName *string `json:"last_name,omitempty"`
+
+	// Metadata The user's metadata, can hold custom key-value pairs.
+	Metadata *map[string]interface{} `json:"metadata,omitempty"`
 }
 
 // AdminUpdateVariantInventoryItem The properties to update of the variant's inventory item association.
@@ -7606,22 +7681,7 @@ type BaseCalculatedPriceSet struct {
 	CalculatedAmountWithoutTax *float32 `json:"calculated_amount_without_tax,omitempty"`
 
 	// CalculatedPrice The calculated price's details.
-	CalculatedPrice *struct {
-		// Id The calculated price's ID.
-		Id string `json:"id"`
-
-		// MaxQuantity The maximum quantity required in the cart for this price to apply.
-		MaxQuantity float32 `json:"max_quantity"`
-
-		// MinQuantity The minimum quantity required in the cart for this price to apply.
-		MinQuantity float32 `json:"min_quantity"`
-
-		// PriceListId The ID of the price list that the price belongs to.
-		PriceListId string `json:"price_list_id"`
-
-		// PriceListType The price list's type. For example, `sale`.
-		PriceListType string `json:"price_list_type"`
-	} `json:"calculated_price,omitempty"`
+	CalculatedPrice *map[string]interface{} `json:"calculated_price,omitempty"`
 
 	// CurrencyCode The calculated price's currency code.
 	CurrencyCode string `json:"currency_code"`
@@ -7645,22 +7705,7 @@ type BaseCalculatedPriceSet struct {
 	OriginalAmount float32 `json:"original_amount"`
 
 	// OriginalPrice The original price's details.
-	OriginalPrice *struct {
-		// Id The original price's ID.
-		Id string `json:"id"`
-
-		// MaxQuantity The maximum quantity required in the cart for this price to apply.
-		MaxQuantity float32 `json:"max_quantity"`
-
-		// MinQuantity The minimum quantity required in the cart for this price to apply.
-		MinQuantity float32 `json:"min_quantity"`
-
-		// PriceListId The ID of the price list that the price belongs to.
-		PriceListId string `json:"price_list_id"`
-
-		// PriceListType The price list's type. For example, `sale`.
-		PriceListType string `json:"price_list_type"`
-	} `json:"original_price,omitempty"`
+	OriginalPrice *map[string]interface{} `json:"original_price,omitempty"`
 }
 
 // BaseCapture The details of a captured payment.
@@ -8043,63 +8088,30 @@ type BaseClaimItem_RawQuantity_Value struct {
 // BaseClaimItemReason The claim's reason.
 type BaseClaimItemReason string
 
-// BaseCollection The collection's details.
-type BaseCollection = map[string]interface{}
-
-// BaseCustomerAddress The customer's address.
-type BaseCustomerAddress struct {
-	// Address1 The address's first line.
-	Address1 string `json:"address_1"`
-
-	// Address2 The address's second line.
-	Address2 string `json:"address_2"`
-
-	// AddressName The address's name.
-	AddressName string `json:"address_name"`
-
-	// City The address's city.
-	City string `json:"city"`
-
-	// Company The customer's company.
-	Company string `json:"company"`
-
-	// CountryCode The address's country code.
-	CountryCode string `json:"country_code"`
-
-	// CreatedAt The address's creation date.
+// BaseCollection The product collection's details.
+type BaseCollection struct {
+	// CreatedAt The collection's creation date.
 	CreatedAt time.Time `json:"created_at"`
 
-	// CustomerId The ID of the customer that this address belongs to.
-	CustomerId string `json:"customer_id"`
+	// DeletedAt The collection's deletion date.
+	DeletedAt time.Time `json:"deleted_at"`
 
-	// FirstName The customer's first name.
-	FirstName string `json:"first_name"`
+	// Handle The collection's handle.
+	Handle string `json:"handle"`
 
-	// Id The address's ID.
+	// Id The collection's ID.
 	Id string `json:"id"`
 
-	// IsDefaultBilling Whether the address is the default billing address.
-	IsDefaultBilling bool `json:"is_default_billing"`
-
-	// IsDefaultShipping Whether the address is the default shipping address.
-	IsDefaultShipping bool `json:"is_default_shipping"`
-
-	// LastName The customer's last name.
-	LastName string `json:"last_name"`
-
-	// Metadata The address's metadata, used to store custom key-value pairs.
+	// Metadata The collection's metadata, used to store custom key-value pairs.
 	Metadata map[string]interface{} `json:"metadata"`
 
-	// Phone The address's phone.
-	Phone string `json:"phone"`
+	// Products The collection's products.
+	Products *[]AdminProduct `json:"products,omitempty"`
 
-	// PostalCode The address's postal code.
-	PostalCode string `json:"postal_code"`
+	// Title The collection's title.
+	Title string `json:"title"`
 
-	// Province The address's province.
-	Province string `json:"province"`
-
-	// UpdatedAt The address's update date.
+	// UpdatedAt The collection's update date.
 	UpdatedAt time.Time `json:"updated_at"`
 }
 
@@ -8215,16 +8227,13 @@ type BaseLineItemTaxLine struct {
 // BaseOrder The order's details.
 type BaseOrder struct {
 	// BillingAddress An order address.
-	BillingAddress *AdminOrderAddress `json:"billing_address,omitempty"`
+	BillingAddress *BaseOrderAddress `json:"billing_address,omitempty"`
 
 	// CreatedAt The date the order was created.
 	CreatedAt time.Time `json:"created_at"`
 
 	// CurrencyCode The order's currency code.
 	CurrencyCode string `json:"currency_code"`
-
-	// Customer The customer's details.
-	Customer *AdminCustomer `json:"customer,omitempty"`
 
 	// CustomerId The ID of the customer that placed the order.
 	CustomerId string `json:"customer_id"`
@@ -8269,7 +8278,7 @@ type BaseOrder struct {
 	Items []BaseOrderLineItem `json:"items"`
 
 	// Metadata The order's metadata, can hold custom key-value pairs.
-	Metadata map[string]interface{} `json:"metadata"`
+	Metadata *map[string]interface{} `json:"metadata,omitempty"`
 
 	// OriginalItemSubtotal The total of the order's items excluding taxes, including promotions.
 	OriginalItemSubtotal float32 `json:"original_item_subtotal"`
@@ -8299,7 +8308,7 @@ type BaseOrder struct {
 	OriginalTotal float32 `json:"original_total"`
 
 	// PaymentCollections The order's payment collections.
-	PaymentCollections []AdminPaymentCollection `json:"payment_collections"`
+	PaymentCollections *[]BasePaymentCollection `json:"payment_collections,omitempty"`
 
 	// PaymentStatus The order's payment status.
 	PaymentStatus BaseOrderPaymentStatus `json:"payment_status"`
@@ -8307,14 +8316,11 @@ type BaseOrder struct {
 	// RegionId The ID of the region associated with the order.
 	RegionId string `json:"region_id"`
 
-	// SalesChannel The sales channel's details.
-	SalesChannel *AdminSalesChannel `json:"sales_channel,omitempty"`
-
 	// SalesChannelId The ID of the sales channel the order is placed in.
 	SalesChannelId string `json:"sales_channel_id"`
 
 	// ShippingAddress An order address.
-	ShippingAddress *AdminOrderAddress `json:"shipping_address,omitempty"`
+	ShippingAddress *BaseOrderAddress `json:"shipping_address,omitempty"`
 
 	// ShippingMethods The order's shipping methods.
 	ShippingMethods []BaseOrderShippingMethod `json:"shipping_methods"`
@@ -8356,7 +8362,7 @@ type BaseOrderFulfillmentStatus string
 // BaseOrderPaymentStatus The order's payment status.
 type BaseOrderPaymentStatus string
 
-// BaseOrderAddress An order address
+// BaseOrderAddress An order address.
 type BaseOrderAddress struct {
 	// Address1 The address's first line.
 	Address1 *string `json:"address_1,omitempty"`
@@ -8369,9 +8375,6 @@ type BaseOrderAddress struct {
 
 	// Company The address's company.
 	Company *string `json:"company,omitempty"`
-
-	// Country The country's details.
-	Country *AdminRegionCountry `json:"country,omitempty"`
 
 	// CountryCode The address's country code.
 	CountryCode *string `json:"country_code,omitempty"`
@@ -8407,56 +8410,7 @@ type BaseOrderAddress struct {
 	UpdatedAt time.Time `json:"updated_at"`
 }
 
-// BaseOrderChangeAction The action's actions.
-type BaseOrderChangeAction struct {
-	// Action The applied action.
-	Action string `json:"action"`
-
-	// ClaimId The ID of the associated claim.
-	ClaimId string `json:"claim_id"`
-
-	// CreatedAt The date the order change action was created.
-	CreatedAt time.Time `json:"created_at"`
-
-	// Details The action's details.
-	Details map[string]interface{} `json:"details"`
-
-	// ExchangeId The ID of the associated exchange.
-	ExchangeId string `json:"exchange_id"`
-
-	// Id The action's ID.
-	Id string `json:"id"`
-
-	// InternalNote A note viewed only by admin users.
-	InternalNote string `json:"internal_note"`
-
-	// Order The order's details.
-	Order       BaseOrder              `json:"order"`
-	OrderChange map[string]interface{} `json:"order_change"`
-
-	// OrderChangeId The ID of the order change this action belongs to.
-	OrderChangeId string `json:"order_change_id"`
-
-	// OrderId The ID of the associated order.
-	OrderId string `json:"order_id"`
-
-	// Reference The name of the table this action applies on.
-	Reference BaseOrderChangeActionReference `json:"reference"`
-
-	// ReferenceId The ID of the record in the referenced table.
-	ReferenceId string `json:"reference_id"`
-
-	// ReturnId The ID of the associated return.
-	ReturnId string `json:"return_id"`
-
-	// UpdatedAt The date the order change action was updated.
-	UpdatedAt time.Time `json:"updated_at"`
-}
-
-// BaseOrderChangeActionReference The name of the table this action applies on.
-type BaseOrderChangeActionReference string
-
-// BaseOrderFulfillment The fulfillment's fulfillments.
+// BaseOrderFulfillment The fulfillment's details.
 type BaseOrderFulfillment struct {
 	// CanceledAt The date the items were canceled.
 	CanceledAt time.Time `json:"canceled_at"`
@@ -8484,6 +8438,9 @@ type BaseOrderFulfillment struct {
 
 	// ProviderId The ID of the fulfillment provider used to handle the fulfillment.
 	ProviderId string `json:"provider_id"`
+
+	// RequiresShipping Whether the fulfillment requires shipping.
+	RequiresShipping bool `json:"requires_shipping"`
 
 	// ShippedAt The date the items were shipped.
 	ShippedAt time.Time `json:"shipped_at"`
@@ -9082,7 +9039,7 @@ type BasePaymentCollection struct {
 // BasePaymentCollectionStatus The payment collection's status.
 type BasePaymentCollectionStatus string
 
-// BasePaymentProvider The payment provider's payment providers.
+// BasePaymentProvider The payment provider's details.
 type BasePaymentProvider struct {
 	// Id The payment provider's ID.
 	Id string `json:"id"`
@@ -9127,7 +9084,7 @@ type BaseProduct struct {
 	// Categories The product's categories.
 	Categories *[]BaseProductCategory `json:"categories,omitempty"`
 
-	// Collection The collection's details.
+	// Collection The product collection's details.
 	Collection *BaseCollection `json:"collection,omitempty"`
 
 	// CollectionId The product's collection id.
@@ -9219,8 +9176,51 @@ type BaseProduct struct {
 // BaseProductStatus The product's status.
 type BaseProductStatus string
 
-// BaseProductCategory The category's categories.
-type BaseProductCategory = map[string]interface{}
+// BaseProductCategory The product category's details.
+type BaseProductCategory struct {
+	// CategoryChildren The category's children.
+	CategoryChildren []map[string]interface{} `json:"category_children"`
+
+	// CreatedAt The date the category was created.
+	CreatedAt time.Time `json:"created_at"`
+
+	// DeletedAt The date the category was deleted.
+	DeletedAt time.Time `json:"deleted_at"`
+
+	// Description The category's description.
+	Description string `json:"description"`
+
+	// Handle The category's unique handle.
+	Handle string `json:"handle"`
+
+	// Id The category's ID.
+	Id string `json:"id"`
+
+	// IsActive Whether the category is active. If disabled, the category isn't shown in the storefront.
+	IsActive bool `json:"is_active"`
+
+	// IsInternal Whether the category is internal. If enabled, the category is only seen by admin users.
+	IsInternal bool `json:"is_internal"`
+
+	// Metadata The category's metadata, can hold custom key-value pairs.
+	Metadata *map[string]interface{} `json:"metadata,omitempty"`
+
+	// Name The category's name.
+	Name           string                 `json:"name"`
+	ParentCategory map[string]interface{} `json:"parent_category"`
+
+	// ParentCategoryId The ID of the category's parent.
+	ParentCategoryId string `json:"parent_category_id"`
+
+	// Products The category's products.
+	Products *[]map[string]interface{} `json:"products,omitempty"`
+
+	// Rank The category's rank among sibling categories.
+	Rank float32 `json:"rank"`
+
+	// UpdatedAt The date the category was updated.
+	UpdatedAt time.Time `json:"updated_at"`
+}
 
 // BaseProductImage The image's details.
 type BaseProductImage struct {
@@ -9245,29 +9245,29 @@ type BaseProductImage struct {
 
 // BaseProductOption The product option's details.
 type BaseProductOption struct {
-	// CreatedAt The option's created at.
+	// CreatedAt The date the product option was created.
 	CreatedAt *time.Time `json:"created_at,omitempty"`
 
-	// DeletedAt The option's deleted at.
+	// DeletedAt The date the product option was deleted.
 	DeletedAt *time.Time `json:"deleted_at,omitempty"`
 
-	// Id The option's ID.
+	// Id The product option's ID.
 	Id string `json:"id"`
 
-	// Metadata The option's metadata.
+	// Metadata The product option's metadata, can hold custom key-value pairs.
 	Metadata *map[string]interface{} `json:"metadata,omitempty"`
 	Product  *map[string]interface{} `json:"product,omitempty"`
 
-	// ProductId The option's product id.
+	// ProductId The ID of the product this option belongs to.
 	ProductId *string `json:"product_id,omitempty"`
 
-	// Title The option's title.
+	// Title The product option's title.
 	Title string `json:"title"`
 
-	// UpdatedAt The option's updated at.
+	// UpdatedAt The date the product option was updated.
 	UpdatedAt *time.Time `json:"updated_at,omitempty"`
 
-	// Values The option's values.
+	// Values The product option's values.
 	Values *[]BaseProductOptionValue `json:"values,omitempty"`
 }
 
@@ -9296,8 +9296,26 @@ type BaseProductOptionValue struct {
 	Value string `json:"value"`
 }
 
-// BaseProductTag The tag's tags.
-type BaseProductTag = map[string]interface{}
+// BaseProductTag The product tag's details.
+type BaseProductTag struct {
+	// CreatedAt The date the tag was created.
+	CreatedAt time.Time `json:"created_at"`
+
+	// DeletedAt The date the tag was deleted.
+	DeletedAt *time.Time `json:"deleted_at,omitempty"`
+
+	// Id The tag's ID.
+	Id string `json:"id"`
+
+	// Metadata The tag's metadata, can hold custom key-value pairs.
+	Metadata *map[string]interface{} `json:"metadata,omitempty"`
+
+	// UpdatedAt The date the tag was updated.
+	UpdatedAt time.Time `json:"updated_at"`
+
+	// Value The tag's value.
+	Value string `json:"value"`
+}
 
 // BaseProductVariant The product variant's details.
 type BaseProductVariant struct {
@@ -9379,30 +9397,6 @@ type BaseProductVariant struct {
 	// Width The variant's width.
 	Width float32 `json:"width"`
 }
-
-// BasePromotion The application method's promotion.
-type BasePromotion = map[string]interface{}
-
-// BasePromotionRule The rule's rules.
-type BasePromotionRule struct {
-	// Attribute The rule's attribute.
-	Attribute *string `json:"attribute,omitempty"`
-
-	// Description The rule's description.
-	Description *string `json:"description,omitempty"`
-
-	// Id The rule's ID.
-	Id string `json:"id"`
-
-	// Operator The rule's operator.
-	Operator *BasePromotionRuleOperator `json:"operator,omitempty"`
-
-	// Values The rule's values.
-	Values []BasePromotionRuleValue `json:"values"`
-}
-
-// BasePromotionRuleOperator The rule's operator.
-type BasePromotionRuleOperator string
 
 // BasePromotionRuleValue The rule value's details.
 type BasePromotionRuleValue struct {
@@ -9942,9 +9936,6 @@ type ErrorCode string
 // ErrorType A slug indicating the type of the error.
 type ErrorType string
 
-// IBigNumber The shipping method's discount tax total.
-type IBigNumber = map[string]interface{}
-
 // InventoryLevel The inventory level's details
 type InventoryLevel struct {
 	// AvailableQuantity The inventory level's available quantity.
@@ -10052,72 +10043,6 @@ type Order struct {
 
 	// OriginalTotal The order's total including taxes, excluding promotions.
 	OriginalTotal float32 `json:"original_total"`
-
-	// RawDiscountTaxTotal The order's raw discount tax total.
-	RawDiscountTaxTotal map[string]interface{} `json:"raw_discount_tax_total"`
-
-	// RawDiscountTotal The order's raw discount total.
-	RawDiscountTotal map[string]interface{} `json:"raw_discount_total"`
-
-	// RawGiftCardTaxTotal The order's raw gift card tax total.
-	RawGiftCardTaxTotal map[string]interface{} `json:"raw_gift_card_tax_total"`
-
-	// RawGiftCardTotal The order's raw gift card total.
-	RawGiftCardTotal map[string]interface{} `json:"raw_gift_card_total"`
-
-	// RawItemSubtotal The order's raw item subtotal.
-	RawItemSubtotal map[string]interface{} `json:"raw_item_subtotal"`
-
-	// RawItemTaxTotal The order's raw item tax total.
-	RawItemTaxTotal map[string]interface{} `json:"raw_item_tax_total"`
-
-	// RawItemTotal The order's raw item total.
-	RawItemTotal map[string]interface{} `json:"raw_item_total"`
-
-	// RawOriginalItemSubtotal The order's raw original item subtotal.
-	RawOriginalItemSubtotal map[string]interface{} `json:"raw_original_item_subtotal"`
-
-	// RawOriginalItemTaxTotal The order's raw original item tax total.
-	RawOriginalItemTaxTotal map[string]interface{} `json:"raw_original_item_tax_total"`
-
-	// RawOriginalItemTotal The order's raw original item total.
-	RawOriginalItemTotal map[string]interface{} `json:"raw_original_item_total"`
-
-	// RawOriginalShippingSubtotal The order's raw original shipping subtotal.
-	RawOriginalShippingSubtotal map[string]interface{} `json:"raw_original_shipping_subtotal"`
-
-	// RawOriginalShippingTaxTotal The order's raw original shipping tax total.
-	RawOriginalShippingTaxTotal map[string]interface{} `json:"raw_original_shipping_tax_total"`
-
-	// RawOriginalShippingTotal The order's raw original shipping total.
-	RawOriginalShippingTotal map[string]interface{} `json:"raw_original_shipping_total"`
-
-	// RawOriginalSubtotal The order's raw original subtotal.
-	RawOriginalSubtotal map[string]interface{} `json:"raw_original_subtotal"`
-
-	// RawOriginalTaxTotal The order's raw original tax total.
-	RawOriginalTaxTotal map[string]interface{} `json:"raw_original_tax_total"`
-
-	// RawOriginalTotal The order's raw original total.
-	RawOriginalTotal map[string]interface{} `json:"raw_original_total"`
-
-	// RawShippingSubtotal The order's raw shipping subtotal.
-	RawShippingSubtotal map[string]interface{} `json:"raw_shipping_subtotal"`
-
-	// RawShippingTaxTotal The order's raw shipping tax total.
-	RawShippingTaxTotal map[string]interface{} `json:"raw_shipping_tax_total"`
-
-	// RawShippingTotal The order's raw shipping total.
-	RawShippingTotal map[string]interface{} `json:"raw_shipping_total"`
-
-	// RawSubtotal The order's raw subtotal.
-	RawSubtotal map[string]interface{} `json:"raw_subtotal"`
-
-	// RawTaxTotal The order's raw tax total.
-	RawTaxTotal map[string]interface{} `json:"raw_tax_total"`
-
-	// RawTotal The order's raw total.
-	RawTotal map[string]interface{} `json:"raw_total"`
 
 	// RegionId The ID of the region the order belongs to.
 	RegionId *string `json:"region_id,omitempty"`
@@ -10353,56 +10278,26 @@ type OrderClaim struct {
 	// AdditionalItems The outbound or new items of the claim.
 	AdditionalItems []BaseClaimItem `json:"additional_items"`
 
-	// BillingAddress An order address
-	BillingAddress *BaseOrderAddress `json:"billing_address,omitempty"`
+	// CanceledAt The date the claim was canceled.
+	CanceledAt *time.Time `json:"canceled_at,omitempty"`
 
 	// ClaimItems The order items targetted by the claim.
 	ClaimItems []BaseClaimItem `json:"claim_items"`
 
 	// CreatedAt The claim's creation date.
-	CreatedAt time.Time `json:"created_at"`
+	CreatedAt *time.Time `json:"created_at,omitempty"`
 
-	// CurrencyCode The claim's currency code.
-	CurrencyCode string `json:"currency_code"`
+	// CreatedBy The ID of the user that created the claim.
+	CreatedBy *string `json:"created_by,omitempty"`
 
-	// CustomerId The ID of the customer associated with the claim's order.
-	CustomerId string `json:"customer_id"`
-
-	// DiscountTaxTotal The claim's discount tax total.
-	DiscountTaxTotal float32 `json:"discount_tax_total"`
-
-	// DiscountTotal The claim's discount total.
-	DiscountTotal float32 `json:"discount_total"`
+	// DeletedAt The date the claim was deleted.
+	DeletedAt *time.Time `json:"deleted_at,omitempty"`
 
 	// DisplayId The claim's display ID.
-	DisplayId *float32 `json:"display_id,omitempty"`
-
-	// Email The email associated with the claim's order.
-	Email openapi_types.Email `json:"email"`
-
-	// FulfillmentStatus The claim's fulfillment status.
-	FulfillmentStatus OrderClaimFulfillmentStatus `json:"fulfillment_status"`
-
-	// Fulfillments The claim's fulfillments.
-	Fulfillments *[]BaseOrderFulfillment `json:"fulfillments,omitempty"`
-
-	// GiftCardTaxTotal The claim's gift card tax total.
-	GiftCardTaxTotal float32 `json:"gift_card_tax_total"`
-
-	// GiftCardTotal The claim's gift card total.
-	GiftCardTotal float32 `json:"gift_card_total"`
+	DisplayId float32 `json:"display_id"`
 
 	// Id The claim's ID.
 	Id string `json:"id"`
-
-	// ItemSubtotal The subtotal of the claim's items.
-	ItemSubtotal float32 `json:"item_subtotal"`
-
-	// ItemTaxTotal The tax total of the claim's items.
-	ItemTaxTotal float32 `json:"item_tax_total"`
-
-	// ItemTotal The total of the claim's items.
-	ItemTotal float32 `json:"item_total"`
 
 	// Metadata The claim's metadata, used to store custom key-value pairs.
 	Metadata map[string]interface{} `json:"metadata"`
@@ -10410,150 +10305,101 @@ type OrderClaim struct {
 	// NoNotification Whether the customer should be notified about changes in the claim.
 	NoNotification *bool `json:"no_notification,omitempty"`
 
+	// Order The order change's order.
+	Order *Order `json:"order,omitempty"`
+
 	// OrderId The ID of the order associated with the claim.
 	OrderId string `json:"order_id"`
 
-	// OriginalItemSubtotal The subtotal of the original items in the associated order.
-	OriginalItemSubtotal float32 `json:"original_item_subtotal"`
-
-	// OriginalItemTaxTotal The tax total of the original items in the associated order.
-	OriginalItemTaxTotal float32 `json:"original_item_tax_total"`
-
-	// OriginalItemTotal The total of the original items in the associated order.
-	OriginalItemTotal float32 `json:"original_item_total"`
-
-	// OriginalShippingSubtotal The associated order's original shipping subtotal.
-	OriginalShippingSubtotal float32 `json:"original_shipping_subtotal"`
-
-	// OriginalShippingTaxTotal The associated order's original shipping tax total.
-	OriginalShippingTaxTotal float32 `json:"original_shipping_tax_total"`
-
-	// OriginalShippingTotal The associated order's original shipping total.
-	OriginalShippingTotal float32 `json:"original_shipping_total"`
-
-	// OriginalSubtotal The associated order's original subtotal.
-	OriginalSubtotal float32 `json:"original_subtotal"`
-
-	// OriginalTaxTotal The associated order's original tax total.
-	OriginalTaxTotal float32 `json:"original_tax_total"`
-
-	// OriginalTotal The associated order's original total.
-	OriginalTotal float32 `json:"original_total"`
-
-	// PaymentCollections The claim's payment collections.
-	PaymentCollections *[]BasePaymentCollection `json:"payment_collections,omitempty"`
-
-	// PaymentStatus The claim's payment status.
-	PaymentStatus OrderClaimPaymentStatus `json:"payment_status"`
+	// OrderVersion The claim's order version.
+	OrderVersion    float32                     `json:"order_version"`
+	RawRefundAmount *OrderClaim_RawRefundAmount `json:"raw_refund_amount,omitempty"`
 
 	// RefundAmount The amount to be refunded.
-	RefundAmount *float32 `json:"refund_amount,omitempty"`
-
-	// RegionId The ID of the region associated with the claim.
-	RegionId string                  `json:"region_id"`
-	Return   *map[string]interface{} `json:"return,omitempty"`
+	RefundAmount *OrderClaim_RefundAmount `json:"refund_amount,omitempty"`
+	Return       *map[string]interface{}  `json:"return,omitempty"`
 
 	// ReturnId The ID of the associated return.
 	ReturnId *string `json:"return_id,omitempty"`
 
-	// SalesChannelId The ID of the sales channel the claim's order is created in.
-	SalesChannelId string `json:"sales_channel_id"`
-
-	// ShippingAddress An order address
-	ShippingAddress *BaseOrderAddress `json:"shipping_address,omitempty"`
-
 	// ShippingMethods The claim's shipping methods.
-	ShippingMethods []BaseOrderShippingMethod `json:"shipping_methods"`
-
-	// ShippingSubtotal The claim's shipping subtotal.
-	ShippingSubtotal float32 `json:"shipping_subtotal"`
-
-	// ShippingTaxTotal The claim's shipping tax total.
-	ShippingTaxTotal float32 `json:"shipping_tax_total"`
-
-	// ShippingTotal The claim's shipping total.
-	ShippingTotal float32 `json:"shipping_total"`
-
-	// Subtotal The claim's subtotal.
-	Subtotal float32 `json:"subtotal"`
-
-	// Summary The order's summary details.
-	Summary BaseOrderSummary `json:"summary"`
-
-	// TaxTotal The claim's tax total.
-	TaxTotal float32 `json:"tax_total"`
-
-	// Total The associated order's total.
-	Total float32 `json:"total"`
+	ShippingMethods *[]OrderShippingMethod `json:"shipping_methods,omitempty"`
 
 	// Transactions The claim's transactions.
-	Transactions *[]BaseOrderTransaction `json:"transactions,omitempty"`
+	Transactions *[]OrderTransaction `json:"transactions,omitempty"`
+
+	// Type The claim's type.
+	Type OrderClaimType `json:"type"`
 
 	// UpdatedAt The claim's update date.
-	UpdatedAt time.Time `json:"updated_at"`
+	UpdatedAt *time.Time `json:"updated_at,omitempty"`
 }
 
-// OrderClaimFulfillmentStatus The claim's fulfillment status.
-type OrderClaimFulfillmentStatus string
+// OrderClaimRawRefundAmount0 The claim's raw refund amount.
+type OrderClaimRawRefundAmount0 = string
 
-// OrderClaimPaymentStatus The claim's payment status.
-type OrderClaimPaymentStatus string
+// OrderClaimRawRefundAmount1 The claim's raw refund amount.
+type OrderClaimRawRefundAmount1 = float32
+
+// OrderClaimRawRefundAmount2 The claim's raw refund amount.
+type OrderClaimRawRefundAmount2 = string
+
+// OrderClaimRawRefundAmount3 The claim's raw refund amount.
+type OrderClaimRawRefundAmount3 = float32
+
+// OrderClaim_RawRefundAmount defines model for OrderClaim.RawRefundAmount.
+type OrderClaim_RawRefundAmount struct {
+	union json.RawMessage
+}
+
+// OrderClaimRefundAmount0 The claim's refund amount.
+type OrderClaimRefundAmount0 = string
+
+// OrderClaimRefundAmount1 The claim's refund amount.
+type OrderClaimRefundAmount1 = float32
+
+// OrderClaimRefundAmount2 The claim's refund amount.
+type OrderClaimRefundAmount2 = string
+
+// OrderClaimRefundAmount3 The claim's refund amount.
+type OrderClaimRefundAmount3 = float32
+
+// OrderClaim_RefundAmount The amount to be refunded.
+type OrderClaim_RefundAmount struct {
+	union json.RawMessage
+}
+
+// OrderClaimType The claim's type.
+type OrderClaimType string
 
 // OrderExchange The order change's exchange.
 type OrderExchange struct {
 	// AdditionalItems The new items (outbound) sent by the exchange.
 	AdditionalItems []BaseExchangeItem `json:"additional_items"`
 
-	// BillingAddress An order address
-	BillingAddress *BaseOrderAddress `json:"billing_address,omitempty"`
+	// AllowBackorder Whether variants that are out of stock can be added to the exchange as outbound items.
+	AllowBackorder *bool `json:"allow_backorder,omitempty"`
+
+	// CanceledAt The date the exchange was canceled.
+	CanceledAt *time.Time `json:"canceled_at,omitempty"`
 
 	// CreatedAt The date that the exchange was created.
-	CreatedAt time.Time `json:"created_at"`
+	CreatedAt *time.Time `json:"created_at,omitempty"`
 
-	// CurrencyCode The exchange's currency code.
-	CurrencyCode string `json:"currency_code"`
+	// CreatedBy The ID of the user that created the exchange.
+	CreatedBy *string `json:"created_by,omitempty"`
 
-	// CustomerId The ID of the customer that placed the order.
-	CustomerId string `json:"customer_id"`
+	// DeletedAt The date the exchange was deleted.
+	DeletedAt *time.Time `json:"deleted_at,omitempty"`
 
 	// DifferenceDue The amount to be exchanged or refunded. If the amount is negative, it must be refunded. If positive, additional payment is required from the customer.
 	DifferenceDue *float32 `json:"difference_due,omitempty"`
 
-	// DiscountTaxTotal The total taxes on discount of the exchange.
-	DiscountTaxTotal float32 `json:"discount_tax_total"`
-
-	// DiscountTotal The discount total of the exchange.
-	DiscountTotal float32 `json:"discount_total"`
-
 	// DisplayId The exchange's display ID.
-	DisplayId *float32 `json:"display_id,omitempty"`
-
-	// Email The email used when placing the order.
-	Email openapi_types.Email `json:"email"`
-
-	// FulfillmentStatus The exchange's fulfillment status.
-	FulfillmentStatus OrderExchangeFulfillmentStatus `json:"fulfillment_status"`
-
-	// Fulfillments The exchange's fulfillments of new (outbound) items.
-	Fulfillments *[]BaseOrderFulfillment `json:"fulfillments,omitempty"`
-
-	// GiftCardTaxTotal The total taxes on the gift card of the exchange.
-	GiftCardTaxTotal float32 `json:"gift_card_tax_total"`
-
-	// GiftCardTotal The gift cards total of the exchange.
-	GiftCardTotal float32 `json:"gift_card_total"`
+	DisplayId float32 `json:"display_id"`
 
 	// Id The exchange's ID.
 	Id string `json:"id"`
-
-	// ItemSubtotal The subtotal of the exchange's new items.
-	ItemSubtotal float32 `json:"item_subtotal"`
-
-	// ItemTaxTotal The tax total of the exchange's new items.
-	ItemTaxTotal float32 `json:"item_tax_total"`
-
-	// ItemTotal The total of the exchange's new items.
-	ItemTotal float32 `json:"item_total"`
 
 	// Metadata The exchange's metadata, can hold custom key-value pairs.
 	Metadata map[string]interface{} `json:"metadata"`
@@ -10561,96 +10407,48 @@ type OrderExchange struct {
 	// NoNotification Whether to send the customer notifications when the exchange is updated.
 	NoNotification *bool `json:"no_notification,omitempty"`
 
+	// Order The order change's order.
+	Order *Order `json:"order,omitempty"`
+
 	// OrderId The ID of the order the exchange is created for.
 	OrderId string `json:"order_id"`
 
-	// OriginalItemSubtotal The subtotal of the original items in the order.
-	OriginalItemSubtotal float32 `json:"original_item_subtotal"`
-
-	// OriginalItemTaxTotal The total tax of the original items in the order.
-	OriginalItemTaxTotal float32 `json:"original_item_tax_total"`
-
-	// OriginalItemTotal The total of the original items in the order.
-	OriginalItemTotal float32 `json:"original_item_total"`
-
-	// OriginalShippingSubtotal The order's shipping subtotal.
-	OriginalShippingSubtotal float32 `json:"original_shipping_subtotal"`
-
-	// OriginalShippingTaxTotal The order's shipping tax total.
-	OriginalShippingTaxTotal float32 `json:"original_shipping_tax_total"`
-
-	// OriginalShippingTotal The order's shipping total.
-	OriginalShippingTotal float32 `json:"original_shipping_total"`
-
-	// OriginalSubtotal The subtotal of the order.
-	OriginalSubtotal float32 `json:"original_subtotal"`
-
-	// OriginalTaxTotal The tax total of the order.
-	OriginalTaxTotal float32 `json:"original_tax_total"`
-
-	// OriginalTotal The total of the order.
-	OriginalTotal float32 `json:"original_total"`
-
-	// PaymentCollections The exchange's payment collections.
-	PaymentCollections *[]BasePaymentCollection `json:"payment_collections,omitempty"`
-
-	// PaymentStatus The exchange's payment status.
-	PaymentStatus OrderExchangePaymentStatus `json:"payment_status"`
-
-	// RegionId The ID of the associated order's region.
-	RegionId string `json:"region_id"`
+	// OrderVersion The version of the order when the exchange is applied.
+	OrderVersion     float32                         `json:"order_version"`
+	RawDifferenceDue *OrderExchange_RawDifferenceDue `json:"raw_difference_due,omitempty"`
 
 	// Return The return's details.
-	Return *AdminReturn `json:"return,omitempty"`
+	Return *Return `json:"return,omitempty"`
 
 	// ReturnId The ID of the associated exchange.
 	ReturnId *string `json:"return_id,omitempty"`
 
-	// ReturnItems The items returned (inbound) by the exchange.
-	ReturnItems []AdminReturnItem `json:"return_items"`
-
-	// SalesChannelId The ID of the sales channel the associated order belongs to.
-	SalesChannelId string `json:"sales_channel_id"`
-
-	// ShippingAddress An order address
-	ShippingAddress *BaseOrderAddress `json:"shipping_address,omitempty"`
-
 	// ShippingMethods The shipping methods used to send the new (outbound) items.
-	ShippingMethods []BaseOrderShippingMethod `json:"shipping_methods"`
-
-	// ShippingSubtotal The exchange's shipping subtotal.
-	ShippingSubtotal float32 `json:"shipping_subtotal"`
-
-	// ShippingTaxTotal The exchange's shipping tax total.
-	ShippingTaxTotal float32 `json:"shipping_tax_total"`
-
-	// ShippingTotal The exchange's shipping total.
-	ShippingTotal float32 `json:"shipping_total"`
-
-	// Subtotal The subtotal of the exchange.
-	Subtotal float32 `json:"subtotal"`
-
-	// Summary The order's summary details.
-	Summary BaseOrderSummary `json:"summary"`
-
-	// TaxTotal The tax total of the exchange.
-	TaxTotal float32 `json:"tax_total"`
-
-	// Total The total of the exchange.
-	Total float32 `json:"total"`
+	ShippingMethods *[]OrderShippingMethod `json:"shipping_methods,omitempty"`
 
 	// Transactions The exchange's transactions.
-	Transactions *[]BaseOrderTransaction `json:"transactions,omitempty"`
+	Transactions *[]OrderTransaction `json:"transactions,omitempty"`
 
 	// UpdatedAt The date that the exchange was updated.
-	UpdatedAt time.Time `json:"updated_at"`
+	UpdatedAt *time.Time `json:"updated_at,omitempty"`
 }
 
-// OrderExchangeFulfillmentStatus The exchange's fulfillment status.
-type OrderExchangeFulfillmentStatus string
+// OrderExchangeRawDifferenceDue0 The exchange's raw difference due.
+type OrderExchangeRawDifferenceDue0 = string
 
-// OrderExchangePaymentStatus The exchange's payment status.
-type OrderExchangePaymentStatus string
+// OrderExchangeRawDifferenceDue1 The exchange's raw difference due.
+type OrderExchangeRawDifferenceDue1 = float32
+
+// OrderExchangeRawDifferenceDue2 The exchange's raw difference due.
+type OrderExchangeRawDifferenceDue2 = string
+
+// OrderExchangeRawDifferenceDue3 The exchange's raw difference due.
+type OrderExchangeRawDifferenceDue3 = float32
+
+// OrderExchange_RawDifferenceDue defines model for OrderExchange.RawDifferenceDue.
+type OrderExchange_RawDifferenceDue struct {
+	union json.RawMessage
+}
 
 // OrderItem The order item's detail.
 type OrderItem struct {
@@ -10675,30 +10473,6 @@ type OrderItem struct {
 
 	// Quantity The item's quantity.
 	Quantity float32 `json:"quantity"`
-
-	// RawDeliveredQuantity The item's raw delivered quantity.
-	RawDeliveredQuantity map[string]interface{} `json:"raw_delivered_quantity"`
-
-	// RawFulfilledQuantity The item's raw fulfilled quantity.
-	RawFulfilledQuantity map[string]interface{} `json:"raw_fulfilled_quantity"`
-
-	// RawQuantity The item's raw quantity.
-	RawQuantity map[string]interface{} `json:"raw_quantity"`
-
-	// RawReturnDismissedQuantity The item's raw return dismissed quantity.
-	RawReturnDismissedQuantity map[string]interface{} `json:"raw_return_dismissed_quantity"`
-
-	// RawReturnReceivedQuantity The item's raw return received quantity.
-	RawReturnReceivedQuantity map[string]interface{} `json:"raw_return_received_quantity"`
-
-	// RawReturnRequestedQuantity The item's raw return requested quantity.
-	RawReturnRequestedQuantity map[string]interface{} `json:"raw_return_requested_quantity"`
-
-	// RawShippedQuantity The item's raw shipped quantity.
-	RawShippedQuantity map[string]interface{} `json:"raw_shipped_quantity"`
-
-	// RawWrittenOffQuantity The item's raw written off quantity.
-	RawWrittenOffQuantity map[string]interface{} `json:"raw_written_off_quantity"`
 
 	// ReturnDismissedQuantity The item's quantity that's returned but dismissed because it's damaged.
 	ReturnDismissedQuantity float32 `json:"return_dismissed_quantity"`
@@ -10793,86 +10567,6 @@ type OrderLineItem struct {
 	// Quantity The item's quantity.
 	Quantity float32 `json:"quantity"`
 
-	// RawCompareAtUnitPrice The item's raw compare at unit price.
-	RawCompareAtUnitPrice *struct {
-		Value OrderLineItem_RawCompareAtUnitPrice_Value `json:"value"`
-	} `json:"raw_compare_at_unit_price,omitempty"`
-
-	// RawDiscountTaxTotal The item's raw discount tax total.
-	RawDiscountTaxTotal struct {
-		Value OrderLineItem_RawDiscountTaxTotal_Value `json:"value"`
-	} `json:"raw_discount_tax_total"`
-
-	// RawDiscountTotal The item's raw discount total.
-	RawDiscountTotal struct {
-		Value OrderLineItem_RawDiscountTotal_Value `json:"value"`
-	} `json:"raw_discount_total"`
-
-	// RawItemSubtotal The item's raw item subtotal.
-	RawItemSubtotal struct {
-		Value OrderLineItem_RawItemSubtotal_Value `json:"value"`
-	} `json:"raw_item_subtotal"`
-
-	// RawItemTaxTotal The item's raw item tax total.
-	RawItemTaxTotal struct {
-		Value OrderLineItem_RawItemTaxTotal_Value `json:"value"`
-	} `json:"raw_item_tax_total"`
-
-	// RawItemTotal The item's raw item total.
-	RawItemTotal struct {
-		Value OrderLineItem_RawItemTotal_Value `json:"value"`
-	} `json:"raw_item_total"`
-
-	// RawOriginalSubtotal The item's raw original subtotal.
-	RawOriginalSubtotal struct {
-		Value OrderLineItem_RawOriginalSubtotal_Value `json:"value"`
-	} `json:"raw_original_subtotal"`
-
-	// RawOriginalTaxTotal The item's raw original tax total.
-	RawOriginalTaxTotal struct {
-		Value OrderLineItem_RawOriginalTaxTotal_Value `json:"value"`
-	} `json:"raw_original_tax_total"`
-
-	// RawOriginalTotal The item's raw original total.
-	RawOriginalTotal struct {
-		Value OrderLineItem_RawOriginalTotal_Value `json:"value"`
-	} `json:"raw_original_total"`
-
-	// RawQuantity The item's raw quantity.
-	RawQuantity struct {
-		Value OrderLineItem_RawQuantity_Value `json:"value"`
-	} `json:"raw_quantity"`
-
-	// RawRefundableTotal The item's raw refundable total.
-	RawRefundableTotal struct {
-		Value OrderLineItem_RawRefundableTotal_Value `json:"value"`
-	} `json:"raw_refundable_total"`
-
-	// RawRefundableTotalPerUnit The item's raw refundable total per unit.
-	RawRefundableTotalPerUnit struct {
-		Value OrderLineItem_RawRefundableTotalPerUnit_Value `json:"value"`
-	} `json:"raw_refundable_total_per_unit"`
-
-	// RawSubtotal The item's raw subtotal.
-	RawSubtotal struct {
-		Value OrderLineItem_RawSubtotal_Value `json:"value"`
-	} `json:"raw_subtotal"`
-
-	// RawTaxTotal The item's raw tax total.
-	RawTaxTotal struct {
-		Value OrderLineItem_RawTaxTotal_Value `json:"value"`
-	} `json:"raw_tax_total"`
-
-	// RawTotal The item's raw total.
-	RawTotal struct {
-		Value OrderLineItem_RawTotal_Value `json:"value"`
-	} `json:"raw_total"`
-
-	// RawUnitPrice The item's raw unit price.
-	RawUnitPrice struct {
-		Value OrderLineItem_RawUnitPrice_Value `json:"value"`
-	} `json:"raw_unit_price"`
-
 	// RefundableTotal The total amount of the item that can be refunded.
 	RefundableTotal float32 `json:"refundable_total"`
 
@@ -10923,182 +10617,6 @@ type OrderLineItem struct {
 
 	// VariantTitle The item's variant title.
 	VariantTitle *string `json:"variant_title,omitempty"`
-}
-
-// OrderLineItemRawCompareAtUnitPriceValue0 The raw compare at unit price's value.
-type OrderLineItemRawCompareAtUnitPriceValue0 = string
-
-// OrderLineItemRawCompareAtUnitPriceValue1 The raw compare at unit price's value.
-type OrderLineItemRawCompareAtUnitPriceValue1 = float32
-
-// OrderLineItem_RawCompareAtUnitPrice_Value defines model for OrderLineItem.RawCompareAtUnitPrice.Value.
-type OrderLineItem_RawCompareAtUnitPrice_Value struct {
-	union json.RawMessage
-}
-
-// OrderLineItemRawDiscountTaxTotalValue0 The raw discount tax total's value.
-type OrderLineItemRawDiscountTaxTotalValue0 = string
-
-// OrderLineItemRawDiscountTaxTotalValue1 The raw discount tax total's value.
-type OrderLineItemRawDiscountTaxTotalValue1 = float32
-
-// OrderLineItem_RawDiscountTaxTotal_Value defines model for OrderLineItem.RawDiscountTaxTotal.Value.
-type OrderLineItem_RawDiscountTaxTotal_Value struct {
-	union json.RawMessage
-}
-
-// OrderLineItemRawDiscountTotalValue0 The raw discount total's value.
-type OrderLineItemRawDiscountTotalValue0 = string
-
-// OrderLineItemRawDiscountTotalValue1 The raw discount total's value.
-type OrderLineItemRawDiscountTotalValue1 = float32
-
-// OrderLineItem_RawDiscountTotal_Value defines model for OrderLineItem.RawDiscountTotal.Value.
-type OrderLineItem_RawDiscountTotal_Value struct {
-	union json.RawMessage
-}
-
-// OrderLineItemRawItemSubtotalValue0 The raw item subtotal's value.
-type OrderLineItemRawItemSubtotalValue0 = string
-
-// OrderLineItemRawItemSubtotalValue1 The raw item subtotal's value.
-type OrderLineItemRawItemSubtotalValue1 = float32
-
-// OrderLineItem_RawItemSubtotal_Value defines model for OrderLineItem.RawItemSubtotal.Value.
-type OrderLineItem_RawItemSubtotal_Value struct {
-	union json.RawMessage
-}
-
-// OrderLineItemRawItemTaxTotalValue0 The raw item tax total's value.
-type OrderLineItemRawItemTaxTotalValue0 = string
-
-// OrderLineItemRawItemTaxTotalValue1 The raw item tax total's value.
-type OrderLineItemRawItemTaxTotalValue1 = float32
-
-// OrderLineItem_RawItemTaxTotal_Value defines model for OrderLineItem.RawItemTaxTotal.Value.
-type OrderLineItem_RawItemTaxTotal_Value struct {
-	union json.RawMessage
-}
-
-// OrderLineItemRawItemTotalValue0 The raw item total's value.
-type OrderLineItemRawItemTotalValue0 = string
-
-// OrderLineItemRawItemTotalValue1 The raw item total's value.
-type OrderLineItemRawItemTotalValue1 = float32
-
-// OrderLineItem_RawItemTotal_Value defines model for OrderLineItem.RawItemTotal.Value.
-type OrderLineItem_RawItemTotal_Value struct {
-	union json.RawMessage
-}
-
-// OrderLineItemRawOriginalSubtotalValue0 The raw original subtotal's value.
-type OrderLineItemRawOriginalSubtotalValue0 = string
-
-// OrderLineItemRawOriginalSubtotalValue1 The raw original subtotal's value.
-type OrderLineItemRawOriginalSubtotalValue1 = float32
-
-// OrderLineItem_RawOriginalSubtotal_Value defines model for OrderLineItem.RawOriginalSubtotal.Value.
-type OrderLineItem_RawOriginalSubtotal_Value struct {
-	union json.RawMessage
-}
-
-// OrderLineItemRawOriginalTaxTotalValue0 The raw original tax total's value.
-type OrderLineItemRawOriginalTaxTotalValue0 = string
-
-// OrderLineItemRawOriginalTaxTotalValue1 The raw original tax total's value.
-type OrderLineItemRawOriginalTaxTotalValue1 = float32
-
-// OrderLineItem_RawOriginalTaxTotal_Value defines model for OrderLineItem.RawOriginalTaxTotal.Value.
-type OrderLineItem_RawOriginalTaxTotal_Value struct {
-	union json.RawMessage
-}
-
-// OrderLineItemRawOriginalTotalValue0 The raw original total's value.
-type OrderLineItemRawOriginalTotalValue0 = string
-
-// OrderLineItemRawOriginalTotalValue1 The raw original total's value.
-type OrderLineItemRawOriginalTotalValue1 = float32
-
-// OrderLineItem_RawOriginalTotal_Value defines model for OrderLineItem.RawOriginalTotal.Value.
-type OrderLineItem_RawOriginalTotal_Value struct {
-	union json.RawMessage
-}
-
-// OrderLineItemRawQuantityValue0 The raw quantity's value.
-type OrderLineItemRawQuantityValue0 = string
-
-// OrderLineItemRawQuantityValue1 The raw quantity's value.
-type OrderLineItemRawQuantityValue1 = float32
-
-// OrderLineItem_RawQuantity_Value defines model for OrderLineItem.RawQuantity.Value.
-type OrderLineItem_RawQuantity_Value struct {
-	union json.RawMessage
-}
-
-// OrderLineItemRawRefundableTotalValue0 The raw refundable total's value.
-type OrderLineItemRawRefundableTotalValue0 = string
-
-// OrderLineItemRawRefundableTotalValue1 The raw refundable total's value.
-type OrderLineItemRawRefundableTotalValue1 = float32
-
-// OrderLineItem_RawRefundableTotal_Value defines model for OrderLineItem.RawRefundableTotal.Value.
-type OrderLineItem_RawRefundableTotal_Value struct {
-	union json.RawMessage
-}
-
-// OrderLineItemRawRefundableTotalPerUnitValue0 The raw refundable total per unit's value.
-type OrderLineItemRawRefundableTotalPerUnitValue0 = string
-
-// OrderLineItemRawRefundableTotalPerUnitValue1 The raw refundable total per unit's value.
-type OrderLineItemRawRefundableTotalPerUnitValue1 = float32
-
-// OrderLineItem_RawRefundableTotalPerUnit_Value defines model for OrderLineItem.RawRefundableTotalPerUnit.Value.
-type OrderLineItem_RawRefundableTotalPerUnit_Value struct {
-	union json.RawMessage
-}
-
-// OrderLineItemRawSubtotalValue0 The raw subtotal's value.
-type OrderLineItemRawSubtotalValue0 = string
-
-// OrderLineItemRawSubtotalValue1 The raw subtotal's value.
-type OrderLineItemRawSubtotalValue1 = float32
-
-// OrderLineItem_RawSubtotal_Value defines model for OrderLineItem.RawSubtotal.Value.
-type OrderLineItem_RawSubtotal_Value struct {
-	union json.RawMessage
-}
-
-// OrderLineItemRawTaxTotalValue0 The raw tax total's value.
-type OrderLineItemRawTaxTotalValue0 = string
-
-// OrderLineItemRawTaxTotalValue1 The raw tax total's value.
-type OrderLineItemRawTaxTotalValue1 = float32
-
-// OrderLineItem_RawTaxTotal_Value defines model for OrderLineItem.RawTaxTotal.Value.
-type OrderLineItem_RawTaxTotal_Value struct {
-	union json.RawMessage
-}
-
-// OrderLineItemRawTotalValue0 The raw total's value.
-type OrderLineItemRawTotalValue0 = string
-
-// OrderLineItemRawTotalValue1 The raw total's value.
-type OrderLineItemRawTotalValue1 = float32
-
-// OrderLineItem_RawTotal_Value defines model for OrderLineItem.RawTotal.Value.
-type OrderLineItem_RawTotal_Value struct {
-	union json.RawMessage
-}
-
-// OrderLineItemRawUnitPriceValue0 The raw unit price's value.
-type OrderLineItemRawUnitPriceValue0 = string
-
-// OrderLineItemRawUnitPriceValue1 The raw unit price's value.
-type OrderLineItemRawUnitPriceValue1 = float32
-
-// OrderLineItem_RawUnitPrice_Value defines model for OrderLineItem.RawUnitPrice.Value.
-type OrderLineItem_RawUnitPrice_Value struct {
-	union json.RawMessage
 }
 
 // OrderLineItemAdjustment The line item adjustment's details.
@@ -11159,12 +10677,6 @@ type OrderLineItemTaxLine struct {
 	// Rate The rate to charge.
 	Rate float32 `json:"rate"`
 
-	// RawSubtotal The tax line's raw subtotal.
-	RawSubtotal map[string]interface{} `json:"raw_subtotal"`
-
-	// RawTotal The tax line's raw total.
-	RawTotal map[string]interface{} `json:"raw_total"`
-
 	// Subtotal The item's total excluding taxes, including promotions.
 	Subtotal float32 `json:"subtotal"`
 
@@ -11180,8 +10692,8 @@ type OrderLineItemTaxLine struct {
 
 // OrderReturnItem The item's items.
 type OrderReturnItem struct {
-	// DamagedQuantity The received damaged quantity of the item, which isn't added to the stocked inventory quantity of the item.
-	DamagedQuantity float32 `json:"damaged_quantity"`
+	// CreatedAt The date the item was created.
+	CreatedAt *time.Time `json:"created_at,omitempty"`
 
 	// Id The return item's ID.
 	Id string `json:"id"`
@@ -11192,8 +10704,8 @@ type OrderReturnItem struct {
 	// Metadata The return item's metadata, can hold custom key-value pairs.
 	Metadata *map[string]interface{} `json:"metadata,omitempty"`
 
-	// Note A note about why the item was returned.
-	Note *string `json:"note,omitempty"`
+	// OrderId The ID of the order the return belongs to.
+	OrderId string `json:"order_id"`
 
 	// Quantity The return item's quantity.
 	Quantity float32 `json:"quantity"`
@@ -11202,10 +10714,13 @@ type OrderReturnItem struct {
 	ReasonId *string `json:"reason_id,omitempty"`
 
 	// ReceivedQuantity The received quantity of the item. This quantity is added to the stocked inventory quantity of the item.
-	ReceivedQuantity float32 `json:"received_quantity"`
+	ReceivedQuantity *float32 `json:"received_quantity,omitempty"`
 
 	// ReturnId The ID of the return this return item belongs to.
 	ReturnId string `json:"return_id"`
+
+	// UpdatedAt The date the item was updated.
+	UpdatedAt *time.Time `json:"updated_at,omitempty"`
 }
 
 // OrderShippingMethod The shipping method's details.
@@ -11255,51 +10770,6 @@ type OrderShippingMethod struct {
 	// OriginalTotal The shipping method's total including taxes, excluding promotions.
 	OriginalTotal float32 `json:"original_total"`
 
-	// RawAmount The shipping method's raw amount.
-	RawAmount struct {
-		Value OrderShippingMethod_RawAmount_Value `json:"value"`
-	} `json:"raw_amount"`
-
-	// RawDiscountTaxTotal The shipping method's raw discount tax total.
-	RawDiscountTaxTotal struct {
-		Value OrderShippingMethod_RawDiscountTaxTotal_Value `json:"value"`
-	} `json:"raw_discount_tax_total"`
-
-	// RawDiscountTotal The shipping method's raw discount total.
-	RawDiscountTotal struct {
-		Value OrderShippingMethod_RawDiscountTotal_Value `json:"value"`
-	} `json:"raw_discount_total"`
-
-	// RawOriginalSubtotal The shipping method's raw original subtotal.
-	RawOriginalSubtotal struct {
-		Value OrderShippingMethod_RawOriginalSubtotal_Value `json:"value"`
-	} `json:"raw_original_subtotal"`
-
-	// RawOriginalTaxTotal The shipping method's raw original tax total.
-	RawOriginalTaxTotal struct {
-		Value OrderShippingMethod_RawOriginalTaxTotal_Value `json:"value"`
-	} `json:"raw_original_tax_total"`
-
-	// RawOriginalTotal The shipping method's raw original total.
-	RawOriginalTotal struct {
-		Value OrderShippingMethod_RawOriginalTotal_Value `json:"value"`
-	} `json:"raw_original_total"`
-
-	// RawSubtotal The shipping method's raw subtotal.
-	RawSubtotal struct {
-		Value OrderShippingMethod_RawSubtotal_Value `json:"value"`
-	} `json:"raw_subtotal"`
-
-	// RawTaxTotal The shipping method's raw tax total.
-	RawTaxTotal struct {
-		Value OrderShippingMethod_RawTaxTotal_Value `json:"value"`
-	} `json:"raw_tax_total"`
-
-	// RawTotal The shipping method's raw total.
-	RawTotal struct {
-		Value OrderShippingMethod_RawTotal_Value `json:"value"`
-	} `json:"raw_total"`
-
 	// ShippingOptionId The ID of the shipping option this method was created from.
 	ShippingOptionId *string `json:"shipping_option_id,omitempty"`
 
@@ -11317,105 +10787,6 @@ type OrderShippingMethod struct {
 
 	// UpdatedAt The date the shipping method was updated.
 	UpdatedAt time.Time `json:"updated_at"`
-}
-
-// OrderShippingMethodRawAmountValue0 The raw amount's value.
-type OrderShippingMethodRawAmountValue0 = string
-
-// OrderShippingMethodRawAmountValue1 The raw amount's value.
-type OrderShippingMethodRawAmountValue1 = float32
-
-// OrderShippingMethod_RawAmount_Value defines model for OrderShippingMethod.RawAmount.Value.
-type OrderShippingMethod_RawAmount_Value struct {
-	union json.RawMessage
-}
-
-// OrderShippingMethodRawDiscountTaxTotalValue0 The raw discount tax total's value.
-type OrderShippingMethodRawDiscountTaxTotalValue0 = string
-
-// OrderShippingMethodRawDiscountTaxTotalValue1 The raw discount tax total's value.
-type OrderShippingMethodRawDiscountTaxTotalValue1 = float32
-
-// OrderShippingMethod_RawDiscountTaxTotal_Value defines model for OrderShippingMethod.RawDiscountTaxTotal.Value.
-type OrderShippingMethod_RawDiscountTaxTotal_Value struct {
-	union json.RawMessage
-}
-
-// OrderShippingMethodRawDiscountTotalValue0 The raw discount total's value.
-type OrderShippingMethodRawDiscountTotalValue0 = string
-
-// OrderShippingMethodRawDiscountTotalValue1 The raw discount total's value.
-type OrderShippingMethodRawDiscountTotalValue1 = float32
-
-// OrderShippingMethod_RawDiscountTotal_Value defines model for OrderShippingMethod.RawDiscountTotal.Value.
-type OrderShippingMethod_RawDiscountTotal_Value struct {
-	union json.RawMessage
-}
-
-// OrderShippingMethodRawOriginalSubtotalValue0 The raw original subtotal's value.
-type OrderShippingMethodRawOriginalSubtotalValue0 = string
-
-// OrderShippingMethodRawOriginalSubtotalValue1 The raw original subtotal's value.
-type OrderShippingMethodRawOriginalSubtotalValue1 = float32
-
-// OrderShippingMethod_RawOriginalSubtotal_Value defines model for OrderShippingMethod.RawOriginalSubtotal.Value.
-type OrderShippingMethod_RawOriginalSubtotal_Value struct {
-	union json.RawMessage
-}
-
-// OrderShippingMethodRawOriginalTaxTotalValue0 The raw original tax total's value.
-type OrderShippingMethodRawOriginalTaxTotalValue0 = string
-
-// OrderShippingMethodRawOriginalTaxTotalValue1 The raw original tax total's value.
-type OrderShippingMethodRawOriginalTaxTotalValue1 = float32
-
-// OrderShippingMethod_RawOriginalTaxTotal_Value defines model for OrderShippingMethod.RawOriginalTaxTotal.Value.
-type OrderShippingMethod_RawOriginalTaxTotal_Value struct {
-	union json.RawMessage
-}
-
-// OrderShippingMethodRawOriginalTotalValue0 The raw original total's value.
-type OrderShippingMethodRawOriginalTotalValue0 = string
-
-// OrderShippingMethodRawOriginalTotalValue1 The raw original total's value.
-type OrderShippingMethodRawOriginalTotalValue1 = float32
-
-// OrderShippingMethod_RawOriginalTotal_Value defines model for OrderShippingMethod.RawOriginalTotal.Value.
-type OrderShippingMethod_RawOriginalTotal_Value struct {
-	union json.RawMessage
-}
-
-// OrderShippingMethodRawSubtotalValue0 The raw subtotal's value.
-type OrderShippingMethodRawSubtotalValue0 = string
-
-// OrderShippingMethodRawSubtotalValue1 The raw subtotal's value.
-type OrderShippingMethodRawSubtotalValue1 = float32
-
-// OrderShippingMethod_RawSubtotal_Value defines model for OrderShippingMethod.RawSubtotal.Value.
-type OrderShippingMethod_RawSubtotal_Value struct {
-	union json.RawMessage
-}
-
-// OrderShippingMethodRawTaxTotalValue0 The raw tax total's value.
-type OrderShippingMethodRawTaxTotalValue0 = string
-
-// OrderShippingMethodRawTaxTotalValue1 The raw tax total's value.
-type OrderShippingMethodRawTaxTotalValue1 = float32
-
-// OrderShippingMethod_RawTaxTotal_Value defines model for OrderShippingMethod.RawTaxTotal.Value.
-type OrderShippingMethod_RawTaxTotal_Value struct {
-	union json.RawMessage
-}
-
-// OrderShippingMethodRawTotalValue0 The raw total's value.
-type OrderShippingMethodRawTotalValue0 = string
-
-// OrderShippingMethodRawTotalValue1 The raw total's value.
-type OrderShippingMethodRawTotalValue1 = float32
-
-// OrderShippingMethod_RawTotal_Value defines model for OrderShippingMethod.RawTotal.Value.
-type OrderShippingMethod_RawTotal_Value struct {
-	union json.RawMessage
 }
 
 // OrderShippingMethodAdjustment The shipping method adjustment's details.
@@ -11470,13 +10841,7 @@ type OrderShippingMethodTaxLine struct {
 	ProviderId *string `json:"provider_id,omitempty"`
 
 	// Rate The rate to charge.
-	Rate float32 `json:"rate"`
-
-	// RawSubtotal The tax line's raw subtotal.
-	RawSubtotal map[string]interface{} `json:"raw_subtotal"`
-
-	// RawTotal The tax line's raw total.
-	RawTotal       map[string]interface{} `json:"raw_total"`
+	Rate           float32                `json:"rate"`
 	ShippingMethod map[string]interface{} `json:"shipping_method"`
 
 	// ShippingMethodId The ID of the shipping method that this tax line is for.
@@ -11511,6 +10876,7 @@ type OrderTransaction struct {
 
 	// Metadata The transaction's metadata, can hold custom key-value pairs.
 	Metadata map[string]interface{} `json:"metadata"`
+	Order    map[string]interface{} `json:"order"`
 
 	// OrderId The ID of the order this transaction belongs to.
 	OrderId string `json:"order_id"`
@@ -11557,200 +10923,90 @@ type RefundReasonResponse struct {
 
 // Return The return's details.
 type Return struct {
-	// BillingAddress The address's details.
-	BillingAddress *OrderAddress `json:"billing_address,omitempty"`
-
 	// CanceledAt The date the return was canceled.
 	CanceledAt *time.Time `json:"canceled_at,omitempty"`
 
+	// Claim The order change's claim.
+	Claim *OrderClaim `json:"claim,omitempty"`
+
+	// ClaimId The ID of the claim this return belongs to, if any.
+	ClaimId *string `json:"claim_id,omitempty"`
+
 	// CreatedAt The date the return was created.
-	CreatedAt time.Time `json:"created_at"`
+	CreatedAt *time.Time `json:"created_at,omitempty"`
 
-	// CurrencyCode The return's currency code.
-	CurrencyCode string `json:"currency_code"`
+	// CreatedBy The ID of the user that created the return.
+	CreatedBy *string `json:"created_by,omitempty"`
 
-	// CustomerId The ID of the customer that placed the order.
-	CustomerId *string `json:"customer_id,omitempty"`
+	// DeletedAt The date the return was deleted.
+	DeletedAt *time.Time `json:"deleted_at,omitempty"`
 
-	// DiscountSubtotal The return's discount subtotal.
-	DiscountSubtotal float32 `json:"discount_subtotal"`
+	// DisplayId The return order's display ID.
+	DisplayId float32                 `json:"display_id"`
+	Exchange  *map[string]interface{} `json:"exchange,omitempty"`
 
-	// DiscountTaxTotal The return's discount tax total.
-	DiscountTaxTotal float32 `json:"discount_tax_total"`
-
-	// DiscountTotal The return's discount total.
-	DiscountTotal float32 `json:"discount_total"`
-
-	// Email The email of the customer that placed the order.
-	Email *openapi_types.Email `json:"email,omitempty"`
-
-	// GiftCardTaxTotal The return's gift card tax total.
-	GiftCardTaxTotal float32 `json:"gift_card_tax_total"`
-
-	// GiftCardTotal The return's gift card total.
-	GiftCardTotal float32 `json:"gift_card_total"`
+	// ExchangeId The ID of the exchange this return belongs to, if any.
+	ExchangeId *string `json:"exchange_id,omitempty"`
 
 	// Id The return's ID.
 	Id string `json:"id"`
 
-	// ItemSubtotal The return's item subtotal.
-	ItemSubtotal float32 `json:"item_subtotal"`
-
-	// ItemTaxTotal The return's item tax total.
-	ItemTaxTotal float32 `json:"item_tax_total"`
-
-	// ItemTotal The return's item total.
-	ItemTotal float32 `json:"item_total"`
-
 	// Items The return's items.
 	Items []OrderReturnItem `json:"items"`
 
-	// Metadata The return's metadata, can hold custom key-value pairs.
-	Metadata *map[string]interface{} `json:"metadata,omitempty"`
+	// LocationId The ID of the stock location the items are returned to.
+	LocationId *string `json:"location_id,omitempty"`
 
-	// OrderChange The order change's details.
-	OrderChange *OrderChange `json:"order_change,omitempty"`
+	// Metadata The return's metadata, can hold custom key-value pairs.
+	Metadata map[string]interface{} `json:"metadata"`
+
+	// NoNotification Whether to notify the customer about changes in the return.
+	NoNotification *bool `json:"no_notification,omitempty"`
+
+	// Order The order change's order.
+	Order *Order `json:"order,omitempty"`
 
 	// OrderId The ID of the associated order.
-	OrderId string `json:"order_id"`
+	OrderId         string                  `json:"order_id"`
+	RawRefundAmount *Return_RawRefundAmount `json:"raw_refund_amount,omitempty"`
 
-	// OriginalItemSubtotal The return's original item subtotal.
-	OriginalItemSubtotal float32 `json:"original_item_subtotal"`
-
-	// OriginalItemTaxTotal The return's original item tax total.
-	OriginalItemTaxTotal float32 `json:"original_item_tax_total"`
-
-	// OriginalItemTotal The return's original item total.
-	OriginalItemTotal float32 `json:"original_item_total"`
-
-	// OriginalShippingSubtotal The return's original shipping subtotal.
-	OriginalShippingSubtotal float32 `json:"original_shipping_subtotal"`
-
-	// OriginalShippingTaxTotal The return's original shipping tax total.
-	OriginalShippingTaxTotal float32 `json:"original_shipping_tax_total"`
-
-	// OriginalShippingTotal The return's original shipping total.
-	OriginalShippingTotal float32 `json:"original_shipping_total"`
-
-	// OriginalSubtotal The return's original subtotal.
-	OriginalSubtotal float32 `json:"original_subtotal"`
-
-	// OriginalTaxTotal The return's original tax total.
-	OriginalTaxTotal float32 `json:"original_tax_total"`
-
-	// OriginalTotal The return's original total.
-	OriginalTotal float32 `json:"original_total"`
-
-	// RawDiscountTaxTotal The return's raw discount tax total.
-	RawDiscountTaxTotal map[string]interface{} `json:"raw_discount_tax_total"`
-
-	// RawDiscountTotal The return's raw discount total.
-	RawDiscountTotal map[string]interface{} `json:"raw_discount_total"`
-
-	// RawGiftCardTaxTotal The return's raw gift card tax total.
-	RawGiftCardTaxTotal map[string]interface{} `json:"raw_gift_card_tax_total"`
-
-	// RawGiftCardTotal The return's raw gift card total.
-	RawGiftCardTotal map[string]interface{} `json:"raw_gift_card_total"`
-
-	// RawItemSubtotal The return's raw item subtotal.
-	RawItemSubtotal map[string]interface{} `json:"raw_item_subtotal"`
-
-	// RawItemTaxTotal The return's raw item tax total.
-	RawItemTaxTotal map[string]interface{} `json:"raw_item_tax_total"`
-
-	// RawItemTotal The return's raw item total.
-	RawItemTotal map[string]interface{} `json:"raw_item_total"`
-
-	// RawOriginalItemSubtotal The return's raw original item subtotal.
-	RawOriginalItemSubtotal map[string]interface{} `json:"raw_original_item_subtotal"`
-
-	// RawOriginalItemTaxTotal The return's raw original item tax total.
-	RawOriginalItemTaxTotal map[string]interface{} `json:"raw_original_item_tax_total"`
-
-	// RawOriginalItemTotal The return's raw original item total.
-	RawOriginalItemTotal map[string]interface{} `json:"raw_original_item_total"`
-
-	// RawOriginalShippingSubtotal The return's raw original shipping subtotal.
-	RawOriginalShippingSubtotal map[string]interface{} `json:"raw_original_shipping_subtotal"`
-
-	// RawOriginalShippingTaxTotal The return's raw original shipping tax total.
-	RawOriginalShippingTaxTotal map[string]interface{} `json:"raw_original_shipping_tax_total"`
-
-	// RawOriginalShippingTotal The return's raw original shipping total.
-	RawOriginalShippingTotal map[string]interface{} `json:"raw_original_shipping_total"`
-
-	// RawOriginalSubtotal The return's raw original subtotal.
-	RawOriginalSubtotal map[string]interface{} `json:"raw_original_subtotal"`
-
-	// RawOriginalTaxTotal The return's raw original tax total.
-	RawOriginalTaxTotal map[string]interface{} `json:"raw_original_tax_total"`
-
-	// RawOriginalTotal The return's raw original total.
-	RawOriginalTotal map[string]interface{} `json:"raw_original_total"`
-
-	// RawShippingSubtotal The return's raw shipping subtotal.
-	RawShippingSubtotal map[string]interface{} `json:"raw_shipping_subtotal"`
-
-	// RawShippingTaxTotal The return's raw shipping tax total.
-	RawShippingTaxTotal map[string]interface{} `json:"raw_shipping_tax_total"`
-
-	// RawShippingTotal The return's raw shipping total.
-	RawShippingTotal map[string]interface{} `json:"raw_shipping_total"`
-
-	// RawSubtotal The return's raw subtotal.
-	RawSubtotal map[string]interface{} `json:"raw_subtotal"`
-
-	// RawTaxTotal The return's raw tax total.
-	RawTaxTotal map[string]interface{} `json:"raw_tax_total"`
-
-	// RawTotal The return's raw total.
-	RawTotal map[string]interface{} `json:"raw_total"`
+	// ReceivedAt The date the return was received.
+	ReceivedAt *time.Time `json:"received_at,omitempty"`
 
 	// RefundAmount The amount refunded by this return.
 	RefundAmount *float32 `json:"refund_amount,omitempty"`
 
-	// RegionId The ID of the region this return belongs to.
-	RegionId *string `json:"region_id,omitempty"`
-
-	// SalesChannelId The ID of the associated order's sales channel.
-	SalesChannelId *string `json:"sales_channel_id,omitempty"`
-
-	// ShippingAddress The address's details.
-	ShippingAddress *OrderAddress `json:"shipping_address,omitempty"`
+	// RequestedAt The date the return was requested.
+	RequestedAt *time.Time `json:"requested_at,omitempty"`
 
 	// ShippingMethods The return's shipping methods.
 	ShippingMethods *[]OrderShippingMethod `json:"shipping_methods,omitempty"`
 
-	// ShippingSubtotal The return's shipping subtotal.
-	ShippingSubtotal float32 `json:"shipping_subtotal"`
-
-	// ShippingTaxTotal The return's shipping tax total.
-	ShippingTaxTotal float32 `json:"shipping_tax_total"`
-
-	// ShippingTotal The return's shipping total.
-	ShippingTotal float32 `json:"shipping_total"`
-
 	// Status The return's status.
 	Status ReturnStatus `json:"status"`
-
-	// Subtotal The return's subtotal.
-	Subtotal float32 `json:"subtotal"`
-
-	// Summary The return's summary.
-	Summary *map[string]interface{} `json:"summary,omitempty"`
-
-	// TaxTotal The return's tax total.
-	TaxTotal float32 `json:"tax_total"`
-
-	// Total The return's total.
-	Total float32 `json:"total"`
 
 	// Transactions The return's transactions.
 	Transactions *[]OrderTransaction `json:"transactions,omitempty"`
 
 	// UpdatedAt The date the return was updated.
-	UpdatedAt time.Time `json:"updated_at"`
+	UpdatedAt *time.Time `json:"updated_at,omitempty"`
+}
+
+// ReturnRawRefundAmount0 The return order's raw refund amount.
+type ReturnRawRefundAmount0 = string
+
+// ReturnRawRefundAmount1 The return order's raw refund amount.
+type ReturnRawRefundAmount1 = float32
+
+// ReturnRawRefundAmount2 The return order's raw refund amount.
+type ReturnRawRefundAmount2 = string
+
+// ReturnRawRefundAmount3 The return order's raw refund amount.
+type ReturnRawRefundAmount3 = float32
+
+// Return_RawRefundAmount defines model for Return.RawRefundAmount.
+type Return_RawRefundAmount struct {
+	union json.RawMessage
 }
 
 // ReturnStatus The return's status.
@@ -12579,13 +11835,16 @@ type StoreCustomerResponse struct {
 // StoreOrder The order's details.
 type StoreOrder struct {
 	// BillingAddress An order address
-	BillingAddress *BaseOrderAddress `json:"billing_address,omitempty"`
+	BillingAddress *StoreOrderAddress `json:"billing_address,omitempty"`
 
 	// CreatedAt The date the order was created.
 	CreatedAt time.Time `json:"created_at"`
 
 	// CurrencyCode The order's currency code.
 	CurrencyCode string `json:"currency_code"`
+
+	// Customer The customer's details.
+	Customer *StoreCustomer `json:"customer,omitempty"`
 
 	// CustomerId The ID of the customer that placed the order.
 	CustomerId string `json:"customer_id"`
@@ -12606,7 +11865,7 @@ type StoreOrder struct {
 	FulfillmentStatus StoreOrderFulfillmentStatus `json:"fulfillment_status"`
 
 	// Fulfillments The order's fulfillments.
-	Fulfillments *[]BaseOrderFulfillment `json:"fulfillments,omitempty"`
+	Fulfillments *[]StoreOrderFulfillment `json:"fulfillments,omitempty"`
 
 	// GiftCardTaxTotal The total taxes applied on the gift card's amount.
 	GiftCardTaxTotal float32 `json:"gift_card_tax_total"`
@@ -12627,10 +11886,10 @@ type StoreOrder struct {
 	ItemTotal float32 `json:"item_total"`
 
 	// Items The order's items.
-	Items []BaseOrderLineItem `json:"items"`
+	Items []StoreOrderLineItem `json:"items"`
 
 	// Metadata The order's metadata, can hold custom key-value pairs.
-	Metadata map[string]interface{} `json:"metadata"`
+	Metadata *map[string]interface{} `json:"metadata,omitempty"`
 
 	// OriginalItemSubtotal The order items' total excluding taxes, including promotions.
 	OriginalItemSubtotal float32 `json:"original_item_subtotal"`
@@ -12660,7 +11919,7 @@ type StoreOrder struct {
 	OriginalTotal float32 `json:"original_total"`
 
 	// PaymentCollections The order's payment collections.
-	PaymentCollections *[]BasePaymentCollection `json:"payment_collections,omitempty"`
+	PaymentCollections *[]StorePaymentCollection `json:"payment_collections,omitempty"`
 
 	// PaymentStatus The order's payment status.
 	PaymentStatus StoreOrderPaymentStatus `json:"payment_status"`
@@ -12672,10 +11931,10 @@ type StoreOrder struct {
 	SalesChannelId string `json:"sales_channel_id"`
 
 	// ShippingAddress An order address
-	ShippingAddress *BaseOrderAddress `json:"shipping_address,omitempty"`
+	ShippingAddress *StoreOrderAddress `json:"shipping_address,omitempty"`
 
 	// ShippingMethods The order's shipping methods.
-	ShippingMethods []BaseOrderShippingMethod `json:"shipping_methods"`
+	ShippingMethods []StoreOrderShippingMethod `json:"shipping_methods"`
 
 	// ShippingSubtotal The order's shipping total excluding taxes, including promotions.
 	ShippingSubtotal float32 `json:"shipping_subtotal"`
@@ -12698,11 +11957,11 @@ type StoreOrder struct {
 	// Total The order's total including taxes and promotions.
 	Total float32 `json:"total"`
 
+	// Transactions The order's transactions.
+	Transactions *[]BaseOrderTransaction `json:"transactions,omitempty"`
+
 	// UpdatedAt The date the order was updated.
 	UpdatedAt time.Time `json:"updated_at"`
-
-	// Version The order's version.
-	Version float32 `json:"version"`
 }
 
 // StoreOrderFulfillmentStatus The order's fulfillment status.
@@ -12711,10 +11970,2215 @@ type StoreOrderFulfillmentStatus string
 // StoreOrderPaymentStatus The order's payment status.
 type StoreOrderPaymentStatus string
 
+// StoreOrderAddress An order address
+type StoreOrderAddress struct {
+	// Address1 The address's first line.
+	Address1 *string `json:"address_1,omitempty"`
+
+	// Address2 The address's second line.
+	Address2 *string `json:"address_2,omitempty"`
+
+	// City The address's city.
+	City *string `json:"city,omitempty"`
+
+	// Company The address's company.
+	Company *string `json:"company,omitempty"`
+
+	// Country The country's details.
+	Country *StoreRegionCountry `json:"country,omitempty"`
+
+	// CountryCode The address's country code.
+	CountryCode *string `json:"country_code,omitempty"`
+
+	// CreatedAt The date the address was created.
+	CreatedAt time.Time `json:"created_at"`
+
+	// CustomerId The ID of the customer this address belongs to.
+	CustomerId *string `json:"customer_id,omitempty"`
+
+	// FirstName The address's first name.
+	FirstName *string `json:"first_name,omitempty"`
+
+	// Id The address's ID.
+	Id string `json:"id"`
+
+	// LastName The address's last name.
+	LastName *string `json:"last_name,omitempty"`
+
+	// Metadata The address's metadata, can hold custom key-value pairs.
+	Metadata map[string]interface{} `json:"metadata"`
+
+	// Phone The address's phone.
+	Phone *string `json:"phone,omitempty"`
+
+	// PostalCode The address's postal code.
+	PostalCode *string `json:"postal_code,omitempty"`
+
+	// Province The address's province.
+	Province *string `json:"province,omitempty"`
+
+	// UpdatedAt The date the address was updated.
+	UpdatedAt time.Time `json:"updated_at"`
+}
+
+// StoreOrderFulfillment The fulfillment's details.
+type StoreOrderFulfillment struct {
+	// CanceledAt The date the items were canceled.
+	CanceledAt time.Time `json:"canceled_at"`
+
+	// CreatedAt The date the fulfillment was created.
+	CreatedAt time.Time `json:"created_at"`
+
+	// Data Data useful for the fulfillment provider handling it. This is taken from the associated shipping option.
+	Data map[string]interface{} `json:"data"`
+
+	// DeliveredAt The date the items were delivered.
+	DeliveredAt time.Time `json:"delivered_at"`
+
+	// Id The fulfillment's ID.
+	Id string `json:"id"`
+
+	// LocationId The ID of the location the items are fulfilled from.
+	LocationId string `json:"location_id"`
+
+	// Metadata The fulfillment's metadata, can hold custom key-value pairs.
+	Metadata map[string]interface{} `json:"metadata"`
+
+	// PackedAt The date the items were packed.
+	PackedAt time.Time `json:"packed_at"`
+
+	// ProviderId The ID of the fulfillment provider used to handle the fulfillment.
+	ProviderId string `json:"provider_id"`
+
+	// RequiresShipping The fulfillment's requires shipping.
+	RequiresShipping bool `json:"requires_shipping"`
+
+	// ShippedAt The date the items were shipped.
+	ShippedAt time.Time `json:"shipped_at"`
+
+	// ShippingOptionId The ID of the associated shipping option.
+	ShippingOptionId string `json:"shipping_option_id"`
+
+	// UpdatedAt The date the fulfillment was updated.
+	UpdatedAt time.Time `json:"updated_at"`
+}
+
+// StoreOrderLineItem The item's details.
+type StoreOrderLineItem struct {
+	// Adjustments The item's adjustments.
+	Adjustments *[]struct {
+		// Amount The adjustment's amount.
+		Amount float32 `json:"amount"`
+
+		// Code The adjustment's code.
+		Code *string `json:"code,omitempty"`
+
+		// CreatedAt The adjustment's created at.
+		CreatedAt time.Time `json:"created_at"`
+
+		// Description The adjustment's description.
+		Description *string `json:"description,omitempty"`
+
+		// Id The adjustment's ID.
+		Id string `json:"id"`
+
+		// Item The adjustment's item.
+		Item struct {
+			// Adjustments The item's adjustments.
+			Adjustments *[]struct {
+				// Amount The adjustment's amount.
+				Amount float32 `json:"amount"`
+
+				// Code The adjustment's code.
+				Code *string `json:"code,omitempty"`
+
+				// CreatedAt The adjustment's created at.
+				CreatedAt time.Time `json:"created_at"`
+
+				// Description The adjustment's description.
+				Description *string `json:"description,omitempty"`
+
+				// Id The adjustment's ID.
+				Id string `json:"id"`
+
+				// Item The adjustment's item.
+				Item map[string]interface{} `json:"item"`
+
+				// ItemId The adjustment's item id.
+				ItemId string `json:"item_id"`
+
+				// OrderId The adjustment's order id.
+				OrderId string `json:"order_id"`
+
+				// PromotionId The adjustment's promotion id.
+				PromotionId *string `json:"promotion_id,omitempty"`
+
+				// ProviderId The adjustment's provider id.
+				ProviderId *string `json:"provider_id,omitempty"`
+
+				// UpdatedAt The adjustment's updated at.
+				UpdatedAt time.Time `json:"updated_at"`
+			} `json:"adjustments,omitempty"`
+
+			// CompareAtUnitPrice The item's compare at unit price.
+			CompareAtUnitPrice *float32 `json:"compare_at_unit_price,omitempty"`
+
+			// CreatedAt The item's created at.
+			CreatedAt time.Time `json:"created_at"`
+			Detail    struct {
+				// CreatedAt The detail's created at.
+				CreatedAt time.Time `json:"created_at"`
+
+				// DeliveredQuantity The detail's delivered quantity.
+				DeliveredQuantity float32 `json:"delivered_quantity"`
+
+				// FulfilledQuantity The detail's fulfilled quantity.
+				FulfilledQuantity float32 `json:"fulfilled_quantity"`
+
+				// Id The detail's ID.
+				Id string `json:"id"`
+
+				// Item The detail's item.
+				Item map[string]interface{} `json:"item"`
+
+				// ItemId The detail's item id.
+				ItemId string `json:"item_id"`
+
+				// Metadata The detail's metadata.
+				Metadata map[string]interface{} `json:"metadata"`
+
+				// Quantity The detail's quantity.
+				Quantity float32 `json:"quantity"`
+
+				// ReturnDismissedQuantity The detail's return dismissed quantity.
+				ReturnDismissedQuantity float32 `json:"return_dismissed_quantity"`
+
+				// ReturnReceivedQuantity The detail's return received quantity.
+				ReturnReceivedQuantity float32 `json:"return_received_quantity"`
+
+				// ReturnRequestedQuantity The detail's return requested quantity.
+				ReturnRequestedQuantity float32 `json:"return_requested_quantity"`
+
+				// ShippedQuantity The detail's shipped quantity.
+				ShippedQuantity float32 `json:"shipped_quantity"`
+
+				// UpdatedAt The detail's updated at.
+				UpdatedAt time.Time `json:"updated_at"`
+
+				// WrittenOffQuantity The detail's written off quantity.
+				WrittenOffQuantity float32 `json:"written_off_quantity"`
+			} `json:"detail"`
+
+			// DiscountTaxTotal The item's discount tax total.
+			DiscountTaxTotal float32 `json:"discount_tax_total"`
+
+			// DiscountTotal The item's discount total.
+			DiscountTotal float32 `json:"discount_total"`
+
+			// Id The item's ID.
+			Id string `json:"id"`
+
+			// IsDiscountable The item's is discountable.
+			IsDiscountable bool `json:"is_discountable"`
+
+			// IsTaxInclusive The item's is tax inclusive.
+			IsTaxInclusive bool `json:"is_tax_inclusive"`
+
+			// ItemSubtotal The item's item subtotal.
+			ItemSubtotal float32 `json:"item_subtotal"`
+
+			// ItemTaxTotal The item's item tax total.
+			ItemTaxTotal float32 `json:"item_tax_total"`
+
+			// ItemTotal The item's item total.
+			ItemTotal float32 `json:"item_total"`
+
+			// Metadata The item's metadata.
+			Metadata map[string]interface{} `json:"metadata"`
+
+			// OriginalSubtotal The item's original subtotal.
+			OriginalSubtotal float32 `json:"original_subtotal"`
+
+			// OriginalTaxTotal The item's original tax total.
+			OriginalTaxTotal float32 `json:"original_tax_total"`
+
+			// OriginalTotal The item's original total.
+			OriginalTotal float32 `json:"original_total"`
+
+			// Product The item's product.
+			Product *struct {
+				// Categories The product's categories.
+				Categories *[]map[string]interface{} `json:"categories,omitempty"`
+
+				// Collection The product's collection.
+				Collection *map[string]interface{} `json:"collection,omitempty"`
+
+				// CollectionId The product's collection id.
+				CollectionId string `json:"collection_id"`
+
+				// CreatedAt The product's created at.
+				CreatedAt time.Time `json:"created_at"`
+
+				// DeletedAt The product's deleted at.
+				DeletedAt time.Time `json:"deleted_at"`
+
+				// Description The product's description.
+				Description string `json:"description"`
+
+				// Discountable The product's discountable.
+				Discountable bool `json:"discountable"`
+
+				// ExternalId The product's external id.
+				ExternalId string `json:"external_id"`
+
+				// Handle The product's handle.
+				Handle string `json:"handle"`
+
+				// Height The product's height.
+				Height float32 `json:"height"`
+
+				// HsCode The product's hs code.
+				HsCode string `json:"hs_code"`
+
+				// Id The product's ID.
+				Id string `json:"id"`
+
+				// Images The product's images.
+				Images []map[string]interface{} `json:"images"`
+
+				// IsGiftcard The product's is giftcard.
+				IsGiftcard bool `json:"is_giftcard"`
+
+				// Length The product's length.
+				Length float32 `json:"length"`
+
+				// Material The product's material.
+				Material string `json:"material"`
+
+				// Metadata The product's metadata.
+				Metadata *map[string]interface{} `json:"metadata,omitempty"`
+
+				// MidCode The product's mid code.
+				MidCode string `json:"mid_code"`
+
+				// Options The product's options.
+				Options []map[string]interface{} `json:"options"`
+
+				// OriginCountry The product's origin country.
+				OriginCountry string `json:"origin_country"`
+
+				// Status The product's status.
+				Status StoreOrderLineItemAdjustmentsItemProductStatus `json:"status"`
+
+				// Subtitle The product's subtitle.
+				Subtitle string `json:"subtitle"`
+
+				// Tags The product's tags.
+				Tags *[]map[string]interface{} `json:"tags,omitempty"`
+
+				// Thumbnail The product's thumbnail.
+				Thumbnail string `json:"thumbnail"`
+
+				// Title The product's title.
+				Title string `json:"title"`
+
+				// Type The product's type.
+				Type *map[string]interface{} `json:"type,omitempty"`
+
+				// TypeId The product's type id.
+				TypeId string `json:"type_id"`
+
+				// UpdatedAt The product's updated at.
+				UpdatedAt time.Time `json:"updated_at"`
+
+				// Variants The product's variants.
+				Variants []map[string]interface{} `json:"variants"`
+
+				// Weight The product's weight.
+				Weight float32 `json:"weight"`
+
+				// Width The product's width.
+				Width float32 `json:"width"`
+			} `json:"product,omitempty"`
+
+			// ProductCollection The item's product collection.
+			ProductCollection string `json:"product_collection"`
+
+			// ProductDescription The item's product description.
+			ProductDescription string `json:"product_description"`
+
+			// ProductHandle The item's product handle.
+			ProductHandle string `json:"product_handle"`
+
+			// ProductId The item's product id.
+			ProductId string `json:"product_id"`
+
+			// ProductSubtitle The item's product subtitle.
+			ProductSubtitle string `json:"product_subtitle"`
+
+			// ProductTitle The item's product title.
+			ProductTitle string `json:"product_title"`
+
+			// ProductType The item's product type.
+			ProductType string `json:"product_type"`
+
+			// Quantity The item's quantity.
+			Quantity float32 `json:"quantity"`
+
+			// RefundableTotal The item's refundable total.
+			RefundableTotal float32 `json:"refundable_total"`
+
+			// RefundableTotalPerUnit The item's refundable total per unit.
+			RefundableTotalPerUnit float32 `json:"refundable_total_per_unit"`
+
+			// RequiresShipping The item's requires shipping.
+			RequiresShipping bool `json:"requires_shipping"`
+
+			// Subtitle The item's subtitle.
+			Subtitle string `json:"subtitle"`
+
+			// Subtotal The item's subtotal.
+			Subtotal float32 `json:"subtotal"`
+
+			// TaxLines The item's tax lines.
+			TaxLines *[]struct {
+				// Code The tax line's code.
+				Code string `json:"code"`
+
+				// CreatedAt The tax line's created at.
+				CreatedAt time.Time `json:"created_at"`
+
+				// Description The tax line's description.
+				Description *string `json:"description,omitempty"`
+
+				// Id The tax line's ID.
+				Id string `json:"id"`
+
+				// Item The tax line's item.
+				Item map[string]interface{} `json:"item"`
+
+				// ItemId The tax line's item id.
+				ItemId string `json:"item_id"`
+
+				// ProviderId The tax line's provider id.
+				ProviderId *string `json:"provider_id,omitempty"`
+
+				// Rate The tax line's rate.
+				Rate float32 `json:"rate"`
+
+				// Subtotal The tax line's subtotal.
+				Subtotal float32 `json:"subtotal"`
+
+				// TaxRateId The tax line's tax rate id.
+				TaxRateId *string `json:"tax_rate_id,omitempty"`
+
+				// Total The tax line's total.
+				Total float32 `json:"total"`
+
+				// UpdatedAt The tax line's updated at.
+				UpdatedAt time.Time `json:"updated_at"`
+			} `json:"tax_lines,omitempty"`
+
+			// TaxTotal The item's tax total.
+			TaxTotal float32 `json:"tax_total"`
+
+			// Thumbnail The item's thumbnail.
+			Thumbnail string `json:"thumbnail"`
+
+			// Title The item's title.
+			Title string `json:"title"`
+
+			// Total The item's total.
+			Total float32 `json:"total"`
+
+			// UnitPrice The item's unit price.
+			UnitPrice float32 `json:"unit_price"`
+
+			// UpdatedAt The item's updated at.
+			UpdatedAt time.Time `json:"updated_at"`
+
+			// Variant The item's variant.
+			Variant *struct {
+				// AllowBackorder The variant's allow backorder.
+				AllowBackorder bool `json:"allow_backorder"`
+
+				// Barcode The variant's barcode.
+				Barcode string `json:"barcode"`
+
+				// CalculatedPrice The variant's calculated price.
+				CalculatedPrice *map[string]interface{} `json:"calculated_price,omitempty"`
+
+				// CreatedAt The variant's created at.
+				CreatedAt time.Time `json:"created_at"`
+
+				// DeletedAt The variant's deleted at.
+				DeletedAt time.Time `json:"deleted_at"`
+
+				// Ean The variant's ean.
+				Ean string `json:"ean"`
+
+				// Height The variant's height.
+				Height float32 `json:"height"`
+
+				// HsCode The variant's hs code.
+				HsCode string `json:"hs_code"`
+
+				// Id The variant's ID.
+				Id string `json:"id"`
+
+				// InventoryQuantity The variant's inventory quantity.
+				InventoryQuantity *float32 `json:"inventory_quantity,omitempty"`
+
+				// Length The variant's length.
+				Length float32 `json:"length"`
+
+				// ManageInventory The variant's manage inventory.
+				ManageInventory bool `json:"manage_inventory"`
+
+				// Material The variant's material.
+				Material string `json:"material"`
+
+				// Metadata The variant's metadata.
+				Metadata *map[string]interface{} `json:"metadata,omitempty"`
+
+				// MidCode The variant's mid code.
+				MidCode string `json:"mid_code"`
+
+				// Options The variant's options.
+				Options []map[string]interface{} `json:"options"`
+
+				// OriginCountry The variant's origin country.
+				OriginCountry string `json:"origin_country"`
+
+				// Product The variant's product.
+				Product *map[string]interface{} `json:"product,omitempty"`
+
+				// ProductId The variant's product id.
+				ProductId *string `json:"product_id,omitempty"`
+
+				// Sku The variant's sku.
+				Sku string `json:"sku"`
+
+				// Title The variant's title.
+				Title string `json:"title"`
+
+				// Upc The variant's upc.
+				Upc string `json:"upc"`
+
+				// UpdatedAt The variant's updated at.
+				UpdatedAt time.Time `json:"updated_at"`
+
+				// VariantRank The variant's variant rank.
+				VariantRank *float32 `json:"variant_rank,omitempty"`
+
+				// Weight The variant's weight.
+				Weight float32 `json:"weight"`
+
+				// Width The variant's width.
+				Width float32 `json:"width"`
+			} `json:"variant,omitempty"`
+
+			// VariantBarcode The item's variant barcode.
+			VariantBarcode string `json:"variant_barcode"`
+
+			// VariantId The item's variant id.
+			VariantId string `json:"variant_id"`
+
+			// VariantOptionValues The item's variant option values.
+			VariantOptionValues map[string]interface{} `json:"variant_option_values"`
+
+			// VariantSku The item's variant sku.
+			VariantSku string `json:"variant_sku"`
+
+			// VariantTitle The item's variant title.
+			VariantTitle string `json:"variant_title"`
+		} `json:"item"`
+
+		// ItemId The adjustment's item id.
+		ItemId string `json:"item_id"`
+
+		// OrderId The adjustment's order id.
+		OrderId string `json:"order_id"`
+
+		// PromotionId The adjustment's promotion id.
+		PromotionId *string `json:"promotion_id,omitempty"`
+
+		// ProviderId The adjustment's provider id.
+		ProviderId *string `json:"provider_id,omitempty"`
+
+		// UpdatedAt The adjustment's updated at.
+		UpdatedAt time.Time `json:"updated_at"`
+	} `json:"adjustments,omitempty"`
+
+	// CompareAtUnitPrice The original price of the item before a promotion or sale.
+	CompareAtUnitPrice *float32 `json:"compare_at_unit_price,omitempty"`
+
+	// CreatedAt The date the item was created.
+	CreatedAt time.Time `json:"created_at"`
+
+	// Detail The item's detail.
+	Detail struct {
+		// CreatedAt The date the detail was created.
+		CreatedAt time.Time `json:"created_at"`
+
+		// DeliveredQuantity The item's delivered quantity.
+		DeliveredQuantity float32 `json:"delivered_quantity"`
+
+		// FulfilledQuantity The item's fulfilled quantity.
+		FulfilledQuantity float32 `json:"fulfilled_quantity"`
+
+		// Id the detail's ID.
+		Id string `json:"id"`
+
+		// Item The detail's item.
+		Item struct {
+			// Adjustments The item's adjustments.
+			Adjustments *[]struct {
+				// Amount The adjustment's amount.
+				Amount float32 `json:"amount"`
+
+				// Code The adjustment's code.
+				Code *string `json:"code,omitempty"`
+
+				// CreatedAt The adjustment's created at.
+				CreatedAt time.Time `json:"created_at"`
+
+				// Description The adjustment's description.
+				Description *string `json:"description,omitempty"`
+
+				// Id The adjustment's ID.
+				Id string `json:"id"`
+
+				// Item The adjustment's item.
+				Item map[string]interface{} `json:"item"`
+
+				// ItemId The adjustment's item id.
+				ItemId string `json:"item_id"`
+
+				// OrderId The adjustment's order id.
+				OrderId string `json:"order_id"`
+
+				// PromotionId The adjustment's promotion id.
+				PromotionId *string `json:"promotion_id,omitempty"`
+
+				// ProviderId The adjustment's provider id.
+				ProviderId *string `json:"provider_id,omitempty"`
+
+				// UpdatedAt The adjustment's updated at.
+				UpdatedAt time.Time `json:"updated_at"`
+			} `json:"adjustments,omitempty"`
+
+			// CompareAtUnitPrice The item's compare at unit price.
+			CompareAtUnitPrice *float32 `json:"compare_at_unit_price,omitempty"`
+
+			// CreatedAt The item's created at.
+			CreatedAt time.Time `json:"created_at"`
+			Detail    struct {
+				// CreatedAt The detail's created at.
+				CreatedAt time.Time `json:"created_at"`
+
+				// DeliveredQuantity The detail's delivered quantity.
+				DeliveredQuantity float32 `json:"delivered_quantity"`
+
+				// FulfilledQuantity The detail's fulfilled quantity.
+				FulfilledQuantity float32 `json:"fulfilled_quantity"`
+
+				// Id The detail's ID.
+				Id string `json:"id"`
+
+				// Item The detail's item.
+				Item map[string]interface{} `json:"item"`
+
+				// ItemId The detail's item id.
+				ItemId string `json:"item_id"`
+
+				// Metadata The detail's metadata.
+				Metadata map[string]interface{} `json:"metadata"`
+
+				// Quantity The detail's quantity.
+				Quantity float32 `json:"quantity"`
+
+				// ReturnDismissedQuantity The detail's return dismissed quantity.
+				ReturnDismissedQuantity float32 `json:"return_dismissed_quantity"`
+
+				// ReturnReceivedQuantity The detail's return received quantity.
+				ReturnReceivedQuantity float32 `json:"return_received_quantity"`
+
+				// ReturnRequestedQuantity The detail's return requested quantity.
+				ReturnRequestedQuantity float32 `json:"return_requested_quantity"`
+
+				// ShippedQuantity The detail's shipped quantity.
+				ShippedQuantity float32 `json:"shipped_quantity"`
+
+				// UpdatedAt The detail's updated at.
+				UpdatedAt time.Time `json:"updated_at"`
+
+				// WrittenOffQuantity The detail's written off quantity.
+				WrittenOffQuantity float32 `json:"written_off_quantity"`
+			} `json:"detail"`
+
+			// DiscountTaxTotal The item's discount tax total.
+			DiscountTaxTotal float32 `json:"discount_tax_total"`
+
+			// DiscountTotal The item's discount total.
+			DiscountTotal float32 `json:"discount_total"`
+
+			// Id The item's ID.
+			Id string `json:"id"`
+
+			// IsDiscountable The item's is discountable.
+			IsDiscountable bool `json:"is_discountable"`
+
+			// IsTaxInclusive The item's is tax inclusive.
+			IsTaxInclusive bool `json:"is_tax_inclusive"`
+
+			// ItemSubtotal The item's item subtotal.
+			ItemSubtotal float32 `json:"item_subtotal"`
+
+			// ItemTaxTotal The item's item tax total.
+			ItemTaxTotal float32 `json:"item_tax_total"`
+
+			// ItemTotal The item's item total.
+			ItemTotal float32 `json:"item_total"`
+
+			// Metadata The item's metadata.
+			Metadata map[string]interface{} `json:"metadata"`
+
+			// OriginalSubtotal The item's original subtotal.
+			OriginalSubtotal float32 `json:"original_subtotal"`
+
+			// OriginalTaxTotal The item's original tax total.
+			OriginalTaxTotal float32 `json:"original_tax_total"`
+
+			// OriginalTotal The item's original total.
+			OriginalTotal float32 `json:"original_total"`
+
+			// Product The item's product.
+			Product *struct {
+				// Categories The product's categories.
+				Categories *[]map[string]interface{} `json:"categories,omitempty"`
+
+				// Collection The product's collection.
+				Collection *map[string]interface{} `json:"collection,omitempty"`
+
+				// CollectionId The product's collection id.
+				CollectionId string `json:"collection_id"`
+
+				// CreatedAt The product's created at.
+				CreatedAt time.Time `json:"created_at"`
+
+				// DeletedAt The product's deleted at.
+				DeletedAt time.Time `json:"deleted_at"`
+
+				// Description The product's description.
+				Description string `json:"description"`
+
+				// Discountable The product's discountable.
+				Discountable bool `json:"discountable"`
+
+				// ExternalId The product's external id.
+				ExternalId string `json:"external_id"`
+
+				// Handle The product's handle.
+				Handle string `json:"handle"`
+
+				// Height The product's height.
+				Height float32 `json:"height"`
+
+				// HsCode The product's hs code.
+				HsCode string `json:"hs_code"`
+
+				// Id The product's ID.
+				Id string `json:"id"`
+
+				// Images The product's images.
+				Images []map[string]interface{} `json:"images"`
+
+				// IsGiftcard The product's is giftcard.
+				IsGiftcard bool `json:"is_giftcard"`
+
+				// Length The product's length.
+				Length float32 `json:"length"`
+
+				// Material The product's material.
+				Material string `json:"material"`
+
+				// Metadata The product's metadata.
+				Metadata *map[string]interface{} `json:"metadata,omitempty"`
+
+				// MidCode The product's mid code.
+				MidCode string `json:"mid_code"`
+
+				// Options The product's options.
+				Options []map[string]interface{} `json:"options"`
+
+				// OriginCountry The product's origin country.
+				OriginCountry string `json:"origin_country"`
+
+				// Status The product's status.
+				Status StoreOrderLineItemDetailItemProductStatus `json:"status"`
+
+				// Subtitle The product's subtitle.
+				Subtitle string `json:"subtitle"`
+
+				// Tags The product's tags.
+				Tags *[]map[string]interface{} `json:"tags,omitempty"`
+
+				// Thumbnail The product's thumbnail.
+				Thumbnail string `json:"thumbnail"`
+
+				// Title The product's title.
+				Title string `json:"title"`
+
+				// Type The product's type.
+				Type *map[string]interface{} `json:"type,omitempty"`
+
+				// TypeId The product's type id.
+				TypeId string `json:"type_id"`
+
+				// UpdatedAt The product's updated at.
+				UpdatedAt time.Time `json:"updated_at"`
+
+				// Variants The product's variants.
+				Variants []map[string]interface{} `json:"variants"`
+
+				// Weight The product's weight.
+				Weight float32 `json:"weight"`
+
+				// Width The product's width.
+				Width float32 `json:"width"`
+			} `json:"product,omitempty"`
+
+			// ProductCollection The item's product collection.
+			ProductCollection string `json:"product_collection"`
+
+			// ProductDescription The item's product description.
+			ProductDescription string `json:"product_description"`
+
+			// ProductHandle The item's product handle.
+			ProductHandle string `json:"product_handle"`
+
+			// ProductId The item's product id.
+			ProductId string `json:"product_id"`
+
+			// ProductSubtitle The item's product subtitle.
+			ProductSubtitle string `json:"product_subtitle"`
+
+			// ProductTitle The item's product title.
+			ProductTitle string `json:"product_title"`
+
+			// ProductType The item's product type.
+			ProductType string `json:"product_type"`
+
+			// Quantity The item's quantity.
+			Quantity float32 `json:"quantity"`
+
+			// RefundableTotal The item's refundable total.
+			RefundableTotal float32 `json:"refundable_total"`
+
+			// RefundableTotalPerUnit The item's refundable total per unit.
+			RefundableTotalPerUnit float32 `json:"refundable_total_per_unit"`
+
+			// RequiresShipping The item's requires shipping.
+			RequiresShipping bool `json:"requires_shipping"`
+
+			// Subtitle The item's subtitle.
+			Subtitle string `json:"subtitle"`
+
+			// Subtotal The item's subtotal.
+			Subtotal float32 `json:"subtotal"`
+
+			// TaxLines The item's tax lines.
+			TaxLines *[]struct {
+				// Code The tax line's code.
+				Code string `json:"code"`
+
+				// CreatedAt The tax line's created at.
+				CreatedAt time.Time `json:"created_at"`
+
+				// Description The tax line's description.
+				Description *string `json:"description,omitempty"`
+
+				// Id The tax line's ID.
+				Id string `json:"id"`
+
+				// Item The tax line's item.
+				Item map[string]interface{} `json:"item"`
+
+				// ItemId The tax line's item id.
+				ItemId string `json:"item_id"`
+
+				// ProviderId The tax line's provider id.
+				ProviderId *string `json:"provider_id,omitempty"`
+
+				// Rate The tax line's rate.
+				Rate float32 `json:"rate"`
+
+				// Subtotal The tax line's subtotal.
+				Subtotal float32 `json:"subtotal"`
+
+				// TaxRateId The tax line's tax rate id.
+				TaxRateId *string `json:"tax_rate_id,omitempty"`
+
+				// Total The tax line's total.
+				Total float32 `json:"total"`
+
+				// UpdatedAt The tax line's updated at.
+				UpdatedAt time.Time `json:"updated_at"`
+			} `json:"tax_lines,omitempty"`
+
+			// TaxTotal The item's tax total.
+			TaxTotal float32 `json:"tax_total"`
+
+			// Thumbnail The item's thumbnail.
+			Thumbnail string `json:"thumbnail"`
+
+			// Title The item's title.
+			Title string `json:"title"`
+
+			// Total The item's total.
+			Total float32 `json:"total"`
+
+			// UnitPrice The item's unit price.
+			UnitPrice float32 `json:"unit_price"`
+
+			// UpdatedAt The item's updated at.
+			UpdatedAt time.Time `json:"updated_at"`
+
+			// Variant The item's variant.
+			Variant *struct {
+				// AllowBackorder The variant's allow backorder.
+				AllowBackorder bool `json:"allow_backorder"`
+
+				// Barcode The variant's barcode.
+				Barcode string `json:"barcode"`
+
+				// CalculatedPrice The variant's calculated price.
+				CalculatedPrice *map[string]interface{} `json:"calculated_price,omitempty"`
+
+				// CreatedAt The variant's created at.
+				CreatedAt time.Time `json:"created_at"`
+
+				// DeletedAt The variant's deleted at.
+				DeletedAt time.Time `json:"deleted_at"`
+
+				// Ean The variant's ean.
+				Ean string `json:"ean"`
+
+				// Height The variant's height.
+				Height float32 `json:"height"`
+
+				// HsCode The variant's hs code.
+				HsCode string `json:"hs_code"`
+
+				// Id The variant's ID.
+				Id string `json:"id"`
+
+				// InventoryQuantity The variant's inventory quantity.
+				InventoryQuantity *float32 `json:"inventory_quantity,omitempty"`
+
+				// Length The variant's length.
+				Length float32 `json:"length"`
+
+				// ManageInventory The variant's manage inventory.
+				ManageInventory bool `json:"manage_inventory"`
+
+				// Material The variant's material.
+				Material string `json:"material"`
+
+				// Metadata The variant's metadata.
+				Metadata *map[string]interface{} `json:"metadata,omitempty"`
+
+				// MidCode The variant's mid code.
+				MidCode string `json:"mid_code"`
+
+				// Options The variant's options.
+				Options []map[string]interface{} `json:"options"`
+
+				// OriginCountry The variant's origin country.
+				OriginCountry string `json:"origin_country"`
+
+				// Product The variant's product.
+				Product *map[string]interface{} `json:"product,omitempty"`
+
+				// ProductId The variant's product id.
+				ProductId *string `json:"product_id,omitempty"`
+
+				// Sku The variant's sku.
+				Sku string `json:"sku"`
+
+				// Title The variant's title.
+				Title string `json:"title"`
+
+				// Upc The variant's upc.
+				Upc string `json:"upc"`
+
+				// UpdatedAt The variant's updated at.
+				UpdatedAt time.Time `json:"updated_at"`
+
+				// VariantRank The variant's variant rank.
+				VariantRank *float32 `json:"variant_rank,omitempty"`
+
+				// Weight The variant's weight.
+				Weight float32 `json:"weight"`
+
+				// Width The variant's width.
+				Width float32 `json:"width"`
+			} `json:"variant,omitempty"`
+
+			// VariantBarcode The item's variant barcode.
+			VariantBarcode string `json:"variant_barcode"`
+
+			// VariantId The item's variant id.
+			VariantId string `json:"variant_id"`
+
+			// VariantOptionValues The item's variant option values.
+			VariantOptionValues map[string]interface{} `json:"variant_option_values"`
+
+			// VariantSku The item's variant sku.
+			VariantSku string `json:"variant_sku"`
+
+			// VariantTitle The item's variant title.
+			VariantTitle string `json:"variant_title"`
+		} `json:"item"`
+
+		// ItemId the ID of the associated line item.
+		ItemId string `json:"item_id"`
+
+		// Metadata The item's metadata, can hold custom key-value pairs.
+		Metadata map[string]interface{} `json:"metadata"`
+
+		// Quantity The item's quantity.
+		Quantity float32 `json:"quantity"`
+
+		// ReturnDismissedQuantity The item's quantity that's returned but damaged. So, it's not added to the underlying variant's stocked quantity.
+		ReturnDismissedQuantity float32 `json:"return_dismissed_quantity"`
+
+		// ReturnReceivedQuantity The item's quantity that's returned and added to the underlying variant's stocked quantity.
+		ReturnReceivedQuantity float32 `json:"return_received_quantity"`
+
+		// ReturnRequestedQuantity The item's quantity that's requested to be returned.
+		ReturnRequestedQuantity float32 `json:"return_requested_quantity"`
+
+		// ShippedQuantity The item's shipped quantity.
+		ShippedQuantity float32 `json:"shipped_quantity"`
+
+		// UpdatedAt The date the detail was updated.
+		UpdatedAt time.Time `json:"updated_at"`
+
+		// WrittenOffQuantity The item's quantity that's removed from the order.
+		WrittenOffQuantity float32 `json:"written_off_quantity"`
+	} `json:"detail"`
+
+	// DiscountTaxTotal The total taxes applied on the discounted amount.
+	DiscountTaxTotal float32 `json:"discount_tax_total"`
+
+	// DiscountTotal The total discount amount of the item.
+	DiscountTotal float32 `json:"discount_total"`
+
+	// Id The item's ID.
+	Id string `json:"id"`
+
+	// IsDiscountable Whether the item is discountable.
+	IsDiscountable bool `json:"is_discountable"`
+
+	// IsTaxInclusive Whether the item is tax inclusive.
+	IsTaxInclusive bool `json:"is_tax_inclusive"`
+
+	// ItemSubtotal The item's total excluding taxes, including promotions.
+	ItemSubtotal float32 `json:"item_subtotal"`
+
+	// ItemTaxTotal The total taxes of the item, including promotions.
+	ItemTaxTotal float32 `json:"item_tax_total"`
+
+	// ItemTotal The total taxes of the item, including promotions.
+	ItemTotal float32 `json:"item_total"`
+
+	// Metadata The item's metadata, can hold custom key-value pairs.
+	Metadata map[string]interface{} `json:"metadata"`
+
+	// OriginalSubtotal The item's total excluding taxes, including promotions.
+	OriginalSubtotal float32 `json:"original_subtotal"`
+
+	// OriginalTaxTotal The total taxes of the item, excluding promotions.
+	OriginalTaxTotal float32 `json:"original_tax_total"`
+
+	// OriginalTotal The item's total including taxes, excluding promotions.
+	OriginalTotal float32 `json:"original_total"`
+
+	// Product The product's details.
+	Product *StoreProduct `json:"product,omitempty"`
+
+	// ProductCollection The ID of the collection the item's product belongs to.
+	ProductCollection string `json:"product_collection"`
+
+	// ProductDescription The item's product description.
+	ProductDescription string `json:"product_description"`
+
+	// ProductHandle The item's product handle.
+	ProductHandle string `json:"product_handle"`
+
+	// ProductId The ID of the associated product.
+	ProductId string `json:"product_id"`
+
+	// ProductSubtitle The item's product subtitle.
+	ProductSubtitle string `json:"product_subtitle"`
+
+	// ProductTitle The item's product title.
+	ProductTitle string `json:"product_title"`
+
+	// ProductType The item's product type.
+	ProductType string `json:"product_type"`
+
+	// Quantity The item's quantity.
+	Quantity float32 `json:"quantity"`
+
+	// RefundableTotal The total refundable amount of the item's total.
+	RefundableTotal float32 `json:"refundable_total"`
+
+	// RefundableTotalPerUnit The total refundable amount of the item's total for a single quantity.
+	RefundableTotalPerUnit float32 `json:"refundable_total_per_unit"`
+
+	// RequiresShipping Whether the item requires shipping.
+	RequiresShipping bool `json:"requires_shipping"`
+
+	// Subtitle The item's subtitle.
+	Subtitle string `json:"subtitle"`
+
+	// Subtotal The item's subtotal excluding taxes, including promotions.
+	Subtotal float32 `json:"subtotal"`
+
+	// TaxLines The item's tax lines.
+	TaxLines *[]struct {
+		// Code The tax line's code.
+		Code string `json:"code"`
+
+		// CreatedAt The tax line's created at.
+		CreatedAt time.Time `json:"created_at"`
+
+		// Description The tax line's description.
+		Description *string `json:"description,omitempty"`
+
+		// Id The tax line's ID.
+		Id string `json:"id"`
+
+		// Item The tax line's item.
+		Item struct {
+			// Adjustments The item's adjustments.
+			Adjustments *[]struct {
+				// Amount The adjustment's amount.
+				Amount float32 `json:"amount"`
+
+				// Code The adjustment's code.
+				Code *string `json:"code,omitempty"`
+
+				// CreatedAt The adjustment's created at.
+				CreatedAt time.Time `json:"created_at"`
+
+				// Description The adjustment's description.
+				Description *string `json:"description,omitempty"`
+
+				// Id The adjustment's ID.
+				Id string `json:"id"`
+
+				// Item The adjustment's item.
+				Item map[string]interface{} `json:"item"`
+
+				// ItemId The adjustment's item id.
+				ItemId string `json:"item_id"`
+
+				// OrderId The adjustment's order id.
+				OrderId string `json:"order_id"`
+
+				// PromotionId The adjustment's promotion id.
+				PromotionId *string `json:"promotion_id,omitempty"`
+
+				// ProviderId The adjustment's provider id.
+				ProviderId *string `json:"provider_id,omitempty"`
+
+				// UpdatedAt The adjustment's updated at.
+				UpdatedAt time.Time `json:"updated_at"`
+			} `json:"adjustments,omitempty"`
+
+			// CompareAtUnitPrice The item's compare at unit price.
+			CompareAtUnitPrice *float32 `json:"compare_at_unit_price,omitempty"`
+
+			// CreatedAt The item's created at.
+			CreatedAt time.Time `json:"created_at"`
+			Detail    struct {
+				// CreatedAt The detail's created at.
+				CreatedAt time.Time `json:"created_at"`
+
+				// DeliveredQuantity The detail's delivered quantity.
+				DeliveredQuantity float32 `json:"delivered_quantity"`
+
+				// FulfilledQuantity The detail's fulfilled quantity.
+				FulfilledQuantity float32 `json:"fulfilled_quantity"`
+
+				// Id The detail's ID.
+				Id string `json:"id"`
+
+				// Item The detail's item.
+				Item map[string]interface{} `json:"item"`
+
+				// ItemId The detail's item id.
+				ItemId string `json:"item_id"`
+
+				// Metadata The detail's metadata.
+				Metadata map[string]interface{} `json:"metadata"`
+
+				// Quantity The detail's quantity.
+				Quantity float32 `json:"quantity"`
+
+				// ReturnDismissedQuantity The detail's return dismissed quantity.
+				ReturnDismissedQuantity float32 `json:"return_dismissed_quantity"`
+
+				// ReturnReceivedQuantity The detail's return received quantity.
+				ReturnReceivedQuantity float32 `json:"return_received_quantity"`
+
+				// ReturnRequestedQuantity The detail's return requested quantity.
+				ReturnRequestedQuantity float32 `json:"return_requested_quantity"`
+
+				// ShippedQuantity The detail's shipped quantity.
+				ShippedQuantity float32 `json:"shipped_quantity"`
+
+				// UpdatedAt The detail's updated at.
+				UpdatedAt time.Time `json:"updated_at"`
+
+				// WrittenOffQuantity The detail's written off quantity.
+				WrittenOffQuantity float32 `json:"written_off_quantity"`
+			} `json:"detail"`
+
+			// DiscountTaxTotal The item's discount tax total.
+			DiscountTaxTotal float32 `json:"discount_tax_total"`
+
+			// DiscountTotal The item's discount total.
+			DiscountTotal float32 `json:"discount_total"`
+
+			// Id The item's ID.
+			Id string `json:"id"`
+
+			// IsDiscountable The item's is discountable.
+			IsDiscountable bool `json:"is_discountable"`
+
+			// IsTaxInclusive The item's is tax inclusive.
+			IsTaxInclusive bool `json:"is_tax_inclusive"`
+
+			// ItemSubtotal The item's item subtotal.
+			ItemSubtotal float32 `json:"item_subtotal"`
+
+			// ItemTaxTotal The item's item tax total.
+			ItemTaxTotal float32 `json:"item_tax_total"`
+
+			// ItemTotal The item's item total.
+			ItemTotal float32 `json:"item_total"`
+
+			// Metadata The item's metadata.
+			Metadata map[string]interface{} `json:"metadata"`
+
+			// OriginalSubtotal The item's original subtotal.
+			OriginalSubtotal float32 `json:"original_subtotal"`
+
+			// OriginalTaxTotal The item's original tax total.
+			OriginalTaxTotal float32 `json:"original_tax_total"`
+
+			// OriginalTotal The item's original total.
+			OriginalTotal float32 `json:"original_total"`
+
+			// Product The item's product.
+			Product *struct {
+				// Categories The product's categories.
+				Categories *[]map[string]interface{} `json:"categories,omitempty"`
+
+				// Collection The product's collection.
+				Collection *map[string]interface{} `json:"collection,omitempty"`
+
+				// CollectionId The product's collection id.
+				CollectionId string `json:"collection_id"`
+
+				// CreatedAt The product's created at.
+				CreatedAt time.Time `json:"created_at"`
+
+				// DeletedAt The product's deleted at.
+				DeletedAt time.Time `json:"deleted_at"`
+
+				// Description The product's description.
+				Description string `json:"description"`
+
+				// Discountable The product's discountable.
+				Discountable bool `json:"discountable"`
+
+				// ExternalId The product's external id.
+				ExternalId string `json:"external_id"`
+
+				// Handle The product's handle.
+				Handle string `json:"handle"`
+
+				// Height The product's height.
+				Height float32 `json:"height"`
+
+				// HsCode The product's hs code.
+				HsCode string `json:"hs_code"`
+
+				// Id The product's ID.
+				Id string `json:"id"`
+
+				// Images The product's images.
+				Images []map[string]interface{} `json:"images"`
+
+				// IsGiftcard The product's is giftcard.
+				IsGiftcard bool `json:"is_giftcard"`
+
+				// Length The product's length.
+				Length float32 `json:"length"`
+
+				// Material The product's material.
+				Material string `json:"material"`
+
+				// Metadata The product's metadata.
+				Metadata *map[string]interface{} `json:"metadata,omitempty"`
+
+				// MidCode The product's mid code.
+				MidCode string `json:"mid_code"`
+
+				// Options The product's options.
+				Options []map[string]interface{} `json:"options"`
+
+				// OriginCountry The product's origin country.
+				OriginCountry string `json:"origin_country"`
+
+				// Status The product's status.
+				Status StoreOrderLineItemTaxLinesItemProductStatus `json:"status"`
+
+				// Subtitle The product's subtitle.
+				Subtitle string `json:"subtitle"`
+
+				// Tags The product's tags.
+				Tags *[]map[string]interface{} `json:"tags,omitempty"`
+
+				// Thumbnail The product's thumbnail.
+				Thumbnail string `json:"thumbnail"`
+
+				// Title The product's title.
+				Title string `json:"title"`
+
+				// Type The product's type.
+				Type *map[string]interface{} `json:"type,omitempty"`
+
+				// TypeId The product's type id.
+				TypeId string `json:"type_id"`
+
+				// UpdatedAt The product's updated at.
+				UpdatedAt time.Time `json:"updated_at"`
+
+				// Variants The product's variants.
+				Variants []map[string]interface{} `json:"variants"`
+
+				// Weight The product's weight.
+				Weight float32 `json:"weight"`
+
+				// Width The product's width.
+				Width float32 `json:"width"`
+			} `json:"product,omitempty"`
+
+			// ProductCollection The item's product collection.
+			ProductCollection string `json:"product_collection"`
+
+			// ProductDescription The item's product description.
+			ProductDescription string `json:"product_description"`
+
+			// ProductHandle The item's product handle.
+			ProductHandle string `json:"product_handle"`
+
+			// ProductId The item's product id.
+			ProductId string `json:"product_id"`
+
+			// ProductSubtitle The item's product subtitle.
+			ProductSubtitle string `json:"product_subtitle"`
+
+			// ProductTitle The item's product title.
+			ProductTitle string `json:"product_title"`
+
+			// ProductType The item's product type.
+			ProductType string `json:"product_type"`
+
+			// Quantity The item's quantity.
+			Quantity float32 `json:"quantity"`
+
+			// RefundableTotal The item's refundable total.
+			RefundableTotal float32 `json:"refundable_total"`
+
+			// RefundableTotalPerUnit The item's refundable total per unit.
+			RefundableTotalPerUnit float32 `json:"refundable_total_per_unit"`
+
+			// RequiresShipping The item's requires shipping.
+			RequiresShipping bool `json:"requires_shipping"`
+
+			// Subtitle The item's subtitle.
+			Subtitle string `json:"subtitle"`
+
+			// Subtotal The item's subtotal.
+			Subtotal float32 `json:"subtotal"`
+
+			// TaxLines The item's tax lines.
+			TaxLines *[]struct {
+				// Code The tax line's code.
+				Code string `json:"code"`
+
+				// CreatedAt The tax line's created at.
+				CreatedAt time.Time `json:"created_at"`
+
+				// Description The tax line's description.
+				Description *string `json:"description,omitempty"`
+
+				// Id The tax line's ID.
+				Id string `json:"id"`
+
+				// Item The tax line's item.
+				Item map[string]interface{} `json:"item"`
+
+				// ItemId The tax line's item id.
+				ItemId string `json:"item_id"`
+
+				// ProviderId The tax line's provider id.
+				ProviderId *string `json:"provider_id,omitempty"`
+
+				// Rate The tax line's rate.
+				Rate float32 `json:"rate"`
+
+				// Subtotal The tax line's subtotal.
+				Subtotal float32 `json:"subtotal"`
+
+				// TaxRateId The tax line's tax rate id.
+				TaxRateId *string `json:"tax_rate_id,omitempty"`
+
+				// Total The tax line's total.
+				Total float32 `json:"total"`
+
+				// UpdatedAt The tax line's updated at.
+				UpdatedAt time.Time `json:"updated_at"`
+			} `json:"tax_lines,omitempty"`
+
+			// TaxTotal The item's tax total.
+			TaxTotal float32 `json:"tax_total"`
+
+			// Thumbnail The item's thumbnail.
+			Thumbnail string `json:"thumbnail"`
+
+			// Title The item's title.
+			Title string `json:"title"`
+
+			// Total The item's total.
+			Total float32 `json:"total"`
+
+			// UnitPrice The item's unit price.
+			UnitPrice float32 `json:"unit_price"`
+
+			// UpdatedAt The item's updated at.
+			UpdatedAt time.Time `json:"updated_at"`
+
+			// Variant The item's variant.
+			Variant *struct {
+				// AllowBackorder The variant's allow backorder.
+				AllowBackorder bool `json:"allow_backorder"`
+
+				// Barcode The variant's barcode.
+				Barcode string `json:"barcode"`
+
+				// CalculatedPrice The variant's calculated price.
+				CalculatedPrice *map[string]interface{} `json:"calculated_price,omitempty"`
+
+				// CreatedAt The variant's created at.
+				CreatedAt time.Time `json:"created_at"`
+
+				// DeletedAt The variant's deleted at.
+				DeletedAt time.Time `json:"deleted_at"`
+
+				// Ean The variant's ean.
+				Ean string `json:"ean"`
+
+				// Height The variant's height.
+				Height float32 `json:"height"`
+
+				// HsCode The variant's hs code.
+				HsCode string `json:"hs_code"`
+
+				// Id The variant's ID.
+				Id string `json:"id"`
+
+				// InventoryQuantity The variant's inventory quantity.
+				InventoryQuantity *float32 `json:"inventory_quantity,omitempty"`
+
+				// Length The variant's length.
+				Length float32 `json:"length"`
+
+				// ManageInventory The variant's manage inventory.
+				ManageInventory bool `json:"manage_inventory"`
+
+				// Material The variant's material.
+				Material string `json:"material"`
+
+				// Metadata The variant's metadata.
+				Metadata *map[string]interface{} `json:"metadata,omitempty"`
+
+				// MidCode The variant's mid code.
+				MidCode string `json:"mid_code"`
+
+				// Options The variant's options.
+				Options []map[string]interface{} `json:"options"`
+
+				// OriginCountry The variant's origin country.
+				OriginCountry string `json:"origin_country"`
+
+				// Product The variant's product.
+				Product *map[string]interface{} `json:"product,omitempty"`
+
+				// ProductId The variant's product id.
+				ProductId *string `json:"product_id,omitempty"`
+
+				// Sku The variant's sku.
+				Sku string `json:"sku"`
+
+				// Title The variant's title.
+				Title string `json:"title"`
+
+				// Upc The variant's upc.
+				Upc string `json:"upc"`
+
+				// UpdatedAt The variant's updated at.
+				UpdatedAt time.Time `json:"updated_at"`
+
+				// VariantRank The variant's variant rank.
+				VariantRank *float32 `json:"variant_rank,omitempty"`
+
+				// Weight The variant's weight.
+				Weight float32 `json:"weight"`
+
+				// Width The variant's width.
+				Width float32 `json:"width"`
+			} `json:"variant,omitempty"`
+
+			// VariantBarcode The item's variant barcode.
+			VariantBarcode string `json:"variant_barcode"`
+
+			// VariantId The item's variant id.
+			VariantId string `json:"variant_id"`
+
+			// VariantOptionValues The item's variant option values.
+			VariantOptionValues map[string]interface{} `json:"variant_option_values"`
+
+			// VariantSku The item's variant sku.
+			VariantSku string `json:"variant_sku"`
+
+			// VariantTitle The item's variant title.
+			VariantTitle string `json:"variant_title"`
+		} `json:"item"`
+
+		// ItemId The tax line's item id.
+		ItemId string `json:"item_id"`
+
+		// ProviderId The tax line's provider id.
+		ProviderId *string `json:"provider_id,omitempty"`
+
+		// Rate The tax line's rate.
+		Rate float32 `json:"rate"`
+
+		// Subtotal The tax line's subtotal.
+		Subtotal float32 `json:"subtotal"`
+
+		// TaxRateId The tax line's tax rate id.
+		TaxRateId *string `json:"tax_rate_id,omitempty"`
+
+		// Total The tax line's total.
+		Total float32 `json:"total"`
+
+		// UpdatedAt The tax line's updated at.
+		UpdatedAt time.Time `json:"updated_at"`
+	} `json:"tax_lines,omitempty"`
+
+	// TaxTotal The tax total of the item including promotions.
+	TaxTotal float32 `json:"tax_total"`
+
+	// Thumbnail The URL of the item's thumbnail.
+	Thumbnail string `json:"thumbnail"`
+
+	// Title The item's title.
+	Title string `json:"title"`
+
+	// Total The item's total, including taxes and promotions.
+	Total float32 `json:"total"`
+
+	// UnitPrice The item's unit price.
+	UnitPrice float32 `json:"unit_price"`
+
+	// UpdatedAt The date the item was updated.
+	UpdatedAt time.Time `json:"updated_at"`
+
+	// Variant The variant's details.
+	Variant *StoreProductVariant `json:"variant,omitempty"`
+
+	// VariantBarcode The item's variant barcode.
+	VariantBarcode string `json:"variant_barcode"`
+
+	// VariantId The ID of the associated variant.
+	VariantId string `json:"variant_id"`
+
+	// VariantOptionValues The values of the item variant's options.
+	VariantOptionValues map[string]interface{} `json:"variant_option_values"`
+
+	// VariantSku The item's variant SKU.
+	VariantSku string `json:"variant_sku"`
+
+	// VariantTitle The item's variant title.
+	VariantTitle string `json:"variant_title"`
+}
+
+// StoreOrderLineItemAdjustmentsItemProductStatus The product's status.
+type StoreOrderLineItemAdjustmentsItemProductStatus string
+
+// StoreOrderLineItemDetailItemProductStatus The product's status.
+type StoreOrderLineItemDetailItemProductStatus string
+
+// StoreOrderLineItemTaxLinesItemProductStatus The product's status.
+type StoreOrderLineItemTaxLinesItemProductStatus string
+
 // StoreOrderResponse The order's details.
 type StoreOrderResponse struct {
 	// Order The order's details.
 	Order StoreOrder `json:"order"`
+}
+
+// StoreOrderShippingMethod The shipping method's details.
+type StoreOrderShippingMethod struct {
+	// Adjustments The shipping method's adjustments.
+	Adjustments *[]struct {
+		// Amount The adjustment's amount.
+		Amount float32 `json:"amount"`
+
+		// Code The adjustment's code.
+		Code *string `json:"code,omitempty"`
+
+		// CreatedAt The adjustment's created at.
+		CreatedAt time.Time `json:"created_at"`
+
+		// Description The adjustment's description.
+		Description *string `json:"description,omitempty"`
+
+		// Id The adjustment's ID.
+		Id string `json:"id"`
+
+		// OrderId The adjustment's order id.
+		OrderId string `json:"order_id"`
+
+		// PromotionId The adjustment's promotion id.
+		PromotionId *string `json:"promotion_id,omitempty"`
+
+		// ProviderId The adjustment's provider id.
+		ProviderId *string `json:"provider_id,omitempty"`
+
+		// ShippingMethod The adjustment's shipping method.
+		ShippingMethod struct {
+			// Adjustments The shipping method's adjustments.
+			Adjustments *[]struct {
+				// Amount The adjustment's amount.
+				Amount float32 `json:"amount"`
+
+				// Code The adjustment's code.
+				Code *string `json:"code,omitempty"`
+
+				// CreatedAt The adjustment's created at.
+				CreatedAt time.Time `json:"created_at"`
+
+				// Description The adjustment's description.
+				Description *string `json:"description,omitempty"`
+
+				// Id The adjustment's ID.
+				Id string `json:"id"`
+
+				// OrderId The adjustment's order id.
+				OrderId string `json:"order_id"`
+
+				// PromotionId The adjustment's promotion id.
+				PromotionId *string `json:"promotion_id,omitempty"`
+
+				// ProviderId The adjustment's provider id.
+				ProviderId *string `json:"provider_id,omitempty"`
+
+				// ShippingMethod The adjustment's shipping method.
+				ShippingMethod map[string]interface{} `json:"shipping_method"`
+
+				// ShippingMethodId The adjustment's shipping method id.
+				ShippingMethodId string `json:"shipping_method_id"`
+
+				// UpdatedAt The adjustment's updated at.
+				UpdatedAt time.Time `json:"updated_at"`
+			} `json:"adjustments,omitempty"`
+
+			// Amount The shipping method's amount.
+			Amount float32 `json:"amount"`
+
+			// CreatedAt The shipping method's created at.
+			CreatedAt time.Time `json:"created_at"`
+
+			// Data The shipping method's data.
+			Data map[string]interface{} `json:"data"`
+
+			// Description The shipping method's description.
+			Description *string `json:"description,omitempty"`
+			Detail      *struct {
+				// ClaimId The detail's claim id.
+				ClaimId *string `json:"claim_id,omitempty"`
+
+				// CreatedAt The detail's created at.
+				CreatedAt time.Time `json:"created_at"`
+
+				// ExchangeId The detail's exchange id.
+				ExchangeId *string `json:"exchange_id,omitempty"`
+
+				// Id The detail's ID.
+				Id string `json:"id"`
+
+				// ReturnId The detail's return id.
+				ReturnId *string `json:"return_id,omitempty"`
+
+				// ShippingMethod The detail's shipping method.
+				ShippingMethod map[string]interface{} `json:"shipping_method"`
+
+				// ShippingMethodId The detail's shipping method id.
+				ShippingMethodId string `json:"shipping_method_id"`
+
+				// UpdatedAt The detail's updated at.
+				UpdatedAt time.Time `json:"updated_at"`
+			} `json:"detail,omitempty"`
+
+			// DiscountTaxTotal The shipping method's discount tax total.
+			DiscountTaxTotal float32 `json:"discount_tax_total"`
+
+			// DiscountTotal The shipping method's discount total.
+			DiscountTotal float32 `json:"discount_total"`
+
+			// Id The shipping method's ID.
+			Id string `json:"id"`
+
+			// IsTaxInclusive The shipping method's is tax inclusive.
+			IsTaxInclusive bool `json:"is_tax_inclusive"`
+
+			// Metadata The shipping method's metadata.
+			Metadata map[string]interface{} `json:"metadata"`
+
+			// Name The shipping method's name.
+			Name string `json:"name"`
+
+			// OrderId The shipping method's order id.
+			OrderId string `json:"order_id"`
+
+			// OriginalSubtotal The shipping method's original subtotal.
+			OriginalSubtotal float32 `json:"original_subtotal"`
+
+			// OriginalTaxTotal The shipping method's original tax total.
+			OriginalTaxTotal float32 `json:"original_tax_total"`
+
+			// OriginalTotal The shipping method's original total.
+			OriginalTotal float32 `json:"original_total"`
+
+			// ShippingOptionId The shipping method's shipping option id.
+			ShippingOptionId string `json:"shipping_option_id"`
+
+			// Subtotal The shipping method's subtotal.
+			Subtotal float32 `json:"subtotal"`
+
+			// TaxLines The shipping method's tax lines.
+			TaxLines *[]struct {
+				// Code The tax line's code.
+				Code string `json:"code"`
+
+				// CreatedAt The tax line's created at.
+				CreatedAt time.Time `json:"created_at"`
+
+				// Description The tax line's description.
+				Description *string `json:"description,omitempty"`
+
+				// Id The tax line's ID.
+				Id string `json:"id"`
+
+				// ProviderId The tax line's provider id.
+				ProviderId *string `json:"provider_id,omitempty"`
+
+				// Rate The tax line's rate.
+				Rate float32 `json:"rate"`
+
+				// ShippingMethod The tax line's shipping method.
+				ShippingMethod map[string]interface{} `json:"shipping_method"`
+
+				// ShippingMethodId The tax line's shipping method id.
+				ShippingMethodId string `json:"shipping_method_id"`
+
+				// Subtotal The tax line's subtotal.
+				Subtotal float32 `json:"subtotal"`
+
+				// TaxRateId The tax line's tax rate id.
+				TaxRateId *string `json:"tax_rate_id,omitempty"`
+
+				// Total The tax line's total.
+				Total float32 `json:"total"`
+
+				// UpdatedAt The tax line's updated at.
+				UpdatedAt time.Time `json:"updated_at"`
+			} `json:"tax_lines,omitempty"`
+
+			// TaxTotal The shipping method's tax total.
+			TaxTotal float32 `json:"tax_total"`
+
+			// Total The shipping method's total.
+			Total float32 `json:"total"`
+
+			// UpdatedAt The shipping method's updated at.
+			UpdatedAt time.Time `json:"updated_at"`
+		} `json:"shipping_method"`
+
+		// ShippingMethodId The adjustment's shipping method id.
+		ShippingMethodId string `json:"shipping_method_id"`
+
+		// UpdatedAt The adjustment's updated at.
+		UpdatedAt time.Time `json:"updated_at"`
+	} `json:"adjustments,omitempty"`
+
+	// Amount The shipping method's amount.
+	Amount float32 `json:"amount"`
+
+	// CreatedAt The date the shipping method was created.
+	CreatedAt time.Time `json:"created_at"`
+
+	// Data The shipping method's data, useful for fulfillment provider handling its fulfillment.
+	Data map[string]interface{} `json:"data"`
+
+	// Description The shipping method's description.
+	Description *string `json:"description,omitempty"`
+
+	// Detail Details of changes to a shipping method.
+	Detail *struct {
+		// ClaimId The ID of the associated claim.
+		ClaimId *string `json:"claim_id,omitempty"`
+
+		// CreatedAt The date the shipping method change was created.
+		CreatedAt time.Time `json:"created_at"`
+
+		// ExchangeId The ID of the associated exchange.
+		ExchangeId *string `json:"exchange_id,omitempty"`
+
+		// Id The ID of the new changes to the shipping method.
+		Id string `json:"id"`
+
+		// ReturnId The ID of the associated return.
+		ReturnId *string `json:"return_id,omitempty"`
+
+		// ShippingMethod The detail's shipping method.
+		ShippingMethod struct {
+			// Adjustments The shipping method's adjustments.
+			Adjustments *[]struct {
+				// Amount The adjustment's amount.
+				Amount float32 `json:"amount"`
+
+				// Code The adjustment's code.
+				Code *string `json:"code,omitempty"`
+
+				// CreatedAt The adjustment's created at.
+				CreatedAt time.Time `json:"created_at"`
+
+				// Description The adjustment's description.
+				Description *string `json:"description,omitempty"`
+
+				// Id The adjustment's ID.
+				Id string `json:"id"`
+
+				// OrderId The adjustment's order id.
+				OrderId string `json:"order_id"`
+
+				// PromotionId The adjustment's promotion id.
+				PromotionId *string `json:"promotion_id,omitempty"`
+
+				// ProviderId The adjustment's provider id.
+				ProviderId *string `json:"provider_id,omitempty"`
+
+				// ShippingMethod The adjustment's shipping method.
+				ShippingMethod map[string]interface{} `json:"shipping_method"`
+
+				// ShippingMethodId The adjustment's shipping method id.
+				ShippingMethodId string `json:"shipping_method_id"`
+
+				// UpdatedAt The adjustment's updated at.
+				UpdatedAt time.Time `json:"updated_at"`
+			} `json:"adjustments,omitempty"`
+
+			// Amount The shipping method's amount.
+			Amount float32 `json:"amount"`
+
+			// CreatedAt The shipping method's created at.
+			CreatedAt time.Time `json:"created_at"`
+
+			// Data The shipping method's data.
+			Data map[string]interface{} `json:"data"`
+
+			// Description The shipping method's description.
+			Description *string `json:"description,omitempty"`
+			Detail      *struct {
+				// ClaimId The detail's claim id.
+				ClaimId *string `json:"claim_id,omitempty"`
+
+				// CreatedAt The detail's created at.
+				CreatedAt time.Time `json:"created_at"`
+
+				// ExchangeId The detail's exchange id.
+				ExchangeId *string `json:"exchange_id,omitempty"`
+
+				// Id The detail's ID.
+				Id string `json:"id"`
+
+				// ReturnId The detail's return id.
+				ReturnId *string `json:"return_id,omitempty"`
+
+				// ShippingMethod The detail's shipping method.
+				ShippingMethod map[string]interface{} `json:"shipping_method"`
+
+				// ShippingMethodId The detail's shipping method id.
+				ShippingMethodId string `json:"shipping_method_id"`
+
+				// UpdatedAt The detail's updated at.
+				UpdatedAt time.Time `json:"updated_at"`
+			} `json:"detail,omitempty"`
+
+			// DiscountTaxTotal The shipping method's discount tax total.
+			DiscountTaxTotal float32 `json:"discount_tax_total"`
+
+			// DiscountTotal The shipping method's discount total.
+			DiscountTotal float32 `json:"discount_total"`
+
+			// Id The shipping method's ID.
+			Id string `json:"id"`
+
+			// IsTaxInclusive The shipping method's is tax inclusive.
+			IsTaxInclusive bool `json:"is_tax_inclusive"`
+
+			// Metadata The shipping method's metadata.
+			Metadata map[string]interface{} `json:"metadata"`
+
+			// Name The shipping method's name.
+			Name string `json:"name"`
+
+			// OrderId The shipping method's order id.
+			OrderId string `json:"order_id"`
+
+			// OriginalSubtotal The shipping method's original subtotal.
+			OriginalSubtotal float32 `json:"original_subtotal"`
+
+			// OriginalTaxTotal The shipping method's original tax total.
+			OriginalTaxTotal float32 `json:"original_tax_total"`
+
+			// OriginalTotal The shipping method's original total.
+			OriginalTotal float32 `json:"original_total"`
+
+			// ShippingOptionId The shipping method's shipping option id.
+			ShippingOptionId string `json:"shipping_option_id"`
+
+			// Subtotal The shipping method's subtotal.
+			Subtotal float32 `json:"subtotal"`
+
+			// TaxLines The shipping method's tax lines.
+			TaxLines *[]struct {
+				// Code The tax line's code.
+				Code string `json:"code"`
+
+				// CreatedAt The tax line's created at.
+				CreatedAt time.Time `json:"created_at"`
+
+				// Description The tax line's description.
+				Description *string `json:"description,omitempty"`
+
+				// Id The tax line's ID.
+				Id string `json:"id"`
+
+				// ProviderId The tax line's provider id.
+				ProviderId *string `json:"provider_id,omitempty"`
+
+				// Rate The tax line's rate.
+				Rate float32 `json:"rate"`
+
+				// ShippingMethod The tax line's shipping method.
+				ShippingMethod map[string]interface{} `json:"shipping_method"`
+
+				// ShippingMethodId The tax line's shipping method id.
+				ShippingMethodId string `json:"shipping_method_id"`
+
+				// Subtotal The tax line's subtotal.
+				Subtotal float32 `json:"subtotal"`
+
+				// TaxRateId The tax line's tax rate id.
+				TaxRateId *string `json:"tax_rate_id,omitempty"`
+
+				// Total The tax line's total.
+				Total float32 `json:"total"`
+
+				// UpdatedAt The tax line's updated at.
+				UpdatedAt time.Time `json:"updated_at"`
+			} `json:"tax_lines,omitempty"`
+
+			// TaxTotal The shipping method's tax total.
+			TaxTotal float32 `json:"tax_total"`
+
+			// Total The shipping method's total.
+			Total float32 `json:"total"`
+
+			// UpdatedAt The shipping method's updated at.
+			UpdatedAt time.Time `json:"updated_at"`
+		} `json:"shipping_method"`
+
+		// ShippingMethodId The ID of the shipping method.
+		ShippingMethodId string `json:"shipping_method_id"`
+
+		// UpdatedAt The date the shipping method change was updated.
+		UpdatedAt time.Time `json:"updated_at"`
+	} `json:"detail,omitempty"`
+
+	// DiscountTaxTotal The taxes applied on the discount amount.
+	DiscountTaxTotal float32 `json:"discount_tax_total"`
+
+	// DiscountTotal The total discounts applied on the shipping method.
+	DiscountTotal float32 `json:"discount_total"`
+
+	// Id The shipping method's ID.
+	Id string `json:"id"`
+
+	// IsTaxInclusive Whether the shipping method's amount includes applied taxes.
+	IsTaxInclusive bool `json:"is_tax_inclusive"`
+
+	// Metadata The shipping method's metadata, can hold custom key-value pairs.
+	Metadata map[string]interface{} `json:"metadata"`
+
+	// Name The shipping method's name.
+	Name string `json:"name"`
+
+	// OrderId The ID of the order the shipping method belongs to.
+	OrderId string `json:"order_id"`
+
+	// OriginalSubtotal The shipping method's total excluding taxes, including promotions.
+	OriginalSubtotal float32 `json:"original_subtotal"`
+
+	// OriginalTaxTotal The shipping method's total taxes excluding promotions.
+	OriginalTaxTotal float32 `json:"original_tax_total"`
+
+	// OriginalTotal The shipping method's total including taxes, excluding promotions.
+	OriginalTotal float32 `json:"original_total"`
+
+	// ShippingOptionId The ID of the shipping option this method was created from.
+	ShippingOptionId string `json:"shipping_option_id"`
+
+	// Subtotal The shipping method's total excluding taxes, including promotions.
+	Subtotal float32 `json:"subtotal"`
+
+	// TaxLines The shipping method's tax lines.
+	TaxLines *[]struct {
+		// Code The tax line's code.
+		Code string `json:"code"`
+
+		// CreatedAt The tax line's created at.
+		CreatedAt time.Time `json:"created_at"`
+
+		// Description The tax line's description.
+		Description *string `json:"description,omitempty"`
+
+		// Id The tax line's ID.
+		Id string `json:"id"`
+
+		// ProviderId The tax line's provider id.
+		ProviderId *string `json:"provider_id,omitempty"`
+
+		// Rate The tax line's rate.
+		Rate float32 `json:"rate"`
+
+		// ShippingMethod The tax line's shipping method.
+		ShippingMethod struct {
+			// Adjustments The shipping method's adjustments.
+			Adjustments *[]struct {
+				// Amount The adjustment's amount.
+				Amount float32 `json:"amount"`
+
+				// Code The adjustment's code.
+				Code *string `json:"code,omitempty"`
+
+				// CreatedAt The adjustment's created at.
+				CreatedAt time.Time `json:"created_at"`
+
+				// Description The adjustment's description.
+				Description *string `json:"description,omitempty"`
+
+				// Id The adjustment's ID.
+				Id string `json:"id"`
+
+				// OrderId The adjustment's order id.
+				OrderId string `json:"order_id"`
+
+				// PromotionId The adjustment's promotion id.
+				PromotionId *string `json:"promotion_id,omitempty"`
+
+				// ProviderId The adjustment's provider id.
+				ProviderId *string `json:"provider_id,omitempty"`
+
+				// ShippingMethod The adjustment's shipping method.
+				ShippingMethod map[string]interface{} `json:"shipping_method"`
+
+				// ShippingMethodId The adjustment's shipping method id.
+				ShippingMethodId string `json:"shipping_method_id"`
+
+				// UpdatedAt The adjustment's updated at.
+				UpdatedAt time.Time `json:"updated_at"`
+			} `json:"adjustments,omitempty"`
+
+			// Amount The shipping method's amount.
+			Amount float32 `json:"amount"`
+
+			// CreatedAt The shipping method's created at.
+			CreatedAt time.Time `json:"created_at"`
+
+			// Data The shipping method's data.
+			Data map[string]interface{} `json:"data"`
+
+			// Description The shipping method's description.
+			Description *string `json:"description,omitempty"`
+			Detail      *struct {
+				// ClaimId The detail's claim id.
+				ClaimId *string `json:"claim_id,omitempty"`
+
+				// CreatedAt The detail's created at.
+				CreatedAt time.Time `json:"created_at"`
+
+				// ExchangeId The detail's exchange id.
+				ExchangeId *string `json:"exchange_id,omitempty"`
+
+				// Id The detail's ID.
+				Id string `json:"id"`
+
+				// ReturnId The detail's return id.
+				ReturnId *string `json:"return_id,omitempty"`
+
+				// ShippingMethod The detail's shipping method.
+				ShippingMethod map[string]interface{} `json:"shipping_method"`
+
+				// ShippingMethodId The detail's shipping method id.
+				ShippingMethodId string `json:"shipping_method_id"`
+
+				// UpdatedAt The detail's updated at.
+				UpdatedAt time.Time `json:"updated_at"`
+			} `json:"detail,omitempty"`
+
+			// DiscountTaxTotal The shipping method's discount tax total.
+			DiscountTaxTotal float32 `json:"discount_tax_total"`
+
+			// DiscountTotal The shipping method's discount total.
+			DiscountTotal float32 `json:"discount_total"`
+
+			// Id The shipping method's ID.
+			Id string `json:"id"`
+
+			// IsTaxInclusive The shipping method's is tax inclusive.
+			IsTaxInclusive bool `json:"is_tax_inclusive"`
+
+			// Metadata The shipping method's metadata.
+			Metadata map[string]interface{} `json:"metadata"`
+
+			// Name The shipping method's name.
+			Name string `json:"name"`
+
+			// OrderId The shipping method's order id.
+			OrderId string `json:"order_id"`
+
+			// OriginalSubtotal The shipping method's original subtotal.
+			OriginalSubtotal float32 `json:"original_subtotal"`
+
+			// OriginalTaxTotal The shipping method's original tax total.
+			OriginalTaxTotal float32 `json:"original_tax_total"`
+
+			// OriginalTotal The shipping method's original total.
+			OriginalTotal float32 `json:"original_total"`
+
+			// ShippingOptionId The shipping method's shipping option id.
+			ShippingOptionId string `json:"shipping_option_id"`
+
+			// Subtotal The shipping method's subtotal.
+			Subtotal float32 `json:"subtotal"`
+
+			// TaxLines The shipping method's tax lines.
+			TaxLines *[]struct {
+				// Code The tax line's code.
+				Code string `json:"code"`
+
+				// CreatedAt The tax line's created at.
+				CreatedAt time.Time `json:"created_at"`
+
+				// Description The tax line's description.
+				Description *string `json:"description,omitempty"`
+
+				// Id The tax line's ID.
+				Id string `json:"id"`
+
+				// ProviderId The tax line's provider id.
+				ProviderId *string `json:"provider_id,omitempty"`
+
+				// Rate The tax line's rate.
+				Rate float32 `json:"rate"`
+
+				// ShippingMethod The tax line's shipping method.
+				ShippingMethod map[string]interface{} `json:"shipping_method"`
+
+				// ShippingMethodId The tax line's shipping method id.
+				ShippingMethodId string `json:"shipping_method_id"`
+
+				// Subtotal The tax line's subtotal.
+				Subtotal float32 `json:"subtotal"`
+
+				// TaxRateId The tax line's tax rate id.
+				TaxRateId *string `json:"tax_rate_id,omitempty"`
+
+				// Total The tax line's total.
+				Total float32 `json:"total"`
+
+				// UpdatedAt The tax line's updated at.
+				UpdatedAt time.Time `json:"updated_at"`
+			} `json:"tax_lines,omitempty"`
+
+			// TaxTotal The shipping method's tax total.
+			TaxTotal float32 `json:"tax_total"`
+
+			// Total The shipping method's total.
+			Total float32 `json:"total"`
+
+			// UpdatedAt The shipping method's updated at.
+			UpdatedAt time.Time `json:"updated_at"`
+		} `json:"shipping_method"`
+
+		// ShippingMethodId The tax line's shipping method id.
+		ShippingMethodId string `json:"shipping_method_id"`
+
+		// Subtotal The tax line's subtotal.
+		Subtotal float32 `json:"subtotal"`
+
+		// TaxRateId The tax line's tax rate id.
+		TaxRateId *string `json:"tax_rate_id,omitempty"`
+
+		// Total The tax line's total.
+		Total float32 `json:"total"`
+
+		// UpdatedAt The tax line's updated at.
+		UpdatedAt time.Time `json:"updated_at"`
+	} `json:"tax_lines,omitempty"`
+
+	// TaxTotal The shipping method's tax total including promotions.
+	TaxTotal float32 `json:"tax_total"`
+
+	// Total The shipping method's total including taxes and promotions.
+	Total float32 `json:"total"`
+
+	// UpdatedAt The date the shipping method was updated.
+	UpdatedAt time.Time `json:"updated_at"`
 }
 
 // StorePaymentCollection The payment collection's details.
@@ -13190,10 +14654,10 @@ type StoreRegionCountry struct {
 	// Id The country's ID.
 	Id string `json:"id"`
 
-	// Iso2 The country's ISO 2 code.
+	// Iso2 The country's ISO 2.
 	Iso2 *string `json:"iso_2,omitempty"`
 
-	// Iso3 The country's ISO 3 codel.
+	// Iso3 The country's ISO 3.
 	Iso3 *string `json:"iso_3,omitempty"`
 
 	// Name The country's name.
@@ -13548,9 +15012,6 @@ type NotFoundError = Error
 
 // GetApiKeysParams defines parameters for GetApiKeys.
 type GetApiKeysParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 
@@ -14144,27 +15605,18 @@ type GetApiKeysParams_RevokedAt_Not struct {
 
 // GetApiKeysIdParams defines parameters for GetApiKeysId.
 type GetApiKeysIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // PostApiKeysIdParams defines parameters for PostApiKeysId.
 type PostApiKeysIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // PostApiKeysIdRevokeParams defines parameters for PostApiKeysIdRevoke.
 type PostApiKeysIdRevokeParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
@@ -14180,18 +15632,12 @@ type PostApiKeysIdSalesChannelsJSONBody struct {
 
 // PostApiKeysIdSalesChannelsParams defines parameters for PostApiKeysIdSalesChannels.
 type PostApiKeysIdSalesChannelsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetCampaignsParams defines parameters for GetCampaigns.
 type GetCampaignsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 
@@ -14246,9 +15692,6 @@ type PostCampaignsJSONBody struct {
 
 // PostCampaignsParams defines parameters for PostCampaigns.
 type PostCampaignsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
@@ -14258,9 +15701,6 @@ type PostCampaignsJSONBodyBudgetType string
 
 // GetCampaignsIdParams defines parameters for GetCampaignsId.
 type GetCampaignsIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
@@ -14300,9 +15740,6 @@ type PostCampaignsIdJSONBody struct {
 
 // PostCampaignsIdParams defines parameters for PostCampaignsId.
 type PostCampaignsIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
@@ -14318,18 +15755,12 @@ type PostCampaignsIdPromotionsJSONBody struct {
 
 // PostCampaignsIdPromotionsParams defines parameters for PostCampaignsIdPromotions.
 type PostCampaignsIdPromotionsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetClaimsParams defines parameters for GetClaims.
 type GetClaimsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 
@@ -14783,126 +16214,84 @@ type GetClaimsParams_UpdatedAt_Not struct {
 
 // PostClaimsParams defines parameters for PostClaims.
 type PostClaimsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetClaimsIdParams defines parameters for GetClaimsId.
 type GetClaimsIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // PostClaimsIdClaimItemsParams defines parameters for PostClaimsIdClaimItems.
 type PostClaimsIdClaimItemsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // DeleteClaimsIdClaimItemsActionIdParams defines parameters for DeleteClaimsIdClaimItemsActionId.
 type DeleteClaimsIdClaimItemsActionIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // PostClaimsIdClaimItemsActionIdParams defines parameters for PostClaimsIdClaimItemsActionId.
 type PostClaimsIdClaimItemsActionIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // PostClaimsIdInboundShippingMethodActionIdParams defines parameters for PostClaimsIdInboundShippingMethodActionId.
 type PostClaimsIdInboundShippingMethodActionIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // PostClaimsIdOutboundItemsParams defines parameters for PostClaimsIdOutboundItems.
 type PostClaimsIdOutboundItemsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // DeleteClaimsIdOutboundItemsActionIdParams defines parameters for DeleteClaimsIdOutboundItemsActionId.
 type DeleteClaimsIdOutboundItemsActionIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // PostClaimsIdOutboundItemsActionIdParams defines parameters for PostClaimsIdOutboundItemsActionId.
 type PostClaimsIdOutboundItemsActionIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // PostClaimsIdOutboundShippingMethodParams defines parameters for PostClaimsIdOutboundShippingMethod.
 type PostClaimsIdOutboundShippingMethodParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // DeleteClaimsIdOutboundShippingMethodActionIdParams defines parameters for DeleteClaimsIdOutboundShippingMethodActionId.
 type DeleteClaimsIdOutboundShippingMethodActionIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // PostClaimsIdOutboundShippingMethodActionIdParams defines parameters for PostClaimsIdOutboundShippingMethodActionId.
 type PostClaimsIdOutboundShippingMethodActionIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // PostClaimsIdRequestParams defines parameters for PostClaimsIdRequest.
 type PostClaimsIdRequestParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetCollectionsParams defines parameters for GetCollections.
 type GetCollectionsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 
@@ -15356,27 +16745,18 @@ type GetCollectionsParams_UpdatedAt_Not struct {
 
 // PostCollectionsParams defines parameters for PostCollections.
 type PostCollectionsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetCollectionsIdParams defines parameters for GetCollectionsId.
 type GetCollectionsIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // PostCollectionsIdParams defines parameters for PostCollectionsId.
 type PostCollectionsIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
@@ -15392,18 +16772,12 @@ type PostCollectionsIdProductsJSONBody struct {
 
 // PostCollectionsIdProductsParams defines parameters for PostCollectionsIdProducts.
 type PostCollectionsIdProductsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetCurrenciesParams defines parameters for GetCurrencies.
 type GetCurrenciesParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 
@@ -15437,18 +16811,12 @@ type GetCurrenciesParamsCode1 = []string
 
 // GetCurrenciesCodeParams defines parameters for GetCurrenciesCode.
 type GetCurrenciesCodeParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetCustomerGroupsParams defines parameters for GetCustomerGroups.
 type GetCustomerGroupsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 
@@ -15911,27 +17279,18 @@ type GetCustomerGroupsParams_DeletedAt_Not struct {
 
 // PostCustomerGroupsParams defines parameters for PostCustomerGroups.
 type PostCustomerGroupsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetCustomerGroupsIdParams defines parameters for GetCustomerGroupsId.
 type GetCustomerGroupsIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // PostCustomerGroupsIdParams defines parameters for PostCustomerGroupsId.
 type PostCustomerGroupsIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
@@ -15947,18 +17306,12 @@ type PostCustomerGroupsIdCustomersJSONBody struct {
 
 // PostCustomerGroupsIdCustomersParams defines parameters for PostCustomerGroupsIdCustomers.
 type PostCustomerGroupsIdCustomersParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetCustomersParams defines parameters for GetCustomers.
 type GetCustomersParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 
@@ -16751,18 +18104,12 @@ type PostCustomersJSONBody struct {
 
 // PostCustomersParams defines parameters for PostCustomers.
 type PostCustomersParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetCustomersIdParams defines parameters for GetCustomersId.
 type GetCustomersIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
@@ -16793,18 +18140,12 @@ type PostCustomersIdJSONBody struct {
 
 // PostCustomersIdParams defines parameters for PostCustomersId.
 type PostCustomersIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetCustomersIdAddressesParams defines parameters for GetCustomersIdAddresses.
 type GetCustomersIdAddressesParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 
@@ -16922,27 +18263,18 @@ type PostCustomersIdAddressesJSONBody struct {
 
 // PostCustomersIdAddressesParams defines parameters for PostCustomersIdAddresses.
 type PostCustomersIdAddressesParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // DeleteCustomersIdAddressesAddressIdParams defines parameters for DeleteCustomersIdAddressesAddressId.
 type DeleteCustomersIdAddressesAddressIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetCustomersIdAddressesAddressIdParams defines parameters for GetCustomersIdAddressesAddressId.
 type GetCustomersIdAddressesAddressIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
@@ -16997,18 +18329,12 @@ type PostCustomersIdAddressesAddressIdJSONBody struct {
 
 // PostCustomersIdAddressesAddressIdParams defines parameters for PostCustomersIdAddressesAddressId.
 type PostCustomersIdAddressesAddressIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetDraftOrdersParams defines parameters for GetDraftOrders.
 type GetDraftOrdersParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 
@@ -17573,9 +18899,6 @@ type PostDraftOrdersJSONBody struct {
 
 // PostDraftOrdersParams defines parameters for PostDraftOrders.
 type PostDraftOrdersParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
@@ -17625,9 +18948,6 @@ type PostDraftOrdersJSONBodyStatus string
 
 // GetExchangesParams defines parameters for GetExchanges.
 type GetExchangesParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 
@@ -18081,99 +19401,66 @@ type GetExchangesParams_UpdatedAt_Not struct {
 
 // PostExchangesParams defines parameters for PostExchanges.
 type PostExchangesParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetExchangesIdParams defines parameters for GetExchangesId.
 type GetExchangesIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // PostExchangesIdInboundShippingMethodActionIdParams defines parameters for PostExchangesIdInboundShippingMethodActionId.
 type PostExchangesIdInboundShippingMethodActionIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // PostExchangesIdOutboundItemsParams defines parameters for PostExchangesIdOutboundItems.
 type PostExchangesIdOutboundItemsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // DeleteExchangesIdOutboundItemsActionIdParams defines parameters for DeleteExchangesIdOutboundItemsActionId.
 type DeleteExchangesIdOutboundItemsActionIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // PostExchangesIdOutboundItemsActionIdParams defines parameters for PostExchangesIdOutboundItemsActionId.
 type PostExchangesIdOutboundItemsActionIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // PostExchangesIdOutboundShippingMethodParams defines parameters for PostExchangesIdOutboundShippingMethod.
 type PostExchangesIdOutboundShippingMethodParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // DeleteExchangesIdOutboundShippingMethodActionIdParams defines parameters for DeleteExchangesIdOutboundShippingMethodActionId.
 type DeleteExchangesIdOutboundShippingMethodActionIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // PostExchangesIdOutboundShippingMethodActionIdParams defines parameters for PostExchangesIdOutboundShippingMethodActionId.
 type PostExchangesIdOutboundShippingMethodActionIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // PostExchangesIdRequestParams defines parameters for PostExchangesIdRequest.
 type PostExchangesIdRequestParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetFulfillmentProvidersParams defines parameters for GetFulfillmentProviders.
 type GetFulfillmentProvidersParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 
@@ -18222,9 +19509,6 @@ type PostFulfillmentSetsIdServiceZonesJSONBody struct {
 
 // PostFulfillmentSetsIdServiceZonesParams defines parameters for PostFulfillmentSetsIdServiceZones.
 type PostFulfillmentSetsIdServiceZonesParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
@@ -18302,9 +19586,6 @@ type PostFulfillmentSetsIdServiceZonesJSONBody_GeoZones_Item struct {
 
 // GetFulfillmentSetsIdServiceZonesZoneIdParams defines parameters for GetFulfillmentSetsIdServiceZonesZoneId.
 type GetFulfillmentSetsIdServiceZonesZoneIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
@@ -18320,9 +19601,6 @@ type PostFulfillmentSetsIdServiceZonesZoneIdJSONBody struct {
 
 // PostFulfillmentSetsIdServiceZonesZoneIdParams defines parameters for PostFulfillmentSetsIdServiceZonesZoneId.
 type PostFulfillmentSetsIdServiceZonesZoneIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
@@ -18412,36 +19690,24 @@ type PostFulfillmentSetsIdServiceZonesZoneIdJSONBody_GeoZones_Item struct {
 
 // PostFulfillmentsParams defines parameters for PostFulfillments.
 type PostFulfillmentsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // PostFulfillmentsIdCancelParams defines parameters for PostFulfillmentsIdCancel.
 type PostFulfillmentsIdCancelParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // PostFulfillmentsIdShipmentParams defines parameters for PostFulfillmentsIdShipment.
 type PostFulfillmentsIdShipmentParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetInventoryItemsParams defines parameters for GetInventoryItems.
 type GetInventoryItemsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 
@@ -18691,18 +19957,12 @@ type GetInventoryItemsParams_LocationLevels_LocationId struct {
 
 // PostInventoryItemsParams defines parameters for PostInventoryItems.
 type PostInventoryItemsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetInventoryItemsIdParams defines parameters for GetInventoryItemsId.
 type GetInventoryItemsIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
@@ -18754,18 +20014,12 @@ type PostInventoryItemsIdJSONBody struct {
 
 // PostInventoryItemsIdParams defines parameters for PostInventoryItemsId.
 type PostInventoryItemsIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetInventoryItemsIdLocationLevelsParams defines parameters for GetInventoryItemsIdLocationLevels.
 type GetInventoryItemsIdLocationLevelsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 
@@ -18804,9 +20058,6 @@ type PostInventoryItemsIdLocationLevelsJSONBody struct {
 
 // PostInventoryItemsIdLocationLevelsParams defines parameters for PostInventoryItemsIdLocationLevels.
 type PostInventoryItemsIdLocationLevelsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
@@ -18840,9 +20091,6 @@ type PostInventoryItemsIdLocationLevelsBatchJSONBody struct {
 
 // DeleteInventoryItemsIdLocationLevelsLocationIdParams defines parameters for DeleteInventoryItemsIdLocationLevelsLocationId.
 type DeleteInventoryItemsIdLocationLevelsLocationIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
@@ -18858,18 +20106,12 @@ type PostInventoryItemsIdLocationLevelsLocationIdJSONBody struct {
 
 // PostInventoryItemsIdLocationLevelsLocationIdParams defines parameters for PostInventoryItemsIdLocationLevelsLocationId.
 type PostInventoryItemsIdLocationLevelsLocationIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetInvitesParams defines parameters for GetInvites.
 type GetInvitesParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 
@@ -19160,9 +20402,6 @@ type PostInvitesJSONBody struct {
 
 // PostInvitesParams defines parameters for PostInvites.
 type PostInvitesParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
@@ -19181,27 +20420,18 @@ type PostInvitesAcceptJSONBody struct {
 
 // GetInvitesIdParams defines parameters for GetInvitesId.
 type GetInvitesIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // PostInvitesIdResendParams defines parameters for PostInvitesIdResend.
 type PostInvitesIdResendParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetNotificationsParams defines parameters for GetNotifications.
 type GetNotificationsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 
@@ -19240,18 +20470,12 @@ type GetNotificationsParamsChannel1 = []string
 
 // GetNotificationsIdParams defines parameters for GetNotificationsId.
 type GetNotificationsIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetOrdersParams defines parameters for GetOrders.
 type GetOrdersParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 
@@ -19580,45 +20804,54 @@ type GetOrdersParams_UpdatedAt_Not struct {
 
 // GetOrdersIdParams defines parameters for GetOrdersId.
 type GetOrdersIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
+	Id     *struct {
+		union json.RawMessage
+	} `form:"id,omitempty" json:"id,omitempty"`
+	Status *struct {
+		union json.RawMessage
+	} `form:"status,omitempty" json:"status,omitempty"`
+
+	// Version The order's version.
+	Version   *float32     `form:"version,omitempty" json:"version,omitempty"`
+	CreatedAt *interface{} `form:"created_at,omitempty" json:"created_at,omitempty"`
+	UpdatedAt *interface{} `form:"updated_at,omitempty" json:"updated_at,omitempty"`
+	DeletedAt *interface{} `form:"deleted_at,omitempty" json:"deleted_at,omitempty"`
 }
+
+// GetOrdersIdParamsId0 defines parameters for GetOrdersId.
+type GetOrdersIdParamsId0 = string
+
+// GetOrdersIdParamsId1 defines parameters for GetOrdersId.
+type GetOrdersIdParamsId1 = []string
+
+// GetOrdersIdParamsStatus0 defines parameters for GetOrdersId.
+type GetOrdersIdParamsStatus0 = string
+
+// GetOrdersIdParamsStatus1 defines parameters for GetOrdersId.
+type GetOrdersIdParamsStatus1 = []string
 
 // PostOrdersIdParams defines parameters for PostOrdersId.
 type PostOrdersIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // PostOrdersIdArchiveParams defines parameters for PostOrdersIdArchive.
 type PostOrdersIdArchiveParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // PostOrdersIdCancelParams defines parameters for PostOrdersIdCancel.
 type PostOrdersIdCancelParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetOrdersIdChangesParams defines parameters for GetOrdersIdChanges.
 type GetOrdersIdChangesParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data.
 	// if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields.
 	// without prefix it will replace the entire default fields.
@@ -19633,9 +20866,6 @@ type PostOrdersIdCompleteJSONBody struct {
 
 // PostOrdersIdCompleteParams defines parameters for PostOrdersIdComplete.
 type PostOrdersIdCompleteParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
@@ -19666,9 +20896,6 @@ type PostOrdersIdFulfillmentsJSONBody struct {
 
 // PostOrdersIdFulfillmentsParams defines parameters for PostOrdersIdFulfillments.
 type PostOrdersIdFulfillmentsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
@@ -19684,18 +20911,12 @@ type PostOrdersIdFulfillmentsFulfillmentIdCancelJSONBody struct {
 
 // PostOrdersIdFulfillmentsFulfillmentIdCancelParams defines parameters for PostOrdersIdFulfillmentsFulfillmentIdCancel.
 type PostOrdersIdFulfillmentsFulfillmentIdCancelParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // PostOrdersIdFulfillmentsFulfillmentIdMarkAsDeliveredParams defines parameters for PostOrdersIdFulfillmentsFulfillmentIdMarkAsDelivered.
 type PostOrdersIdFulfillmentsFulfillmentIdMarkAsDeliveredParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data.
 	// If a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields.
 	// Without prefix it will replace the entire default fields.
@@ -19737,12 +20958,62 @@ type PostOrdersIdFulfillmentsFulfillmentIdShipmentsJSONBody struct {
 
 // PostOrdersIdFulfillmentsFulfillmentIdShipmentsParams defines parameters for PostOrdersIdFulfillmentsFulfillmentIdShipments.
 type PostOrdersIdFulfillmentsFulfillmentIdShipmentsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
+
+// GetOrdersIdLineItemsParams defines parameters for GetOrdersIdLineItems.
+type GetOrdersIdLineItemsParams struct {
+	// Fields Comma-separated fields that should be included in the returned data.
+	//  * if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields.
+	//  * without prefix it will replace the entire default fields.
+	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
+	Id     *struct {
+		union json.RawMessage
+	} `form:"id,omitempty" json:"id,omitempty"`
+	ItemId *struct {
+		union json.RawMessage
+	} `form:"item_id,omitempty" json:"item_id,omitempty"`
+	OrderId *struct {
+		union json.RawMessage
+	} `form:"order_id,omitempty" json:"order_id,omitempty"`
+	Version *struct {
+		union json.RawMessage
+	} `form:"version,omitempty" json:"version,omitempty"`
+
+	// Limit Limit the number of items returned in the list.
+	Limit *float32 `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// Offset The number of items to skip when retrieving a list.
+	Offset *float32 `form:"offset,omitempty" json:"offset,omitempty"`
+
+	// Order The field to sort the data by. By default, the sort order is ascending. To change the order to descending, prefix the field name with `-`.
+	Order *string `form:"order,omitempty" json:"order,omitempty"`
+}
+
+// GetOrdersIdLineItemsParamsId0 defines parameters for GetOrdersIdLineItems.
+type GetOrdersIdLineItemsParamsId0 = string
+
+// GetOrdersIdLineItemsParamsId1 defines parameters for GetOrdersIdLineItems.
+type GetOrdersIdLineItemsParamsId1 = []string
+
+// GetOrdersIdLineItemsParamsItemId0 defines parameters for GetOrdersIdLineItems.
+type GetOrdersIdLineItemsParamsItemId0 = string
+
+// GetOrdersIdLineItemsParamsItemId1 defines parameters for GetOrdersIdLineItems.
+type GetOrdersIdLineItemsParamsItemId1 = []string
+
+// GetOrdersIdLineItemsParamsOrderId0 defines parameters for GetOrdersIdLineItems.
+type GetOrdersIdLineItemsParamsOrderId0 = string
+
+// GetOrdersIdLineItemsParamsOrderId1 defines parameters for GetOrdersIdLineItems.
+type GetOrdersIdLineItemsParamsOrderId1 = []string
+
+// GetOrdersIdLineItemsParamsVersion0 defines parameters for GetOrdersIdLineItems.
+type GetOrdersIdLineItemsParamsVersion0 = float32
+
+// GetOrdersIdLineItemsParamsVersion1 defines parameters for GetOrdersIdLineItems.
+type GetOrdersIdLineItemsParamsVersion1 = []float32
 
 // PostPaymentCollectionsJSONBody defines parameters for PostPaymentCollections.
 type PostPaymentCollectionsJSONBody struct {
@@ -19755,9 +21026,6 @@ type PostPaymentCollectionsJSONBody struct {
 
 // PostPaymentCollectionsParams defines parameters for PostPaymentCollections.
 type PostPaymentCollectionsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
@@ -19770,18 +21038,12 @@ type PostPaymentCollectionsIdMarkAsPaidJSONBody struct {
 
 // PostPaymentCollectionsIdMarkAsPaidParams defines parameters for PostPaymentCollectionsIdMarkAsPaid.
 type PostPaymentCollectionsIdMarkAsPaidParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetPaymentsParams defines parameters for GetPayments.
 type GetPaymentsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 
@@ -20063,9 +21325,6 @@ type GetPaymentsParams_DeletedAt_Not struct {
 
 // GetPaymentsPaymentProvidersParams defines parameters for GetPaymentsPaymentProviders.
 type GetPaymentsPaymentProvidersParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 
@@ -20095,9 +21354,6 @@ type GetPaymentsPaymentProvidersParamsId1 = []string
 
 // GetPaymentsIdParams defines parameters for GetPaymentsId.
 type GetPaymentsIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
@@ -20110,9 +21366,6 @@ type PostPaymentsIdCaptureJSONBody struct {
 
 // PostPaymentsIdCaptureParams defines parameters for PostPaymentsIdCapture.
 type PostPaymentsIdCaptureParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
@@ -20131,18 +21384,12 @@ type PostPaymentsIdRefundJSONBody struct {
 
 // PostPaymentsIdRefundParams defines parameters for PostPaymentsIdRefund.
 type PostPaymentsIdRefundParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetPriceListsParams defines parameters for GetPriceLists.
 type GetPriceListsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 
@@ -20347,27 +21594,18 @@ type GetPriceListsParamsStatus string
 
 // PostPriceListsParams defines parameters for PostPriceLists.
 type PostPriceListsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetPriceListsIdParams defines parameters for GetPriceListsId.
 type GetPriceListsIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // PostPriceListsIdParams defines parameters for PostPriceListsId.
 type PostPriceListsIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
@@ -20425,18 +21663,12 @@ type PostPriceListsIdPricesBatchJSONBody struct {
 
 // PostPriceListsIdProductsParams defines parameters for PostPriceListsIdProducts.
 type PostPriceListsIdProductsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetPricePreferencesParams defines parameters for GetPricePreferences.
 type GetPricePreferencesParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 
@@ -20488,36 +21720,24 @@ type GetPricePreferencesParamsValue1 = []string
 
 // PostPricePreferencesParams defines parameters for PostPricePreferences.
 type PostPricePreferencesParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetPricePreferencesIdParams defines parameters for GetPricePreferencesId.
 type GetPricePreferencesIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // PostPricePreferencesIdParams defines parameters for PostPricePreferencesId.
 type PostPricePreferencesIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetProductCategoriesParams defines parameters for GetProductCategories.
 type GetProductCategoriesParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 
@@ -20838,18 +22058,12 @@ type GetProductCategoriesParamsName1 = []string
 
 // PostProductCategoriesParams defines parameters for PostProductCategories.
 type PostProductCategoriesParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetProductCategoriesIdParams defines parameters for GetProductCategoriesId.
 type GetProductCategoriesIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 
@@ -20889,9 +22103,6 @@ type PostProductCategoriesIdJSONBody struct {
 
 // PostProductCategoriesIdParams defines parameters for PostProductCategoriesId.
 type PostProductCategoriesIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
@@ -20907,18 +22118,12 @@ type PostProductCategoriesIdProductsJSONBody struct {
 
 // PostProductCategoriesIdProductsParams defines parameters for PostProductCategoriesIdProducts.
 type PostProductCategoriesIdProductsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetProductTagsParams defines parameters for GetProductTags.
 type GetProductTagsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 
@@ -21200,18 +22405,12 @@ type GetProductTagsParams_DeletedAt_Not struct {
 
 // PostProductTagsParams defines parameters for PostProductTags.
 type PostProductTagsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetProductTagsIdParams defines parameters for GetProductTagsId.
 type GetProductTagsIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
@@ -21227,18 +22426,12 @@ type PostProductTagsIdJSONBody struct {
 
 // PostProductTagsIdParams defines parameters for PostProductTagsId.
 type PostProductTagsIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetProductTypesParams defines parameters for GetProductTypes.
 type GetProductTypesParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 
@@ -21520,18 +22713,12 @@ type GetProductTypesParams_DeletedAt_Not struct {
 
 // PostProductTypesParams defines parameters for PostProductTypes.
 type PostProductTypesParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetProductTypesIdParams defines parameters for GetProductTypesId.
 type GetProductTypesIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
@@ -21547,18 +22734,12 @@ type PostProductTypesIdJSONBody struct {
 
 // PostProductTypesIdParams defines parameters for PostProductTypesId.
 type PostProductTypesIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetProductVariantsParams defines parameters for GetProductVariants.
 type GetProductVariantsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 
@@ -21841,9 +23022,6 @@ type GetProductVariantsParams_DeletedAt_Not struct {
 
 // GetProductsParams defines parameters for GetProducts.
 type GetProductsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 
@@ -22538,7 +23716,7 @@ type PostProductsJSONBody struct {
 	MidCode *string `json:"mid_code,omitempty"`
 
 	// Options The product's options.
-	Options *[]AdminCreateProductOption `json:"options,omitempty"`
+	Options []AdminCreateProductOption `json:"options"`
 
 	// OriginCountry The product's origin country.
 	OriginCountry *string `json:"origin_country,omitempty"`
@@ -22582,9 +23760,6 @@ type PostProductsJSONBody struct {
 
 // PostProductsParams defines parameters for PostProducts.
 type PostProductsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
@@ -22594,27 +23769,18 @@ type PostProductsJSONBodyStatus string
 
 // PostProductsBatchParams defines parameters for PostProductsBatch.
 type PostProductsBatchParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // PostProductsExportParams defines parameters for PostProductsExport.
 type PostProductsExportParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetProductsIdParams defines parameters for GetProductsId.
 type GetProductsIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
@@ -22714,9 +23880,6 @@ type PostProductsIdJSONBody struct {
 
 // PostProductsIdParams defines parameters for PostProductsId.
 type PostProductsIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
@@ -22731,9 +23894,6 @@ type PostProductsIdJSONBody_Variants_Item struct {
 
 // GetProductsIdOptionsParams defines parameters for GetProductsIdOptions.
 type GetProductsIdOptionsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 
@@ -22788,27 +23948,18 @@ type PostProductsIdOptionsJSONBody struct {
 
 // PostProductsIdOptionsParams defines parameters for PostProductsIdOptions.
 type PostProductsIdOptionsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // DeleteProductsIdOptionsOptionIdParams defines parameters for DeleteProductsIdOptionsOptionId.
 type DeleteProductsIdOptionsOptionIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetProductsIdOptionsOptionIdParams defines parameters for GetProductsIdOptionsOptionId.
 type GetProductsIdOptionsOptionIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
@@ -22827,18 +23978,12 @@ type PostProductsIdOptionsOptionIdJSONBody struct {
 
 // PostProductsIdOptionsOptionIdParams defines parameters for PostProductsIdOptionsOptionId.
 type PostProductsIdOptionsOptionIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetProductsIdVariantsParams defines parameters for GetProductsIdVariants.
 type GetProductsIdVariantsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 
@@ -23187,18 +24332,12 @@ type PostProductsIdVariantsJSONBody struct {
 
 // PostProductsIdVariantsParams defines parameters for PostProductsIdVariants.
 type PostProductsIdVariantsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // PostProductsIdVariantsBatchParams defines parameters for PostProductsIdVariantsBatch.
 type PostProductsIdVariantsBatchParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
@@ -23241,18 +24380,12 @@ type PostProductsIdVariantsInventoryItemsBatchJSONBody struct {
 
 // DeleteProductsIdVariantsVariantIdParams defines parameters for DeleteProductsIdVariantsVariantId.
 type DeleteProductsIdVariantsVariantIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetProductsIdVariantsVariantIdParams defines parameters for GetProductsIdVariantsVariantId.
 type GetProductsIdVariantsVariantIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
@@ -23322,45 +24455,30 @@ type PostProductsIdVariantsVariantIdJSONBody struct {
 
 // PostProductsIdVariantsVariantIdParams defines parameters for PostProductsIdVariantsVariantId.
 type PostProductsIdVariantsVariantIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // PostProductsIdVariantsVariantIdInventoryItemsParams defines parameters for PostProductsIdVariantsVariantIdInventoryItems.
 type PostProductsIdVariantsVariantIdInventoryItemsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // DeleteProductsIdVariantsVariantIdInventoryItemsInventoryItemIdParams defines parameters for DeleteProductsIdVariantsVariantIdInventoryItemsInventoryItemId.
 type DeleteProductsIdVariantsVariantIdInventoryItemsInventoryItemIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // PostProductsIdVariantsVariantIdInventoryItemsInventoryItemIdParams defines parameters for PostProductsIdVariantsVariantIdInventoryItemsInventoryItemId.
 type PostProductsIdVariantsVariantIdInventoryItemsInventoryItemIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetPromotionsParams defines parameters for GetPromotions.
 type GetPromotionsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 
@@ -23775,9 +24893,6 @@ type PostPromotionsJSONBody struct {
 
 // PostPromotionsParams defines parameters for PostPromotions.
 type PostPromotionsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
@@ -23886,9 +25001,6 @@ type GetPromotionsRuleValueOptionsRuleTypeRuleAttributeIdParamsRuleType string
 
 // GetPromotionsIdParams defines parameters for GetPromotionsId.
 type GetPromotionsIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
@@ -23946,9 +25058,6 @@ type PostPromotionsIdJSONBody struct {
 
 // PostPromotionsIdParams defines parameters for PostPromotionsId.
 type PostPromotionsIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
@@ -23979,9 +25088,6 @@ type PostPromotionsIdBuyRulesBatchJSONBody struct {
 
 // PostPromotionsIdBuyRulesBatchParams defines parameters for PostPromotionsIdBuyRulesBatch.
 type PostPromotionsIdBuyRulesBatchParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
@@ -24000,9 +25106,6 @@ type PostPromotionsIdRulesBatchJSONBody struct {
 
 // PostPromotionsIdRulesBatchParams defines parameters for PostPromotionsIdRulesBatch.
 type PostPromotionsIdRulesBatchParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
@@ -24021,18 +25124,12 @@ type PostPromotionsIdTargetRulesBatchJSONBody struct {
 
 // PostPromotionsIdTargetRulesBatchParams defines parameters for PostPromotionsIdTargetRulesBatch.
 type PostPromotionsIdTargetRulesBatchParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetPromotionsIdRuleTypeParams defines parameters for GetPromotionsIdRuleType.
 type GetPromotionsIdRuleTypeParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
@@ -24042,9 +25139,6 @@ type GetPromotionsIdRuleTypeParamsRuleType string
 
 // GetRefundReasonsParams defines parameters for GetRefundReasons.
 type GetRefundReasonsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 
@@ -24078,18 +25172,12 @@ type GetRefundReasonsParamsId1 = []string
 
 // PostRefundReasonsParams defines parameters for PostRefundReasons.
 type PostRefundReasonsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetRefundReasonsIdParams defines parameters for GetRefundReasonsId.
 type GetRefundReasonsIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
@@ -24105,18 +25193,12 @@ type PostRefundReasonsIdJSONBody struct {
 
 // PostRefundReasonsIdParams defines parameters for PostRefundReasonsId.
 type PostRefundReasonsIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetRegionsParams defines parameters for GetRegions.
 type GetRegionsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 
@@ -24407,18 +25489,12 @@ type GetRegionsParamsCurrencyCode1 = []string
 
 // PostRegionsParams defines parameters for PostRegions.
 type PostRegionsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetRegionsIdParams defines parameters for GetRegionsId.
 type GetRegionsIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
@@ -24449,18 +25525,12 @@ type PostRegionsIdJSONBody struct {
 
 // PostRegionsIdParams defines parameters for PostRegionsId.
 type PostRegionsIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetReservationsParams defines parameters for GetReservations.
 type GetReservationsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 
@@ -24800,18 +25870,12 @@ type GetReservationsParams_DeletedAt_Not struct {
 
 // PostReservationsParams defines parameters for PostReservations.
 type PostReservationsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetReservationsIdParams defines parameters for GetReservationsId.
 type GetReservationsIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
@@ -24833,18 +25897,12 @@ type PostReservationsIdJSONBody struct {
 
 // PostReservationsIdParams defines parameters for PostReservationsId.
 type PostReservationsIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetReturnReasonsParams defines parameters for GetReturnReasons.
 type GetReturnReasonsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 
@@ -25157,36 +26215,24 @@ type GetReturnReasonsParams_DeletedAt_Not struct {
 
 // PostReturnReasonsParams defines parameters for PostReturnReasons.
 type PostReturnReasonsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetReturnReasonsIdParams defines parameters for GetReturnReasonsId.
 type GetReturnReasonsIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // PostReturnReasonsIdParams defines parameters for PostReturnReasonsId.
 type PostReturnReasonsIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetReturnsParams defines parameters for GetReturns.
 type GetReturnsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 
@@ -25515,171 +26561,114 @@ type GetReturnsParams_UpdatedAt_Not struct {
 
 // PostReturnsParams defines parameters for PostReturns.
 type PostReturnsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetReturnsIdParams defines parameters for GetReturnsId.
 type GetReturnsIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // PostReturnsIdParams defines parameters for PostReturnsId.
 type PostReturnsIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // PostReturnsIdDismissItemsParams defines parameters for PostReturnsIdDismissItems.
 type PostReturnsIdDismissItemsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // DeleteReturnsIdDismissItemsActionIdParams defines parameters for DeleteReturnsIdDismissItemsActionId.
 type DeleteReturnsIdDismissItemsActionIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // PostReturnsIdDismissItemsActionIdParams defines parameters for PostReturnsIdDismissItemsActionId.
 type PostReturnsIdDismissItemsActionIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // PostReturnsIdReceiveParams defines parameters for PostReturnsIdReceive.
 type PostReturnsIdReceiveParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // PostReturnsIdReceiveItemsParams defines parameters for PostReturnsIdReceiveItems.
 type PostReturnsIdReceiveItemsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // DeleteReturnsIdReceiveItemsActionIdParams defines parameters for DeleteReturnsIdReceiveItemsActionId.
 type DeleteReturnsIdReceiveItemsActionIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // PostReturnsIdReceiveItemsActionIdParams defines parameters for PostReturnsIdReceiveItemsActionId.
 type PostReturnsIdReceiveItemsActionIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // PostReturnsIdReceiveConfirmParams defines parameters for PostReturnsIdReceiveConfirm.
 type PostReturnsIdReceiveConfirmParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // PostReturnsIdRequestParams defines parameters for PostReturnsIdRequest.
 type PostReturnsIdRequestParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // PostReturnsIdRequestItemsParams defines parameters for PostReturnsIdRequestItems.
 type PostReturnsIdRequestItemsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // DeleteReturnsIdRequestItemsActionIdParams defines parameters for DeleteReturnsIdRequestItemsActionId.
 type DeleteReturnsIdRequestItemsActionIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // PostReturnsIdRequestItemsActionIdParams defines parameters for PostReturnsIdRequestItemsActionId.
 type PostReturnsIdRequestItemsActionIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // PostReturnsIdShippingMethodParams defines parameters for PostReturnsIdShippingMethod.
 type PostReturnsIdShippingMethodParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // DeleteReturnsIdShippingMethodActionIdParams defines parameters for DeleteReturnsIdShippingMethodActionId.
 type DeleteReturnsIdShippingMethodActionIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // PostReturnsIdShippingMethodActionIdParams defines parameters for PostReturnsIdShippingMethodActionId.
 type PostReturnsIdShippingMethodActionIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetSalesChannelsParams defines parameters for GetSalesChannels.
 type GetSalesChannelsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 
@@ -25985,27 +26974,18 @@ type GetSalesChannelsParamsPublishableKeyId1 = []string
 
 // PostSalesChannelsParams defines parameters for PostSalesChannels.
 type PostSalesChannelsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetSalesChannelsIdParams defines parameters for GetSalesChannelsId.
 type GetSalesChannelsIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // PostSalesChannelsIdParams defines parameters for PostSalesChannelsId.
 type PostSalesChannelsIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
@@ -26021,18 +27001,12 @@ type PostSalesChannelsIdProductsJSONBody struct {
 
 // PostSalesChannelsIdProductsParams defines parameters for PostSalesChannelsIdProducts.
 type PostSalesChannelsIdProductsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetShippingOptionsParams defines parameters for GetShippingOptions.
 type GetShippingOptionsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 
@@ -26354,21 +27328,15 @@ type GetShippingOptionsParamsStockLocationId1 = []string
 
 // PostShippingOptionsParams defines parameters for PostShippingOptions.
 type PostShippingOptionsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetShippingOptionsIdParams defines parameters for GetShippingOptionsId.
 type GetShippingOptionsIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data.
-	//  * if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields.
-	//  * without prefix it will replace the entire default fields.
+	// if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields.
+	// without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
@@ -26410,9 +27378,6 @@ type PostShippingOptionsIdJSONBody struct {
 
 // PostShippingOptionsIdParams defines parameters for PostShippingOptionsId.
 type PostShippingOptionsIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
@@ -26491,18 +27456,12 @@ type PostShippingOptionsIdRulesBatchJSONBody struct {
 
 // PostShippingOptionsIdRulesBatchParams defines parameters for PostShippingOptionsIdRulesBatch.
 type PostShippingOptionsIdRulesBatchParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetShippingProfilesParams defines parameters for GetShippingProfiles.
 type GetShippingProfilesParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 
@@ -26781,18 +27740,12 @@ type GetShippingProfilesParams_DeletedAt_Not struct {
 
 // PostShippingProfilesParams defines parameters for PostShippingProfiles.
 type PostShippingProfilesParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetShippingProfilesIdParams defines parameters for GetShippingProfilesId.
 type GetShippingProfilesIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
@@ -26811,18 +27764,12 @@ type PostShippingProfilesIdJSONBody struct {
 
 // PostShippingProfilesIdParams defines parameters for PostShippingProfilesId.
 type PostShippingProfilesIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetStockLocationsParams defines parameters for GetStockLocations.
 type GetStockLocationsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 
@@ -27122,27 +28069,18 @@ type GetStockLocationsParams_DeletedAt_Not struct {
 
 // PostStockLocationsParams defines parameters for PostStockLocations.
 type PostStockLocationsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetStockLocationsIdParams defines parameters for GetStockLocationsId.
 type GetStockLocationsIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // PostStockLocationsIdParams defines parameters for PostStockLocationsId.
 type PostStockLocationsIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
@@ -27158,9 +28096,6 @@ type PostStockLocationsIdFulfillmentProvidersJSONBody struct {
 
 // PostStockLocationsIdFulfillmentProvidersParams defines parameters for PostStockLocationsIdFulfillmentProviders.
 type PostStockLocationsIdFulfillmentProvidersParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
@@ -27176,9 +28111,6 @@ type PostStockLocationsIdFulfillmentSetsJSONBody struct {
 
 // PostStockLocationsIdFulfillmentSetsParams defines parameters for PostStockLocationsIdFulfillmentSets.
 type PostStockLocationsIdFulfillmentSetsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
@@ -27194,18 +28126,12 @@ type PostStockLocationsIdSalesChannelsJSONBody struct {
 
 // PostStockLocationsIdSalesChannelsParams defines parameters for PostStockLocationsIdSalesChannels.
 type PostStockLocationsIdSalesChannelsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetStoresParams defines parameters for GetStores.
 type GetStoresParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 
@@ -27244,27 +28170,18 @@ type GetStoresParamsName1 = []string
 
 // GetStoresIdParams defines parameters for GetStoresId.
 type GetStoresIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // PostStoresIdParams defines parameters for PostStoresId.
 type PostStoresIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetTaxRatesParams defines parameters for GetTaxRates.
 type GetTaxRatesParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 
@@ -27594,54 +28511,36 @@ type GetTaxRatesParams_DeletedAt_Not struct {
 
 // PostTaxRatesParams defines parameters for PostTaxRates.
 type PostTaxRatesParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetTaxRatesIdParams defines parameters for GetTaxRatesId.
 type GetTaxRatesIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // PostTaxRatesIdParams defines parameters for PostTaxRatesId.
 type PostTaxRatesIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // PostTaxRatesIdRulesParams defines parameters for PostTaxRatesIdRules.
 type PostTaxRatesIdRulesParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // DeleteTaxRatesIdRulesRuleIdParams defines parameters for DeleteTaxRatesIdRulesRuleId.
 type DeleteTaxRatesIdRulesRuleIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetTaxRegionsParams defines parameters for GetTaxRegions.
 type GetTaxRegionsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 
@@ -28016,19 +28915,21 @@ type GetTaxRegionsParamsDeletedAt1 struct {
 
 // PostTaxRegionsParams defines parameters for PostTaxRegions.
 type PostTaxRegionsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetTaxRegionsIdParams defines parameters for GetTaxRegionsId.
 type GetTaxRegionsIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
+	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
+}
+
+// PostTaxRegionsIdParams defines parameters for PostTaxRegionsId.
+type PostTaxRegionsIdParams struct {
+	// Fields Comma-separated fields that should be included in the returned data.
+	//  * if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields.
+	//  * without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
@@ -28048,18 +28949,12 @@ type PostUploadsJSONBody1 = []map[string]interface{}
 
 // GetUploadsIdParams defines parameters for GetUploadsId.
 type GetUploadsIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetUsersParams defines parameters for GetUsers.
 type GetUsersParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 
@@ -28339,36 +29234,24 @@ type GetUsersParams_DeletedAt_Not struct {
 
 // GetUsersMeParams defines parameters for GetUsersMe.
 type GetUsersMeParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetUsersIdParams defines parameters for GetUsersId.
 type GetUsersIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // PostUsersIdParams defines parameters for PostUsersId.
 type PostUsersIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetWorkflowsExecutionsParams defines parameters for GetWorkflowsExecutions.
 type GetWorkflowsExecutionsParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 
@@ -28402,18 +29285,12 @@ type GetWorkflowsExecutionsParamsWorkflowId1 = []string
 
 // GetWorkflowsExecutionsIdParams defines parameters for GetWorkflowsExecutionsId.
 type GetWorkflowsExecutionsIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
 // GetWorkflowsExecutionsWorkflowIdTransactionIdParams defines parameters for GetWorkflowsExecutionsWorkflowIdTransactionId.
 type GetWorkflowsExecutionsWorkflowIdTransactionIdParams struct {
-	// Expand Comma-separated relations that should be expanded in the returned data.
-	Expand *string `form:"expand,omitempty" json:"expand,omitempty"`
-
 	// Fields Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default fields. without prefix it will replace the entire default fields.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
@@ -28423,6 +29300,18 @@ type PostActorTypeAuthProviderJSONBody = map[string]interface{}
 
 // PostActorTypeAuthProviderRegisterJSONBody defines parameters for PostActorTypeAuthProviderRegister.
 type PostActorTypeAuthProviderRegisterJSONBody = map[string]interface{}
+
+// PostActorTypeAuthProviderResetPasswordJSONBody defines parameters for PostActorTypeAuthProviderResetPassword.
+type PostActorTypeAuthProviderResetPasswordJSONBody = map[string]interface{}
+
+// PostActorTypeAuthProviderUpdateJSONBody defines parameters for PostActorTypeAuthProviderUpdate.
+type PostActorTypeAuthProviderUpdateJSONBody = map[string]interface{}
+
+// PostActorTypeAuthProviderUpdateParams defines parameters for PostActorTypeAuthProviderUpdate.
+type PostActorTypeAuthProviderUpdateParams struct {
+	// Token The reset password token received using the Get Reset Password API route.
+	Token string `form:"token" json:"token"`
+}
 
 // PostApiKeysJSONRequestBody defines body for PostApiKeys for application/json ContentType.
 type PostApiKeysJSONRequestBody = AdminCreateApiKey
@@ -28829,6 +29718,9 @@ type PostTaxRatesIdRulesJSONRequestBody = AdminCreateTaxRateRule
 // PostTaxRegionsJSONRequestBody defines body for PostTaxRegions for application/json ContentType.
 type PostTaxRegionsJSONRequestBody = AdminCreateTaxRegion
 
+// PostTaxRegionsIdJSONRequestBody defines body for PostTaxRegionsId for application/json ContentType.
+type PostTaxRegionsIdJSONRequestBody = AdminUpdateTaxRegion
+
 // PostUploadsJSONRequestBody defines body for PostUploads for application/json ContentType.
 type PostUploadsJSONRequestBody PostUploadsJSONBody
 
@@ -28849,6 +29741,12 @@ type PostActorTypeAuthProviderJSONRequestBody = PostActorTypeAuthProviderJSONBod
 
 // PostActorTypeAuthProviderRegisterJSONRequestBody defines body for PostActorTypeAuthProviderRegister for application/json ContentType.
 type PostActorTypeAuthProviderRegisterJSONRequestBody = PostActorTypeAuthProviderRegisterJSONBody
+
+// PostActorTypeAuthProviderResetPasswordJSONRequestBody defines body for PostActorTypeAuthProviderResetPassword for application/json ContentType.
+type PostActorTypeAuthProviderResetPasswordJSONRequestBody = PostActorTypeAuthProviderResetPasswordJSONBody
+
+// PostActorTypeAuthProviderUpdateJSONRequestBody defines body for PostActorTypeAuthProviderUpdate for application/json ContentType.
+type PostActorTypeAuthProviderUpdateJSONRequestBody = PostActorTypeAuthProviderUpdateJSONBody
 
 // AsAdminCreatePromotionRuleValues0 returns the union data inside the AdminCreatePromotionRule_Values as a AdminCreatePromotionRuleValues0
 func (t AdminCreatePromotionRule_Values) AsAdminCreatePromotionRuleValues0() (AdminCreatePromotionRuleValues0, error) {
@@ -28908,6 +29806,68 @@ func (t AdminCreatePromotionRule_Values) MarshalJSON() ([]byte, error) {
 }
 
 func (t *AdminCreatePromotionRule_Values) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsAdminCreateShippingOptionPrices0 returns the union data inside the AdminCreateShippingOption_Prices_Item as a AdminCreateShippingOptionPrices0
+func (t AdminCreateShippingOption_Prices_Item) AsAdminCreateShippingOptionPrices0() (AdminCreateShippingOptionPrices0, error) {
+	var body AdminCreateShippingOptionPrices0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAdminCreateShippingOptionPrices0 overwrites any union data inside the AdminCreateShippingOption_Prices_Item as the provided AdminCreateShippingOptionPrices0
+func (t *AdminCreateShippingOption_Prices_Item) FromAdminCreateShippingOptionPrices0(v AdminCreateShippingOptionPrices0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAdminCreateShippingOptionPrices0 performs a merge with any union data inside the AdminCreateShippingOption_Prices_Item, using the provided AdminCreateShippingOptionPrices0
+func (t *AdminCreateShippingOption_Prices_Item) MergeAdminCreateShippingOptionPrices0(v AdminCreateShippingOptionPrices0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JsonMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsAdminCreateShippingOptionPrices1 returns the union data inside the AdminCreateShippingOption_Prices_Item as a AdminCreateShippingOptionPrices1
+func (t AdminCreateShippingOption_Prices_Item) AsAdminCreateShippingOptionPrices1() (AdminCreateShippingOptionPrices1, error) {
+	var body AdminCreateShippingOptionPrices1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAdminCreateShippingOptionPrices1 overwrites any union data inside the AdminCreateShippingOption_Prices_Item as the provided AdminCreateShippingOptionPrices1
+func (t *AdminCreateShippingOption_Prices_Item) FromAdminCreateShippingOptionPrices1(v AdminCreateShippingOptionPrices1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAdminCreateShippingOptionPrices1 performs a merge with any union data inside the AdminCreateShippingOption_Prices_Item, using the provided AdminCreateShippingOptionPrices1
+func (t *AdminCreateShippingOption_Prices_Item) MergeAdminCreateShippingOptionPrices1(v AdminCreateShippingOptionPrices1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JsonMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t AdminCreateShippingOption_Prices_Item) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *AdminCreateShippingOption_Prices_Item) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
@@ -31512,22 +32472,22 @@ func (t *CustomerGroupInCustomerFilters_UpdatedAt_Not) UnmarshalJSON(b []byte) e
 	return err
 }
 
-// AsOrderLineItemRawCompareAtUnitPriceValue0 returns the union data inside the OrderLineItem_RawCompareAtUnitPrice_Value as a OrderLineItemRawCompareAtUnitPriceValue0
-func (t OrderLineItem_RawCompareAtUnitPrice_Value) AsOrderLineItemRawCompareAtUnitPriceValue0() (OrderLineItemRawCompareAtUnitPriceValue0, error) {
-	var body OrderLineItemRawCompareAtUnitPriceValue0
+// AsOrderClaimRawRefundAmount0 returns the union data inside the OrderClaim_RawRefundAmount as a OrderClaimRawRefundAmount0
+func (t OrderClaim_RawRefundAmount) AsOrderClaimRawRefundAmount0() (OrderClaimRawRefundAmount0, error) {
+	var body OrderClaimRawRefundAmount0
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromOrderLineItemRawCompareAtUnitPriceValue0 overwrites any union data inside the OrderLineItem_RawCompareAtUnitPrice_Value as the provided OrderLineItemRawCompareAtUnitPriceValue0
-func (t *OrderLineItem_RawCompareAtUnitPrice_Value) FromOrderLineItemRawCompareAtUnitPriceValue0(v OrderLineItemRawCompareAtUnitPriceValue0) error {
+// FromOrderClaimRawRefundAmount0 overwrites any union data inside the OrderClaim_RawRefundAmount as the provided OrderClaimRawRefundAmount0
+func (t *OrderClaim_RawRefundAmount) FromOrderClaimRawRefundAmount0(v OrderClaimRawRefundAmount0) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeOrderLineItemRawCompareAtUnitPriceValue0 performs a merge with any union data inside the OrderLineItem_RawCompareAtUnitPrice_Value, using the provided OrderLineItemRawCompareAtUnitPriceValue0
-func (t *OrderLineItem_RawCompareAtUnitPrice_Value) MergeOrderLineItemRawCompareAtUnitPriceValue0(v OrderLineItemRawCompareAtUnitPriceValue0) error {
+// MergeOrderClaimRawRefundAmount0 performs a merge with any union data inside the OrderClaim_RawRefundAmount, using the provided OrderClaimRawRefundAmount0
+func (t *OrderClaim_RawRefundAmount) MergeOrderClaimRawRefundAmount0(v OrderClaimRawRefundAmount0) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -31538,22 +32498,22 @@ func (t *OrderLineItem_RawCompareAtUnitPrice_Value) MergeOrderLineItemRawCompare
 	return err
 }
 
-// AsOrderLineItemRawCompareAtUnitPriceValue1 returns the union data inside the OrderLineItem_RawCompareAtUnitPrice_Value as a OrderLineItemRawCompareAtUnitPriceValue1
-func (t OrderLineItem_RawCompareAtUnitPrice_Value) AsOrderLineItemRawCompareAtUnitPriceValue1() (OrderLineItemRawCompareAtUnitPriceValue1, error) {
-	var body OrderLineItemRawCompareAtUnitPriceValue1
+// AsOrderClaimRawRefundAmount1 returns the union data inside the OrderClaim_RawRefundAmount as a OrderClaimRawRefundAmount1
+func (t OrderClaim_RawRefundAmount) AsOrderClaimRawRefundAmount1() (OrderClaimRawRefundAmount1, error) {
+	var body OrderClaimRawRefundAmount1
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromOrderLineItemRawCompareAtUnitPriceValue1 overwrites any union data inside the OrderLineItem_RawCompareAtUnitPrice_Value as the provided OrderLineItemRawCompareAtUnitPriceValue1
-func (t *OrderLineItem_RawCompareAtUnitPrice_Value) FromOrderLineItemRawCompareAtUnitPriceValue1(v OrderLineItemRawCompareAtUnitPriceValue1) error {
+// FromOrderClaimRawRefundAmount1 overwrites any union data inside the OrderClaim_RawRefundAmount as the provided OrderClaimRawRefundAmount1
+func (t *OrderClaim_RawRefundAmount) FromOrderClaimRawRefundAmount1(v OrderClaimRawRefundAmount1) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeOrderLineItemRawCompareAtUnitPriceValue1 performs a merge with any union data inside the OrderLineItem_RawCompareAtUnitPrice_Value, using the provided OrderLineItemRawCompareAtUnitPriceValue1
-func (t *OrderLineItem_RawCompareAtUnitPrice_Value) MergeOrderLineItemRawCompareAtUnitPriceValue1(v OrderLineItemRawCompareAtUnitPriceValue1) error {
+// MergeOrderClaimRawRefundAmount1 performs a merge with any union data inside the OrderClaim_RawRefundAmount, using the provided OrderClaimRawRefundAmount1
+func (t *OrderClaim_RawRefundAmount) MergeOrderClaimRawRefundAmount1(v OrderClaimRawRefundAmount1) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -31564,32 +32524,84 @@ func (t *OrderLineItem_RawCompareAtUnitPrice_Value) MergeOrderLineItemRawCompare
 	return err
 }
 
-func (t OrderLineItem_RawCompareAtUnitPrice_Value) MarshalJSON() ([]byte, error) {
+// AsOrderClaimRawRefundAmount2 returns the union data inside the OrderClaim_RawRefundAmount as a OrderClaimRawRefundAmount2
+func (t OrderClaim_RawRefundAmount) AsOrderClaimRawRefundAmount2() (OrderClaimRawRefundAmount2, error) {
+	var body OrderClaimRawRefundAmount2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromOrderClaimRawRefundAmount2 overwrites any union data inside the OrderClaim_RawRefundAmount as the provided OrderClaimRawRefundAmount2
+func (t *OrderClaim_RawRefundAmount) FromOrderClaimRawRefundAmount2(v OrderClaimRawRefundAmount2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeOrderClaimRawRefundAmount2 performs a merge with any union data inside the OrderClaim_RawRefundAmount, using the provided OrderClaimRawRefundAmount2
+func (t *OrderClaim_RawRefundAmount) MergeOrderClaimRawRefundAmount2(v OrderClaimRawRefundAmount2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JsonMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsOrderClaimRawRefundAmount3 returns the union data inside the OrderClaim_RawRefundAmount as a OrderClaimRawRefundAmount3
+func (t OrderClaim_RawRefundAmount) AsOrderClaimRawRefundAmount3() (OrderClaimRawRefundAmount3, error) {
+	var body OrderClaimRawRefundAmount3
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromOrderClaimRawRefundAmount3 overwrites any union data inside the OrderClaim_RawRefundAmount as the provided OrderClaimRawRefundAmount3
+func (t *OrderClaim_RawRefundAmount) FromOrderClaimRawRefundAmount3(v OrderClaimRawRefundAmount3) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeOrderClaimRawRefundAmount3 performs a merge with any union data inside the OrderClaim_RawRefundAmount, using the provided OrderClaimRawRefundAmount3
+func (t *OrderClaim_RawRefundAmount) MergeOrderClaimRawRefundAmount3(v OrderClaimRawRefundAmount3) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JsonMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t OrderClaim_RawRefundAmount) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
 }
 
-func (t *OrderLineItem_RawCompareAtUnitPrice_Value) UnmarshalJSON(b []byte) error {
+func (t *OrderClaim_RawRefundAmount) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
 
-// AsOrderLineItemRawDiscountTaxTotalValue0 returns the union data inside the OrderLineItem_RawDiscountTaxTotal_Value as a OrderLineItemRawDiscountTaxTotalValue0
-func (t OrderLineItem_RawDiscountTaxTotal_Value) AsOrderLineItemRawDiscountTaxTotalValue0() (OrderLineItemRawDiscountTaxTotalValue0, error) {
-	var body OrderLineItemRawDiscountTaxTotalValue0
+// AsOrderClaimRefundAmount0 returns the union data inside the OrderClaim_RefundAmount as a OrderClaimRefundAmount0
+func (t OrderClaim_RefundAmount) AsOrderClaimRefundAmount0() (OrderClaimRefundAmount0, error) {
+	var body OrderClaimRefundAmount0
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromOrderLineItemRawDiscountTaxTotalValue0 overwrites any union data inside the OrderLineItem_RawDiscountTaxTotal_Value as the provided OrderLineItemRawDiscountTaxTotalValue0
-func (t *OrderLineItem_RawDiscountTaxTotal_Value) FromOrderLineItemRawDiscountTaxTotalValue0(v OrderLineItemRawDiscountTaxTotalValue0) error {
+// FromOrderClaimRefundAmount0 overwrites any union data inside the OrderClaim_RefundAmount as the provided OrderClaimRefundAmount0
+func (t *OrderClaim_RefundAmount) FromOrderClaimRefundAmount0(v OrderClaimRefundAmount0) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeOrderLineItemRawDiscountTaxTotalValue0 performs a merge with any union data inside the OrderLineItem_RawDiscountTaxTotal_Value, using the provided OrderLineItemRawDiscountTaxTotalValue0
-func (t *OrderLineItem_RawDiscountTaxTotal_Value) MergeOrderLineItemRawDiscountTaxTotalValue0(v OrderLineItemRawDiscountTaxTotalValue0) error {
+// MergeOrderClaimRefundAmount0 performs a merge with any union data inside the OrderClaim_RefundAmount, using the provided OrderClaimRefundAmount0
+func (t *OrderClaim_RefundAmount) MergeOrderClaimRefundAmount0(v OrderClaimRefundAmount0) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -31600,22 +32612,22 @@ func (t *OrderLineItem_RawDiscountTaxTotal_Value) MergeOrderLineItemRawDiscountT
 	return err
 }
 
-// AsOrderLineItemRawDiscountTaxTotalValue1 returns the union data inside the OrderLineItem_RawDiscountTaxTotal_Value as a OrderLineItemRawDiscountTaxTotalValue1
-func (t OrderLineItem_RawDiscountTaxTotal_Value) AsOrderLineItemRawDiscountTaxTotalValue1() (OrderLineItemRawDiscountTaxTotalValue1, error) {
-	var body OrderLineItemRawDiscountTaxTotalValue1
+// AsOrderClaimRefundAmount1 returns the union data inside the OrderClaim_RefundAmount as a OrderClaimRefundAmount1
+func (t OrderClaim_RefundAmount) AsOrderClaimRefundAmount1() (OrderClaimRefundAmount1, error) {
+	var body OrderClaimRefundAmount1
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromOrderLineItemRawDiscountTaxTotalValue1 overwrites any union data inside the OrderLineItem_RawDiscountTaxTotal_Value as the provided OrderLineItemRawDiscountTaxTotalValue1
-func (t *OrderLineItem_RawDiscountTaxTotal_Value) FromOrderLineItemRawDiscountTaxTotalValue1(v OrderLineItemRawDiscountTaxTotalValue1) error {
+// FromOrderClaimRefundAmount1 overwrites any union data inside the OrderClaim_RefundAmount as the provided OrderClaimRefundAmount1
+func (t *OrderClaim_RefundAmount) FromOrderClaimRefundAmount1(v OrderClaimRefundAmount1) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeOrderLineItemRawDiscountTaxTotalValue1 performs a merge with any union data inside the OrderLineItem_RawDiscountTaxTotal_Value, using the provided OrderLineItemRawDiscountTaxTotalValue1
-func (t *OrderLineItem_RawDiscountTaxTotal_Value) MergeOrderLineItemRawDiscountTaxTotalValue1(v OrderLineItemRawDiscountTaxTotalValue1) error {
+// MergeOrderClaimRefundAmount1 performs a merge with any union data inside the OrderClaim_RefundAmount, using the provided OrderClaimRefundAmount1
+func (t *OrderClaim_RefundAmount) MergeOrderClaimRefundAmount1(v OrderClaimRefundAmount1) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -31626,32 +32638,84 @@ func (t *OrderLineItem_RawDiscountTaxTotal_Value) MergeOrderLineItemRawDiscountT
 	return err
 }
 
-func (t OrderLineItem_RawDiscountTaxTotal_Value) MarshalJSON() ([]byte, error) {
+// AsOrderClaimRefundAmount2 returns the union data inside the OrderClaim_RefundAmount as a OrderClaimRefundAmount2
+func (t OrderClaim_RefundAmount) AsOrderClaimRefundAmount2() (OrderClaimRefundAmount2, error) {
+	var body OrderClaimRefundAmount2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromOrderClaimRefundAmount2 overwrites any union data inside the OrderClaim_RefundAmount as the provided OrderClaimRefundAmount2
+func (t *OrderClaim_RefundAmount) FromOrderClaimRefundAmount2(v OrderClaimRefundAmount2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeOrderClaimRefundAmount2 performs a merge with any union data inside the OrderClaim_RefundAmount, using the provided OrderClaimRefundAmount2
+func (t *OrderClaim_RefundAmount) MergeOrderClaimRefundAmount2(v OrderClaimRefundAmount2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JsonMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsOrderClaimRefundAmount3 returns the union data inside the OrderClaim_RefundAmount as a OrderClaimRefundAmount3
+func (t OrderClaim_RefundAmount) AsOrderClaimRefundAmount3() (OrderClaimRefundAmount3, error) {
+	var body OrderClaimRefundAmount3
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromOrderClaimRefundAmount3 overwrites any union data inside the OrderClaim_RefundAmount as the provided OrderClaimRefundAmount3
+func (t *OrderClaim_RefundAmount) FromOrderClaimRefundAmount3(v OrderClaimRefundAmount3) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeOrderClaimRefundAmount3 performs a merge with any union data inside the OrderClaim_RefundAmount, using the provided OrderClaimRefundAmount3
+func (t *OrderClaim_RefundAmount) MergeOrderClaimRefundAmount3(v OrderClaimRefundAmount3) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JsonMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t OrderClaim_RefundAmount) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
 }
 
-func (t *OrderLineItem_RawDiscountTaxTotal_Value) UnmarshalJSON(b []byte) error {
+func (t *OrderClaim_RefundAmount) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
 
-// AsOrderLineItemRawDiscountTotalValue0 returns the union data inside the OrderLineItem_RawDiscountTotal_Value as a OrderLineItemRawDiscountTotalValue0
-func (t OrderLineItem_RawDiscountTotal_Value) AsOrderLineItemRawDiscountTotalValue0() (OrderLineItemRawDiscountTotalValue0, error) {
-	var body OrderLineItemRawDiscountTotalValue0
+// AsOrderExchangeRawDifferenceDue0 returns the union data inside the OrderExchange_RawDifferenceDue as a OrderExchangeRawDifferenceDue0
+func (t OrderExchange_RawDifferenceDue) AsOrderExchangeRawDifferenceDue0() (OrderExchangeRawDifferenceDue0, error) {
+	var body OrderExchangeRawDifferenceDue0
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromOrderLineItemRawDiscountTotalValue0 overwrites any union data inside the OrderLineItem_RawDiscountTotal_Value as the provided OrderLineItemRawDiscountTotalValue0
-func (t *OrderLineItem_RawDiscountTotal_Value) FromOrderLineItemRawDiscountTotalValue0(v OrderLineItemRawDiscountTotalValue0) error {
+// FromOrderExchangeRawDifferenceDue0 overwrites any union data inside the OrderExchange_RawDifferenceDue as the provided OrderExchangeRawDifferenceDue0
+func (t *OrderExchange_RawDifferenceDue) FromOrderExchangeRawDifferenceDue0(v OrderExchangeRawDifferenceDue0) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeOrderLineItemRawDiscountTotalValue0 performs a merge with any union data inside the OrderLineItem_RawDiscountTotal_Value, using the provided OrderLineItemRawDiscountTotalValue0
-func (t *OrderLineItem_RawDiscountTotal_Value) MergeOrderLineItemRawDiscountTotalValue0(v OrderLineItemRawDiscountTotalValue0) error {
+// MergeOrderExchangeRawDifferenceDue0 performs a merge with any union data inside the OrderExchange_RawDifferenceDue, using the provided OrderExchangeRawDifferenceDue0
+func (t *OrderExchange_RawDifferenceDue) MergeOrderExchangeRawDifferenceDue0(v OrderExchangeRawDifferenceDue0) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -31662,22 +32726,22 @@ func (t *OrderLineItem_RawDiscountTotal_Value) MergeOrderLineItemRawDiscountTota
 	return err
 }
 
-// AsOrderLineItemRawDiscountTotalValue1 returns the union data inside the OrderLineItem_RawDiscountTotal_Value as a OrderLineItemRawDiscountTotalValue1
-func (t OrderLineItem_RawDiscountTotal_Value) AsOrderLineItemRawDiscountTotalValue1() (OrderLineItemRawDiscountTotalValue1, error) {
-	var body OrderLineItemRawDiscountTotalValue1
+// AsOrderExchangeRawDifferenceDue1 returns the union data inside the OrderExchange_RawDifferenceDue as a OrderExchangeRawDifferenceDue1
+func (t OrderExchange_RawDifferenceDue) AsOrderExchangeRawDifferenceDue1() (OrderExchangeRawDifferenceDue1, error) {
+	var body OrderExchangeRawDifferenceDue1
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromOrderLineItemRawDiscountTotalValue1 overwrites any union data inside the OrderLineItem_RawDiscountTotal_Value as the provided OrderLineItemRawDiscountTotalValue1
-func (t *OrderLineItem_RawDiscountTotal_Value) FromOrderLineItemRawDiscountTotalValue1(v OrderLineItemRawDiscountTotalValue1) error {
+// FromOrderExchangeRawDifferenceDue1 overwrites any union data inside the OrderExchange_RawDifferenceDue as the provided OrderExchangeRawDifferenceDue1
+func (t *OrderExchange_RawDifferenceDue) FromOrderExchangeRawDifferenceDue1(v OrderExchangeRawDifferenceDue1) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeOrderLineItemRawDiscountTotalValue1 performs a merge with any union data inside the OrderLineItem_RawDiscountTotal_Value, using the provided OrderLineItemRawDiscountTotalValue1
-func (t *OrderLineItem_RawDiscountTotal_Value) MergeOrderLineItemRawDiscountTotalValue1(v OrderLineItemRawDiscountTotalValue1) error {
+// MergeOrderExchangeRawDifferenceDue1 performs a merge with any union data inside the OrderExchange_RawDifferenceDue, using the provided OrderExchangeRawDifferenceDue1
+func (t *OrderExchange_RawDifferenceDue) MergeOrderExchangeRawDifferenceDue1(v OrderExchangeRawDifferenceDue1) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -31688,32 +32752,84 @@ func (t *OrderLineItem_RawDiscountTotal_Value) MergeOrderLineItemRawDiscountTota
 	return err
 }
 
-func (t OrderLineItem_RawDiscountTotal_Value) MarshalJSON() ([]byte, error) {
+// AsOrderExchangeRawDifferenceDue2 returns the union data inside the OrderExchange_RawDifferenceDue as a OrderExchangeRawDifferenceDue2
+func (t OrderExchange_RawDifferenceDue) AsOrderExchangeRawDifferenceDue2() (OrderExchangeRawDifferenceDue2, error) {
+	var body OrderExchangeRawDifferenceDue2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromOrderExchangeRawDifferenceDue2 overwrites any union data inside the OrderExchange_RawDifferenceDue as the provided OrderExchangeRawDifferenceDue2
+func (t *OrderExchange_RawDifferenceDue) FromOrderExchangeRawDifferenceDue2(v OrderExchangeRawDifferenceDue2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeOrderExchangeRawDifferenceDue2 performs a merge with any union data inside the OrderExchange_RawDifferenceDue, using the provided OrderExchangeRawDifferenceDue2
+func (t *OrderExchange_RawDifferenceDue) MergeOrderExchangeRawDifferenceDue2(v OrderExchangeRawDifferenceDue2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JsonMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsOrderExchangeRawDifferenceDue3 returns the union data inside the OrderExchange_RawDifferenceDue as a OrderExchangeRawDifferenceDue3
+func (t OrderExchange_RawDifferenceDue) AsOrderExchangeRawDifferenceDue3() (OrderExchangeRawDifferenceDue3, error) {
+	var body OrderExchangeRawDifferenceDue3
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromOrderExchangeRawDifferenceDue3 overwrites any union data inside the OrderExchange_RawDifferenceDue as the provided OrderExchangeRawDifferenceDue3
+func (t *OrderExchange_RawDifferenceDue) FromOrderExchangeRawDifferenceDue3(v OrderExchangeRawDifferenceDue3) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeOrderExchangeRawDifferenceDue3 performs a merge with any union data inside the OrderExchange_RawDifferenceDue, using the provided OrderExchangeRawDifferenceDue3
+func (t *OrderExchange_RawDifferenceDue) MergeOrderExchangeRawDifferenceDue3(v OrderExchangeRawDifferenceDue3) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JsonMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t OrderExchange_RawDifferenceDue) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
 }
 
-func (t *OrderLineItem_RawDiscountTotal_Value) UnmarshalJSON(b []byte) error {
+func (t *OrderExchange_RawDifferenceDue) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
 
-// AsOrderLineItemRawItemSubtotalValue0 returns the union data inside the OrderLineItem_RawItemSubtotal_Value as a OrderLineItemRawItemSubtotalValue0
-func (t OrderLineItem_RawItemSubtotal_Value) AsOrderLineItemRawItemSubtotalValue0() (OrderLineItemRawItemSubtotalValue0, error) {
-	var body OrderLineItemRawItemSubtotalValue0
+// AsReturnRawRefundAmount0 returns the union data inside the Return_RawRefundAmount as a ReturnRawRefundAmount0
+func (t Return_RawRefundAmount) AsReturnRawRefundAmount0() (ReturnRawRefundAmount0, error) {
+	var body ReturnRawRefundAmount0
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromOrderLineItemRawItemSubtotalValue0 overwrites any union data inside the OrderLineItem_RawItemSubtotal_Value as the provided OrderLineItemRawItemSubtotalValue0
-func (t *OrderLineItem_RawItemSubtotal_Value) FromOrderLineItemRawItemSubtotalValue0(v OrderLineItemRawItemSubtotalValue0) error {
+// FromReturnRawRefundAmount0 overwrites any union data inside the Return_RawRefundAmount as the provided ReturnRawRefundAmount0
+func (t *Return_RawRefundAmount) FromReturnRawRefundAmount0(v ReturnRawRefundAmount0) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeOrderLineItemRawItemSubtotalValue0 performs a merge with any union data inside the OrderLineItem_RawItemSubtotal_Value, using the provided OrderLineItemRawItemSubtotalValue0
-func (t *OrderLineItem_RawItemSubtotal_Value) MergeOrderLineItemRawItemSubtotalValue0(v OrderLineItemRawItemSubtotalValue0) error {
+// MergeReturnRawRefundAmount0 performs a merge with any union data inside the Return_RawRefundAmount, using the provided ReturnRawRefundAmount0
+func (t *Return_RawRefundAmount) MergeReturnRawRefundAmount0(v ReturnRawRefundAmount0) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -31724,22 +32840,22 @@ func (t *OrderLineItem_RawItemSubtotal_Value) MergeOrderLineItemRawItemSubtotalV
 	return err
 }
 
-// AsOrderLineItemRawItemSubtotalValue1 returns the union data inside the OrderLineItem_RawItemSubtotal_Value as a OrderLineItemRawItemSubtotalValue1
-func (t OrderLineItem_RawItemSubtotal_Value) AsOrderLineItemRawItemSubtotalValue1() (OrderLineItemRawItemSubtotalValue1, error) {
-	var body OrderLineItemRawItemSubtotalValue1
+// AsReturnRawRefundAmount1 returns the union data inside the Return_RawRefundAmount as a ReturnRawRefundAmount1
+func (t Return_RawRefundAmount) AsReturnRawRefundAmount1() (ReturnRawRefundAmount1, error) {
+	var body ReturnRawRefundAmount1
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromOrderLineItemRawItemSubtotalValue1 overwrites any union data inside the OrderLineItem_RawItemSubtotal_Value as the provided OrderLineItemRawItemSubtotalValue1
-func (t *OrderLineItem_RawItemSubtotal_Value) FromOrderLineItemRawItemSubtotalValue1(v OrderLineItemRawItemSubtotalValue1) error {
+// FromReturnRawRefundAmount1 overwrites any union data inside the Return_RawRefundAmount as the provided ReturnRawRefundAmount1
+func (t *Return_RawRefundAmount) FromReturnRawRefundAmount1(v ReturnRawRefundAmount1) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeOrderLineItemRawItemSubtotalValue1 performs a merge with any union data inside the OrderLineItem_RawItemSubtotal_Value, using the provided OrderLineItemRawItemSubtotalValue1
-func (t *OrderLineItem_RawItemSubtotal_Value) MergeOrderLineItemRawItemSubtotalValue1(v OrderLineItemRawItemSubtotalValue1) error {
+// MergeReturnRawRefundAmount1 performs a merge with any union data inside the Return_RawRefundAmount, using the provided ReturnRawRefundAmount1
+func (t *Return_RawRefundAmount) MergeReturnRawRefundAmount1(v ReturnRawRefundAmount1) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -31750,1314 +32866,64 @@ func (t *OrderLineItem_RawItemSubtotal_Value) MergeOrderLineItemRawItemSubtotalV
 	return err
 }
 
-func (t OrderLineItem_RawItemSubtotal_Value) MarshalJSON() ([]byte, error) {
+// AsReturnRawRefundAmount2 returns the union data inside the Return_RawRefundAmount as a ReturnRawRefundAmount2
+func (t Return_RawRefundAmount) AsReturnRawRefundAmount2() (ReturnRawRefundAmount2, error) {
+	var body ReturnRawRefundAmount2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromReturnRawRefundAmount2 overwrites any union data inside the Return_RawRefundAmount as the provided ReturnRawRefundAmount2
+func (t *Return_RawRefundAmount) FromReturnRawRefundAmount2(v ReturnRawRefundAmount2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeReturnRawRefundAmount2 performs a merge with any union data inside the Return_RawRefundAmount, using the provided ReturnRawRefundAmount2
+func (t *Return_RawRefundAmount) MergeReturnRawRefundAmount2(v ReturnRawRefundAmount2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JsonMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsReturnRawRefundAmount3 returns the union data inside the Return_RawRefundAmount as a ReturnRawRefundAmount3
+func (t Return_RawRefundAmount) AsReturnRawRefundAmount3() (ReturnRawRefundAmount3, error) {
+	var body ReturnRawRefundAmount3
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromReturnRawRefundAmount3 overwrites any union data inside the Return_RawRefundAmount as the provided ReturnRawRefundAmount3
+func (t *Return_RawRefundAmount) FromReturnRawRefundAmount3(v ReturnRawRefundAmount3) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeReturnRawRefundAmount3 performs a merge with any union data inside the Return_RawRefundAmount, using the provided ReturnRawRefundAmount3
+func (t *Return_RawRefundAmount) MergeReturnRawRefundAmount3(v ReturnRawRefundAmount3) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JsonMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t Return_RawRefundAmount) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
 }
 
-func (t *OrderLineItem_RawItemSubtotal_Value) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsOrderLineItemRawItemTaxTotalValue0 returns the union data inside the OrderLineItem_RawItemTaxTotal_Value as a OrderLineItemRawItemTaxTotalValue0
-func (t OrderLineItem_RawItemTaxTotal_Value) AsOrderLineItemRawItemTaxTotalValue0() (OrderLineItemRawItemTaxTotalValue0, error) {
-	var body OrderLineItemRawItemTaxTotalValue0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromOrderLineItemRawItemTaxTotalValue0 overwrites any union data inside the OrderLineItem_RawItemTaxTotal_Value as the provided OrderLineItemRawItemTaxTotalValue0
-func (t *OrderLineItem_RawItemTaxTotal_Value) FromOrderLineItemRawItemTaxTotalValue0(v OrderLineItemRawItemTaxTotalValue0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeOrderLineItemRawItemTaxTotalValue0 performs a merge with any union data inside the OrderLineItem_RawItemTaxTotal_Value, using the provided OrderLineItemRawItemTaxTotalValue0
-func (t *OrderLineItem_RawItemTaxTotal_Value) MergeOrderLineItemRawItemTaxTotalValue0(v OrderLineItemRawItemTaxTotalValue0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JsonMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsOrderLineItemRawItemTaxTotalValue1 returns the union data inside the OrderLineItem_RawItemTaxTotal_Value as a OrderLineItemRawItemTaxTotalValue1
-func (t OrderLineItem_RawItemTaxTotal_Value) AsOrderLineItemRawItemTaxTotalValue1() (OrderLineItemRawItemTaxTotalValue1, error) {
-	var body OrderLineItemRawItemTaxTotalValue1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromOrderLineItemRawItemTaxTotalValue1 overwrites any union data inside the OrderLineItem_RawItemTaxTotal_Value as the provided OrderLineItemRawItemTaxTotalValue1
-func (t *OrderLineItem_RawItemTaxTotal_Value) FromOrderLineItemRawItemTaxTotalValue1(v OrderLineItemRawItemTaxTotalValue1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeOrderLineItemRawItemTaxTotalValue1 performs a merge with any union data inside the OrderLineItem_RawItemTaxTotal_Value, using the provided OrderLineItemRawItemTaxTotalValue1
-func (t *OrderLineItem_RawItemTaxTotal_Value) MergeOrderLineItemRawItemTaxTotalValue1(v OrderLineItemRawItemTaxTotalValue1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JsonMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t OrderLineItem_RawItemTaxTotal_Value) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *OrderLineItem_RawItemTaxTotal_Value) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsOrderLineItemRawItemTotalValue0 returns the union data inside the OrderLineItem_RawItemTotal_Value as a OrderLineItemRawItemTotalValue0
-func (t OrderLineItem_RawItemTotal_Value) AsOrderLineItemRawItemTotalValue0() (OrderLineItemRawItemTotalValue0, error) {
-	var body OrderLineItemRawItemTotalValue0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromOrderLineItemRawItemTotalValue0 overwrites any union data inside the OrderLineItem_RawItemTotal_Value as the provided OrderLineItemRawItemTotalValue0
-func (t *OrderLineItem_RawItemTotal_Value) FromOrderLineItemRawItemTotalValue0(v OrderLineItemRawItemTotalValue0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeOrderLineItemRawItemTotalValue0 performs a merge with any union data inside the OrderLineItem_RawItemTotal_Value, using the provided OrderLineItemRawItemTotalValue0
-func (t *OrderLineItem_RawItemTotal_Value) MergeOrderLineItemRawItemTotalValue0(v OrderLineItemRawItemTotalValue0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JsonMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsOrderLineItemRawItemTotalValue1 returns the union data inside the OrderLineItem_RawItemTotal_Value as a OrderLineItemRawItemTotalValue1
-func (t OrderLineItem_RawItemTotal_Value) AsOrderLineItemRawItemTotalValue1() (OrderLineItemRawItemTotalValue1, error) {
-	var body OrderLineItemRawItemTotalValue1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromOrderLineItemRawItemTotalValue1 overwrites any union data inside the OrderLineItem_RawItemTotal_Value as the provided OrderLineItemRawItemTotalValue1
-func (t *OrderLineItem_RawItemTotal_Value) FromOrderLineItemRawItemTotalValue1(v OrderLineItemRawItemTotalValue1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeOrderLineItemRawItemTotalValue1 performs a merge with any union data inside the OrderLineItem_RawItemTotal_Value, using the provided OrderLineItemRawItemTotalValue1
-func (t *OrderLineItem_RawItemTotal_Value) MergeOrderLineItemRawItemTotalValue1(v OrderLineItemRawItemTotalValue1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JsonMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t OrderLineItem_RawItemTotal_Value) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *OrderLineItem_RawItemTotal_Value) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsOrderLineItemRawOriginalSubtotalValue0 returns the union data inside the OrderLineItem_RawOriginalSubtotal_Value as a OrderLineItemRawOriginalSubtotalValue0
-func (t OrderLineItem_RawOriginalSubtotal_Value) AsOrderLineItemRawOriginalSubtotalValue0() (OrderLineItemRawOriginalSubtotalValue0, error) {
-	var body OrderLineItemRawOriginalSubtotalValue0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromOrderLineItemRawOriginalSubtotalValue0 overwrites any union data inside the OrderLineItem_RawOriginalSubtotal_Value as the provided OrderLineItemRawOriginalSubtotalValue0
-func (t *OrderLineItem_RawOriginalSubtotal_Value) FromOrderLineItemRawOriginalSubtotalValue0(v OrderLineItemRawOriginalSubtotalValue0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeOrderLineItemRawOriginalSubtotalValue0 performs a merge with any union data inside the OrderLineItem_RawOriginalSubtotal_Value, using the provided OrderLineItemRawOriginalSubtotalValue0
-func (t *OrderLineItem_RawOriginalSubtotal_Value) MergeOrderLineItemRawOriginalSubtotalValue0(v OrderLineItemRawOriginalSubtotalValue0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JsonMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsOrderLineItemRawOriginalSubtotalValue1 returns the union data inside the OrderLineItem_RawOriginalSubtotal_Value as a OrderLineItemRawOriginalSubtotalValue1
-func (t OrderLineItem_RawOriginalSubtotal_Value) AsOrderLineItemRawOriginalSubtotalValue1() (OrderLineItemRawOriginalSubtotalValue1, error) {
-	var body OrderLineItemRawOriginalSubtotalValue1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromOrderLineItemRawOriginalSubtotalValue1 overwrites any union data inside the OrderLineItem_RawOriginalSubtotal_Value as the provided OrderLineItemRawOriginalSubtotalValue1
-func (t *OrderLineItem_RawOriginalSubtotal_Value) FromOrderLineItemRawOriginalSubtotalValue1(v OrderLineItemRawOriginalSubtotalValue1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeOrderLineItemRawOriginalSubtotalValue1 performs a merge with any union data inside the OrderLineItem_RawOriginalSubtotal_Value, using the provided OrderLineItemRawOriginalSubtotalValue1
-func (t *OrderLineItem_RawOriginalSubtotal_Value) MergeOrderLineItemRawOriginalSubtotalValue1(v OrderLineItemRawOriginalSubtotalValue1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JsonMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t OrderLineItem_RawOriginalSubtotal_Value) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *OrderLineItem_RawOriginalSubtotal_Value) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsOrderLineItemRawOriginalTaxTotalValue0 returns the union data inside the OrderLineItem_RawOriginalTaxTotal_Value as a OrderLineItemRawOriginalTaxTotalValue0
-func (t OrderLineItem_RawOriginalTaxTotal_Value) AsOrderLineItemRawOriginalTaxTotalValue0() (OrderLineItemRawOriginalTaxTotalValue0, error) {
-	var body OrderLineItemRawOriginalTaxTotalValue0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromOrderLineItemRawOriginalTaxTotalValue0 overwrites any union data inside the OrderLineItem_RawOriginalTaxTotal_Value as the provided OrderLineItemRawOriginalTaxTotalValue0
-func (t *OrderLineItem_RawOriginalTaxTotal_Value) FromOrderLineItemRawOriginalTaxTotalValue0(v OrderLineItemRawOriginalTaxTotalValue0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeOrderLineItemRawOriginalTaxTotalValue0 performs a merge with any union data inside the OrderLineItem_RawOriginalTaxTotal_Value, using the provided OrderLineItemRawOriginalTaxTotalValue0
-func (t *OrderLineItem_RawOriginalTaxTotal_Value) MergeOrderLineItemRawOriginalTaxTotalValue0(v OrderLineItemRawOriginalTaxTotalValue0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JsonMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsOrderLineItemRawOriginalTaxTotalValue1 returns the union data inside the OrderLineItem_RawOriginalTaxTotal_Value as a OrderLineItemRawOriginalTaxTotalValue1
-func (t OrderLineItem_RawOriginalTaxTotal_Value) AsOrderLineItemRawOriginalTaxTotalValue1() (OrderLineItemRawOriginalTaxTotalValue1, error) {
-	var body OrderLineItemRawOriginalTaxTotalValue1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromOrderLineItemRawOriginalTaxTotalValue1 overwrites any union data inside the OrderLineItem_RawOriginalTaxTotal_Value as the provided OrderLineItemRawOriginalTaxTotalValue1
-func (t *OrderLineItem_RawOriginalTaxTotal_Value) FromOrderLineItemRawOriginalTaxTotalValue1(v OrderLineItemRawOriginalTaxTotalValue1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeOrderLineItemRawOriginalTaxTotalValue1 performs a merge with any union data inside the OrderLineItem_RawOriginalTaxTotal_Value, using the provided OrderLineItemRawOriginalTaxTotalValue1
-func (t *OrderLineItem_RawOriginalTaxTotal_Value) MergeOrderLineItemRawOriginalTaxTotalValue1(v OrderLineItemRawOriginalTaxTotalValue1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JsonMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t OrderLineItem_RawOriginalTaxTotal_Value) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *OrderLineItem_RawOriginalTaxTotal_Value) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsOrderLineItemRawOriginalTotalValue0 returns the union data inside the OrderLineItem_RawOriginalTotal_Value as a OrderLineItemRawOriginalTotalValue0
-func (t OrderLineItem_RawOriginalTotal_Value) AsOrderLineItemRawOriginalTotalValue0() (OrderLineItemRawOriginalTotalValue0, error) {
-	var body OrderLineItemRawOriginalTotalValue0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromOrderLineItemRawOriginalTotalValue0 overwrites any union data inside the OrderLineItem_RawOriginalTotal_Value as the provided OrderLineItemRawOriginalTotalValue0
-func (t *OrderLineItem_RawOriginalTotal_Value) FromOrderLineItemRawOriginalTotalValue0(v OrderLineItemRawOriginalTotalValue0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeOrderLineItemRawOriginalTotalValue0 performs a merge with any union data inside the OrderLineItem_RawOriginalTotal_Value, using the provided OrderLineItemRawOriginalTotalValue0
-func (t *OrderLineItem_RawOriginalTotal_Value) MergeOrderLineItemRawOriginalTotalValue0(v OrderLineItemRawOriginalTotalValue0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JsonMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsOrderLineItemRawOriginalTotalValue1 returns the union data inside the OrderLineItem_RawOriginalTotal_Value as a OrderLineItemRawOriginalTotalValue1
-func (t OrderLineItem_RawOriginalTotal_Value) AsOrderLineItemRawOriginalTotalValue1() (OrderLineItemRawOriginalTotalValue1, error) {
-	var body OrderLineItemRawOriginalTotalValue1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromOrderLineItemRawOriginalTotalValue1 overwrites any union data inside the OrderLineItem_RawOriginalTotal_Value as the provided OrderLineItemRawOriginalTotalValue1
-func (t *OrderLineItem_RawOriginalTotal_Value) FromOrderLineItemRawOriginalTotalValue1(v OrderLineItemRawOriginalTotalValue1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeOrderLineItemRawOriginalTotalValue1 performs a merge with any union data inside the OrderLineItem_RawOriginalTotal_Value, using the provided OrderLineItemRawOriginalTotalValue1
-func (t *OrderLineItem_RawOriginalTotal_Value) MergeOrderLineItemRawOriginalTotalValue1(v OrderLineItemRawOriginalTotalValue1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JsonMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t OrderLineItem_RawOriginalTotal_Value) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *OrderLineItem_RawOriginalTotal_Value) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsOrderLineItemRawQuantityValue0 returns the union data inside the OrderLineItem_RawQuantity_Value as a OrderLineItemRawQuantityValue0
-func (t OrderLineItem_RawQuantity_Value) AsOrderLineItemRawQuantityValue0() (OrderLineItemRawQuantityValue0, error) {
-	var body OrderLineItemRawQuantityValue0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromOrderLineItemRawQuantityValue0 overwrites any union data inside the OrderLineItem_RawQuantity_Value as the provided OrderLineItemRawQuantityValue0
-func (t *OrderLineItem_RawQuantity_Value) FromOrderLineItemRawQuantityValue0(v OrderLineItemRawQuantityValue0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeOrderLineItemRawQuantityValue0 performs a merge with any union data inside the OrderLineItem_RawQuantity_Value, using the provided OrderLineItemRawQuantityValue0
-func (t *OrderLineItem_RawQuantity_Value) MergeOrderLineItemRawQuantityValue0(v OrderLineItemRawQuantityValue0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JsonMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsOrderLineItemRawQuantityValue1 returns the union data inside the OrderLineItem_RawQuantity_Value as a OrderLineItemRawQuantityValue1
-func (t OrderLineItem_RawQuantity_Value) AsOrderLineItemRawQuantityValue1() (OrderLineItemRawQuantityValue1, error) {
-	var body OrderLineItemRawQuantityValue1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromOrderLineItemRawQuantityValue1 overwrites any union data inside the OrderLineItem_RawQuantity_Value as the provided OrderLineItemRawQuantityValue1
-func (t *OrderLineItem_RawQuantity_Value) FromOrderLineItemRawQuantityValue1(v OrderLineItemRawQuantityValue1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeOrderLineItemRawQuantityValue1 performs a merge with any union data inside the OrderLineItem_RawQuantity_Value, using the provided OrderLineItemRawQuantityValue1
-func (t *OrderLineItem_RawQuantity_Value) MergeOrderLineItemRawQuantityValue1(v OrderLineItemRawQuantityValue1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JsonMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t OrderLineItem_RawQuantity_Value) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *OrderLineItem_RawQuantity_Value) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsOrderLineItemRawRefundableTotalValue0 returns the union data inside the OrderLineItem_RawRefundableTotal_Value as a OrderLineItemRawRefundableTotalValue0
-func (t OrderLineItem_RawRefundableTotal_Value) AsOrderLineItemRawRefundableTotalValue0() (OrderLineItemRawRefundableTotalValue0, error) {
-	var body OrderLineItemRawRefundableTotalValue0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromOrderLineItemRawRefundableTotalValue0 overwrites any union data inside the OrderLineItem_RawRefundableTotal_Value as the provided OrderLineItemRawRefundableTotalValue0
-func (t *OrderLineItem_RawRefundableTotal_Value) FromOrderLineItemRawRefundableTotalValue0(v OrderLineItemRawRefundableTotalValue0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeOrderLineItemRawRefundableTotalValue0 performs a merge with any union data inside the OrderLineItem_RawRefundableTotal_Value, using the provided OrderLineItemRawRefundableTotalValue0
-func (t *OrderLineItem_RawRefundableTotal_Value) MergeOrderLineItemRawRefundableTotalValue0(v OrderLineItemRawRefundableTotalValue0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JsonMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsOrderLineItemRawRefundableTotalValue1 returns the union data inside the OrderLineItem_RawRefundableTotal_Value as a OrderLineItemRawRefundableTotalValue1
-func (t OrderLineItem_RawRefundableTotal_Value) AsOrderLineItemRawRefundableTotalValue1() (OrderLineItemRawRefundableTotalValue1, error) {
-	var body OrderLineItemRawRefundableTotalValue1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromOrderLineItemRawRefundableTotalValue1 overwrites any union data inside the OrderLineItem_RawRefundableTotal_Value as the provided OrderLineItemRawRefundableTotalValue1
-func (t *OrderLineItem_RawRefundableTotal_Value) FromOrderLineItemRawRefundableTotalValue1(v OrderLineItemRawRefundableTotalValue1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeOrderLineItemRawRefundableTotalValue1 performs a merge with any union data inside the OrderLineItem_RawRefundableTotal_Value, using the provided OrderLineItemRawRefundableTotalValue1
-func (t *OrderLineItem_RawRefundableTotal_Value) MergeOrderLineItemRawRefundableTotalValue1(v OrderLineItemRawRefundableTotalValue1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JsonMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t OrderLineItem_RawRefundableTotal_Value) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *OrderLineItem_RawRefundableTotal_Value) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsOrderLineItemRawRefundableTotalPerUnitValue0 returns the union data inside the OrderLineItem_RawRefundableTotalPerUnit_Value as a OrderLineItemRawRefundableTotalPerUnitValue0
-func (t OrderLineItem_RawRefundableTotalPerUnit_Value) AsOrderLineItemRawRefundableTotalPerUnitValue0() (OrderLineItemRawRefundableTotalPerUnitValue0, error) {
-	var body OrderLineItemRawRefundableTotalPerUnitValue0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromOrderLineItemRawRefundableTotalPerUnitValue0 overwrites any union data inside the OrderLineItem_RawRefundableTotalPerUnit_Value as the provided OrderLineItemRawRefundableTotalPerUnitValue0
-func (t *OrderLineItem_RawRefundableTotalPerUnit_Value) FromOrderLineItemRawRefundableTotalPerUnitValue0(v OrderLineItemRawRefundableTotalPerUnitValue0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeOrderLineItemRawRefundableTotalPerUnitValue0 performs a merge with any union data inside the OrderLineItem_RawRefundableTotalPerUnit_Value, using the provided OrderLineItemRawRefundableTotalPerUnitValue0
-func (t *OrderLineItem_RawRefundableTotalPerUnit_Value) MergeOrderLineItemRawRefundableTotalPerUnitValue0(v OrderLineItemRawRefundableTotalPerUnitValue0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JsonMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsOrderLineItemRawRefundableTotalPerUnitValue1 returns the union data inside the OrderLineItem_RawRefundableTotalPerUnit_Value as a OrderLineItemRawRefundableTotalPerUnitValue1
-func (t OrderLineItem_RawRefundableTotalPerUnit_Value) AsOrderLineItemRawRefundableTotalPerUnitValue1() (OrderLineItemRawRefundableTotalPerUnitValue1, error) {
-	var body OrderLineItemRawRefundableTotalPerUnitValue1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromOrderLineItemRawRefundableTotalPerUnitValue1 overwrites any union data inside the OrderLineItem_RawRefundableTotalPerUnit_Value as the provided OrderLineItemRawRefundableTotalPerUnitValue1
-func (t *OrderLineItem_RawRefundableTotalPerUnit_Value) FromOrderLineItemRawRefundableTotalPerUnitValue1(v OrderLineItemRawRefundableTotalPerUnitValue1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeOrderLineItemRawRefundableTotalPerUnitValue1 performs a merge with any union data inside the OrderLineItem_RawRefundableTotalPerUnit_Value, using the provided OrderLineItemRawRefundableTotalPerUnitValue1
-func (t *OrderLineItem_RawRefundableTotalPerUnit_Value) MergeOrderLineItemRawRefundableTotalPerUnitValue1(v OrderLineItemRawRefundableTotalPerUnitValue1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JsonMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t OrderLineItem_RawRefundableTotalPerUnit_Value) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *OrderLineItem_RawRefundableTotalPerUnit_Value) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsOrderLineItemRawSubtotalValue0 returns the union data inside the OrderLineItem_RawSubtotal_Value as a OrderLineItemRawSubtotalValue0
-func (t OrderLineItem_RawSubtotal_Value) AsOrderLineItemRawSubtotalValue0() (OrderLineItemRawSubtotalValue0, error) {
-	var body OrderLineItemRawSubtotalValue0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromOrderLineItemRawSubtotalValue0 overwrites any union data inside the OrderLineItem_RawSubtotal_Value as the provided OrderLineItemRawSubtotalValue0
-func (t *OrderLineItem_RawSubtotal_Value) FromOrderLineItemRawSubtotalValue0(v OrderLineItemRawSubtotalValue0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeOrderLineItemRawSubtotalValue0 performs a merge with any union data inside the OrderLineItem_RawSubtotal_Value, using the provided OrderLineItemRawSubtotalValue0
-func (t *OrderLineItem_RawSubtotal_Value) MergeOrderLineItemRawSubtotalValue0(v OrderLineItemRawSubtotalValue0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JsonMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsOrderLineItemRawSubtotalValue1 returns the union data inside the OrderLineItem_RawSubtotal_Value as a OrderLineItemRawSubtotalValue1
-func (t OrderLineItem_RawSubtotal_Value) AsOrderLineItemRawSubtotalValue1() (OrderLineItemRawSubtotalValue1, error) {
-	var body OrderLineItemRawSubtotalValue1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromOrderLineItemRawSubtotalValue1 overwrites any union data inside the OrderLineItem_RawSubtotal_Value as the provided OrderLineItemRawSubtotalValue1
-func (t *OrderLineItem_RawSubtotal_Value) FromOrderLineItemRawSubtotalValue1(v OrderLineItemRawSubtotalValue1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeOrderLineItemRawSubtotalValue1 performs a merge with any union data inside the OrderLineItem_RawSubtotal_Value, using the provided OrderLineItemRawSubtotalValue1
-func (t *OrderLineItem_RawSubtotal_Value) MergeOrderLineItemRawSubtotalValue1(v OrderLineItemRawSubtotalValue1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JsonMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t OrderLineItem_RawSubtotal_Value) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *OrderLineItem_RawSubtotal_Value) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsOrderLineItemRawTaxTotalValue0 returns the union data inside the OrderLineItem_RawTaxTotal_Value as a OrderLineItemRawTaxTotalValue0
-func (t OrderLineItem_RawTaxTotal_Value) AsOrderLineItemRawTaxTotalValue0() (OrderLineItemRawTaxTotalValue0, error) {
-	var body OrderLineItemRawTaxTotalValue0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromOrderLineItemRawTaxTotalValue0 overwrites any union data inside the OrderLineItem_RawTaxTotal_Value as the provided OrderLineItemRawTaxTotalValue0
-func (t *OrderLineItem_RawTaxTotal_Value) FromOrderLineItemRawTaxTotalValue0(v OrderLineItemRawTaxTotalValue0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeOrderLineItemRawTaxTotalValue0 performs a merge with any union data inside the OrderLineItem_RawTaxTotal_Value, using the provided OrderLineItemRawTaxTotalValue0
-func (t *OrderLineItem_RawTaxTotal_Value) MergeOrderLineItemRawTaxTotalValue0(v OrderLineItemRawTaxTotalValue0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JsonMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsOrderLineItemRawTaxTotalValue1 returns the union data inside the OrderLineItem_RawTaxTotal_Value as a OrderLineItemRawTaxTotalValue1
-func (t OrderLineItem_RawTaxTotal_Value) AsOrderLineItemRawTaxTotalValue1() (OrderLineItemRawTaxTotalValue1, error) {
-	var body OrderLineItemRawTaxTotalValue1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromOrderLineItemRawTaxTotalValue1 overwrites any union data inside the OrderLineItem_RawTaxTotal_Value as the provided OrderLineItemRawTaxTotalValue1
-func (t *OrderLineItem_RawTaxTotal_Value) FromOrderLineItemRawTaxTotalValue1(v OrderLineItemRawTaxTotalValue1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeOrderLineItemRawTaxTotalValue1 performs a merge with any union data inside the OrderLineItem_RawTaxTotal_Value, using the provided OrderLineItemRawTaxTotalValue1
-func (t *OrderLineItem_RawTaxTotal_Value) MergeOrderLineItemRawTaxTotalValue1(v OrderLineItemRawTaxTotalValue1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JsonMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t OrderLineItem_RawTaxTotal_Value) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *OrderLineItem_RawTaxTotal_Value) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsOrderLineItemRawTotalValue0 returns the union data inside the OrderLineItem_RawTotal_Value as a OrderLineItemRawTotalValue0
-func (t OrderLineItem_RawTotal_Value) AsOrderLineItemRawTotalValue0() (OrderLineItemRawTotalValue0, error) {
-	var body OrderLineItemRawTotalValue0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromOrderLineItemRawTotalValue0 overwrites any union data inside the OrderLineItem_RawTotal_Value as the provided OrderLineItemRawTotalValue0
-func (t *OrderLineItem_RawTotal_Value) FromOrderLineItemRawTotalValue0(v OrderLineItemRawTotalValue0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeOrderLineItemRawTotalValue0 performs a merge with any union data inside the OrderLineItem_RawTotal_Value, using the provided OrderLineItemRawTotalValue0
-func (t *OrderLineItem_RawTotal_Value) MergeOrderLineItemRawTotalValue0(v OrderLineItemRawTotalValue0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JsonMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsOrderLineItemRawTotalValue1 returns the union data inside the OrderLineItem_RawTotal_Value as a OrderLineItemRawTotalValue1
-func (t OrderLineItem_RawTotal_Value) AsOrderLineItemRawTotalValue1() (OrderLineItemRawTotalValue1, error) {
-	var body OrderLineItemRawTotalValue1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromOrderLineItemRawTotalValue1 overwrites any union data inside the OrderLineItem_RawTotal_Value as the provided OrderLineItemRawTotalValue1
-func (t *OrderLineItem_RawTotal_Value) FromOrderLineItemRawTotalValue1(v OrderLineItemRawTotalValue1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeOrderLineItemRawTotalValue1 performs a merge with any union data inside the OrderLineItem_RawTotal_Value, using the provided OrderLineItemRawTotalValue1
-func (t *OrderLineItem_RawTotal_Value) MergeOrderLineItemRawTotalValue1(v OrderLineItemRawTotalValue1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JsonMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t OrderLineItem_RawTotal_Value) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *OrderLineItem_RawTotal_Value) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsOrderLineItemRawUnitPriceValue0 returns the union data inside the OrderLineItem_RawUnitPrice_Value as a OrderLineItemRawUnitPriceValue0
-func (t OrderLineItem_RawUnitPrice_Value) AsOrderLineItemRawUnitPriceValue0() (OrderLineItemRawUnitPriceValue0, error) {
-	var body OrderLineItemRawUnitPriceValue0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromOrderLineItemRawUnitPriceValue0 overwrites any union data inside the OrderLineItem_RawUnitPrice_Value as the provided OrderLineItemRawUnitPriceValue0
-func (t *OrderLineItem_RawUnitPrice_Value) FromOrderLineItemRawUnitPriceValue0(v OrderLineItemRawUnitPriceValue0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeOrderLineItemRawUnitPriceValue0 performs a merge with any union data inside the OrderLineItem_RawUnitPrice_Value, using the provided OrderLineItemRawUnitPriceValue0
-func (t *OrderLineItem_RawUnitPrice_Value) MergeOrderLineItemRawUnitPriceValue0(v OrderLineItemRawUnitPriceValue0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JsonMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsOrderLineItemRawUnitPriceValue1 returns the union data inside the OrderLineItem_RawUnitPrice_Value as a OrderLineItemRawUnitPriceValue1
-func (t OrderLineItem_RawUnitPrice_Value) AsOrderLineItemRawUnitPriceValue1() (OrderLineItemRawUnitPriceValue1, error) {
-	var body OrderLineItemRawUnitPriceValue1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromOrderLineItemRawUnitPriceValue1 overwrites any union data inside the OrderLineItem_RawUnitPrice_Value as the provided OrderLineItemRawUnitPriceValue1
-func (t *OrderLineItem_RawUnitPrice_Value) FromOrderLineItemRawUnitPriceValue1(v OrderLineItemRawUnitPriceValue1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeOrderLineItemRawUnitPriceValue1 performs a merge with any union data inside the OrderLineItem_RawUnitPrice_Value, using the provided OrderLineItemRawUnitPriceValue1
-func (t *OrderLineItem_RawUnitPrice_Value) MergeOrderLineItemRawUnitPriceValue1(v OrderLineItemRawUnitPriceValue1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JsonMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t OrderLineItem_RawUnitPrice_Value) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *OrderLineItem_RawUnitPrice_Value) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsOrderShippingMethodRawAmountValue0 returns the union data inside the OrderShippingMethod_RawAmount_Value as a OrderShippingMethodRawAmountValue0
-func (t OrderShippingMethod_RawAmount_Value) AsOrderShippingMethodRawAmountValue0() (OrderShippingMethodRawAmountValue0, error) {
-	var body OrderShippingMethodRawAmountValue0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromOrderShippingMethodRawAmountValue0 overwrites any union data inside the OrderShippingMethod_RawAmount_Value as the provided OrderShippingMethodRawAmountValue0
-func (t *OrderShippingMethod_RawAmount_Value) FromOrderShippingMethodRawAmountValue0(v OrderShippingMethodRawAmountValue0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeOrderShippingMethodRawAmountValue0 performs a merge with any union data inside the OrderShippingMethod_RawAmount_Value, using the provided OrderShippingMethodRawAmountValue0
-func (t *OrderShippingMethod_RawAmount_Value) MergeOrderShippingMethodRawAmountValue0(v OrderShippingMethodRawAmountValue0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JsonMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsOrderShippingMethodRawAmountValue1 returns the union data inside the OrderShippingMethod_RawAmount_Value as a OrderShippingMethodRawAmountValue1
-func (t OrderShippingMethod_RawAmount_Value) AsOrderShippingMethodRawAmountValue1() (OrderShippingMethodRawAmountValue1, error) {
-	var body OrderShippingMethodRawAmountValue1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromOrderShippingMethodRawAmountValue1 overwrites any union data inside the OrderShippingMethod_RawAmount_Value as the provided OrderShippingMethodRawAmountValue1
-func (t *OrderShippingMethod_RawAmount_Value) FromOrderShippingMethodRawAmountValue1(v OrderShippingMethodRawAmountValue1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeOrderShippingMethodRawAmountValue1 performs a merge with any union data inside the OrderShippingMethod_RawAmount_Value, using the provided OrderShippingMethodRawAmountValue1
-func (t *OrderShippingMethod_RawAmount_Value) MergeOrderShippingMethodRawAmountValue1(v OrderShippingMethodRawAmountValue1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JsonMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t OrderShippingMethod_RawAmount_Value) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *OrderShippingMethod_RawAmount_Value) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsOrderShippingMethodRawDiscountTaxTotalValue0 returns the union data inside the OrderShippingMethod_RawDiscountTaxTotal_Value as a OrderShippingMethodRawDiscountTaxTotalValue0
-func (t OrderShippingMethod_RawDiscountTaxTotal_Value) AsOrderShippingMethodRawDiscountTaxTotalValue0() (OrderShippingMethodRawDiscountTaxTotalValue0, error) {
-	var body OrderShippingMethodRawDiscountTaxTotalValue0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromOrderShippingMethodRawDiscountTaxTotalValue0 overwrites any union data inside the OrderShippingMethod_RawDiscountTaxTotal_Value as the provided OrderShippingMethodRawDiscountTaxTotalValue0
-func (t *OrderShippingMethod_RawDiscountTaxTotal_Value) FromOrderShippingMethodRawDiscountTaxTotalValue0(v OrderShippingMethodRawDiscountTaxTotalValue0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeOrderShippingMethodRawDiscountTaxTotalValue0 performs a merge with any union data inside the OrderShippingMethod_RawDiscountTaxTotal_Value, using the provided OrderShippingMethodRawDiscountTaxTotalValue0
-func (t *OrderShippingMethod_RawDiscountTaxTotal_Value) MergeOrderShippingMethodRawDiscountTaxTotalValue0(v OrderShippingMethodRawDiscountTaxTotalValue0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JsonMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsOrderShippingMethodRawDiscountTaxTotalValue1 returns the union data inside the OrderShippingMethod_RawDiscountTaxTotal_Value as a OrderShippingMethodRawDiscountTaxTotalValue1
-func (t OrderShippingMethod_RawDiscountTaxTotal_Value) AsOrderShippingMethodRawDiscountTaxTotalValue1() (OrderShippingMethodRawDiscountTaxTotalValue1, error) {
-	var body OrderShippingMethodRawDiscountTaxTotalValue1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromOrderShippingMethodRawDiscountTaxTotalValue1 overwrites any union data inside the OrderShippingMethod_RawDiscountTaxTotal_Value as the provided OrderShippingMethodRawDiscountTaxTotalValue1
-func (t *OrderShippingMethod_RawDiscountTaxTotal_Value) FromOrderShippingMethodRawDiscountTaxTotalValue1(v OrderShippingMethodRawDiscountTaxTotalValue1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeOrderShippingMethodRawDiscountTaxTotalValue1 performs a merge with any union data inside the OrderShippingMethod_RawDiscountTaxTotal_Value, using the provided OrderShippingMethodRawDiscountTaxTotalValue1
-func (t *OrderShippingMethod_RawDiscountTaxTotal_Value) MergeOrderShippingMethodRawDiscountTaxTotalValue1(v OrderShippingMethodRawDiscountTaxTotalValue1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JsonMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t OrderShippingMethod_RawDiscountTaxTotal_Value) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *OrderShippingMethod_RawDiscountTaxTotal_Value) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsOrderShippingMethodRawDiscountTotalValue0 returns the union data inside the OrderShippingMethod_RawDiscountTotal_Value as a OrderShippingMethodRawDiscountTotalValue0
-func (t OrderShippingMethod_RawDiscountTotal_Value) AsOrderShippingMethodRawDiscountTotalValue0() (OrderShippingMethodRawDiscountTotalValue0, error) {
-	var body OrderShippingMethodRawDiscountTotalValue0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromOrderShippingMethodRawDiscountTotalValue0 overwrites any union data inside the OrderShippingMethod_RawDiscountTotal_Value as the provided OrderShippingMethodRawDiscountTotalValue0
-func (t *OrderShippingMethod_RawDiscountTotal_Value) FromOrderShippingMethodRawDiscountTotalValue0(v OrderShippingMethodRawDiscountTotalValue0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeOrderShippingMethodRawDiscountTotalValue0 performs a merge with any union data inside the OrderShippingMethod_RawDiscountTotal_Value, using the provided OrderShippingMethodRawDiscountTotalValue0
-func (t *OrderShippingMethod_RawDiscountTotal_Value) MergeOrderShippingMethodRawDiscountTotalValue0(v OrderShippingMethodRawDiscountTotalValue0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JsonMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsOrderShippingMethodRawDiscountTotalValue1 returns the union data inside the OrderShippingMethod_RawDiscountTotal_Value as a OrderShippingMethodRawDiscountTotalValue1
-func (t OrderShippingMethod_RawDiscountTotal_Value) AsOrderShippingMethodRawDiscountTotalValue1() (OrderShippingMethodRawDiscountTotalValue1, error) {
-	var body OrderShippingMethodRawDiscountTotalValue1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromOrderShippingMethodRawDiscountTotalValue1 overwrites any union data inside the OrderShippingMethod_RawDiscountTotal_Value as the provided OrderShippingMethodRawDiscountTotalValue1
-func (t *OrderShippingMethod_RawDiscountTotal_Value) FromOrderShippingMethodRawDiscountTotalValue1(v OrderShippingMethodRawDiscountTotalValue1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeOrderShippingMethodRawDiscountTotalValue1 performs a merge with any union data inside the OrderShippingMethod_RawDiscountTotal_Value, using the provided OrderShippingMethodRawDiscountTotalValue1
-func (t *OrderShippingMethod_RawDiscountTotal_Value) MergeOrderShippingMethodRawDiscountTotalValue1(v OrderShippingMethodRawDiscountTotalValue1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JsonMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t OrderShippingMethod_RawDiscountTotal_Value) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *OrderShippingMethod_RawDiscountTotal_Value) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsOrderShippingMethodRawOriginalSubtotalValue0 returns the union data inside the OrderShippingMethod_RawOriginalSubtotal_Value as a OrderShippingMethodRawOriginalSubtotalValue0
-func (t OrderShippingMethod_RawOriginalSubtotal_Value) AsOrderShippingMethodRawOriginalSubtotalValue0() (OrderShippingMethodRawOriginalSubtotalValue0, error) {
-	var body OrderShippingMethodRawOriginalSubtotalValue0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromOrderShippingMethodRawOriginalSubtotalValue0 overwrites any union data inside the OrderShippingMethod_RawOriginalSubtotal_Value as the provided OrderShippingMethodRawOriginalSubtotalValue0
-func (t *OrderShippingMethod_RawOriginalSubtotal_Value) FromOrderShippingMethodRawOriginalSubtotalValue0(v OrderShippingMethodRawOriginalSubtotalValue0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeOrderShippingMethodRawOriginalSubtotalValue0 performs a merge with any union data inside the OrderShippingMethod_RawOriginalSubtotal_Value, using the provided OrderShippingMethodRawOriginalSubtotalValue0
-func (t *OrderShippingMethod_RawOriginalSubtotal_Value) MergeOrderShippingMethodRawOriginalSubtotalValue0(v OrderShippingMethodRawOriginalSubtotalValue0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JsonMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsOrderShippingMethodRawOriginalSubtotalValue1 returns the union data inside the OrderShippingMethod_RawOriginalSubtotal_Value as a OrderShippingMethodRawOriginalSubtotalValue1
-func (t OrderShippingMethod_RawOriginalSubtotal_Value) AsOrderShippingMethodRawOriginalSubtotalValue1() (OrderShippingMethodRawOriginalSubtotalValue1, error) {
-	var body OrderShippingMethodRawOriginalSubtotalValue1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromOrderShippingMethodRawOriginalSubtotalValue1 overwrites any union data inside the OrderShippingMethod_RawOriginalSubtotal_Value as the provided OrderShippingMethodRawOriginalSubtotalValue1
-func (t *OrderShippingMethod_RawOriginalSubtotal_Value) FromOrderShippingMethodRawOriginalSubtotalValue1(v OrderShippingMethodRawOriginalSubtotalValue1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeOrderShippingMethodRawOriginalSubtotalValue1 performs a merge with any union data inside the OrderShippingMethod_RawOriginalSubtotal_Value, using the provided OrderShippingMethodRawOriginalSubtotalValue1
-func (t *OrderShippingMethod_RawOriginalSubtotal_Value) MergeOrderShippingMethodRawOriginalSubtotalValue1(v OrderShippingMethodRawOriginalSubtotalValue1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JsonMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t OrderShippingMethod_RawOriginalSubtotal_Value) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *OrderShippingMethod_RawOriginalSubtotal_Value) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsOrderShippingMethodRawOriginalTaxTotalValue0 returns the union data inside the OrderShippingMethod_RawOriginalTaxTotal_Value as a OrderShippingMethodRawOriginalTaxTotalValue0
-func (t OrderShippingMethod_RawOriginalTaxTotal_Value) AsOrderShippingMethodRawOriginalTaxTotalValue0() (OrderShippingMethodRawOriginalTaxTotalValue0, error) {
-	var body OrderShippingMethodRawOriginalTaxTotalValue0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromOrderShippingMethodRawOriginalTaxTotalValue0 overwrites any union data inside the OrderShippingMethod_RawOriginalTaxTotal_Value as the provided OrderShippingMethodRawOriginalTaxTotalValue0
-func (t *OrderShippingMethod_RawOriginalTaxTotal_Value) FromOrderShippingMethodRawOriginalTaxTotalValue0(v OrderShippingMethodRawOriginalTaxTotalValue0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeOrderShippingMethodRawOriginalTaxTotalValue0 performs a merge with any union data inside the OrderShippingMethod_RawOriginalTaxTotal_Value, using the provided OrderShippingMethodRawOriginalTaxTotalValue0
-func (t *OrderShippingMethod_RawOriginalTaxTotal_Value) MergeOrderShippingMethodRawOriginalTaxTotalValue0(v OrderShippingMethodRawOriginalTaxTotalValue0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JsonMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsOrderShippingMethodRawOriginalTaxTotalValue1 returns the union data inside the OrderShippingMethod_RawOriginalTaxTotal_Value as a OrderShippingMethodRawOriginalTaxTotalValue1
-func (t OrderShippingMethod_RawOriginalTaxTotal_Value) AsOrderShippingMethodRawOriginalTaxTotalValue1() (OrderShippingMethodRawOriginalTaxTotalValue1, error) {
-	var body OrderShippingMethodRawOriginalTaxTotalValue1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromOrderShippingMethodRawOriginalTaxTotalValue1 overwrites any union data inside the OrderShippingMethod_RawOriginalTaxTotal_Value as the provided OrderShippingMethodRawOriginalTaxTotalValue1
-func (t *OrderShippingMethod_RawOriginalTaxTotal_Value) FromOrderShippingMethodRawOriginalTaxTotalValue1(v OrderShippingMethodRawOriginalTaxTotalValue1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeOrderShippingMethodRawOriginalTaxTotalValue1 performs a merge with any union data inside the OrderShippingMethod_RawOriginalTaxTotal_Value, using the provided OrderShippingMethodRawOriginalTaxTotalValue1
-func (t *OrderShippingMethod_RawOriginalTaxTotal_Value) MergeOrderShippingMethodRawOriginalTaxTotalValue1(v OrderShippingMethodRawOriginalTaxTotalValue1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JsonMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t OrderShippingMethod_RawOriginalTaxTotal_Value) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *OrderShippingMethod_RawOriginalTaxTotal_Value) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsOrderShippingMethodRawOriginalTotalValue0 returns the union data inside the OrderShippingMethod_RawOriginalTotal_Value as a OrderShippingMethodRawOriginalTotalValue0
-func (t OrderShippingMethod_RawOriginalTotal_Value) AsOrderShippingMethodRawOriginalTotalValue0() (OrderShippingMethodRawOriginalTotalValue0, error) {
-	var body OrderShippingMethodRawOriginalTotalValue0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromOrderShippingMethodRawOriginalTotalValue0 overwrites any union data inside the OrderShippingMethod_RawOriginalTotal_Value as the provided OrderShippingMethodRawOriginalTotalValue0
-func (t *OrderShippingMethod_RawOriginalTotal_Value) FromOrderShippingMethodRawOriginalTotalValue0(v OrderShippingMethodRawOriginalTotalValue0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeOrderShippingMethodRawOriginalTotalValue0 performs a merge with any union data inside the OrderShippingMethod_RawOriginalTotal_Value, using the provided OrderShippingMethodRawOriginalTotalValue0
-func (t *OrderShippingMethod_RawOriginalTotal_Value) MergeOrderShippingMethodRawOriginalTotalValue0(v OrderShippingMethodRawOriginalTotalValue0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JsonMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsOrderShippingMethodRawOriginalTotalValue1 returns the union data inside the OrderShippingMethod_RawOriginalTotal_Value as a OrderShippingMethodRawOriginalTotalValue1
-func (t OrderShippingMethod_RawOriginalTotal_Value) AsOrderShippingMethodRawOriginalTotalValue1() (OrderShippingMethodRawOriginalTotalValue1, error) {
-	var body OrderShippingMethodRawOriginalTotalValue1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromOrderShippingMethodRawOriginalTotalValue1 overwrites any union data inside the OrderShippingMethod_RawOriginalTotal_Value as the provided OrderShippingMethodRawOriginalTotalValue1
-func (t *OrderShippingMethod_RawOriginalTotal_Value) FromOrderShippingMethodRawOriginalTotalValue1(v OrderShippingMethodRawOriginalTotalValue1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeOrderShippingMethodRawOriginalTotalValue1 performs a merge with any union data inside the OrderShippingMethod_RawOriginalTotal_Value, using the provided OrderShippingMethodRawOriginalTotalValue1
-func (t *OrderShippingMethod_RawOriginalTotal_Value) MergeOrderShippingMethodRawOriginalTotalValue1(v OrderShippingMethodRawOriginalTotalValue1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JsonMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t OrderShippingMethod_RawOriginalTotal_Value) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *OrderShippingMethod_RawOriginalTotal_Value) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsOrderShippingMethodRawSubtotalValue0 returns the union data inside the OrderShippingMethod_RawSubtotal_Value as a OrderShippingMethodRawSubtotalValue0
-func (t OrderShippingMethod_RawSubtotal_Value) AsOrderShippingMethodRawSubtotalValue0() (OrderShippingMethodRawSubtotalValue0, error) {
-	var body OrderShippingMethodRawSubtotalValue0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromOrderShippingMethodRawSubtotalValue0 overwrites any union data inside the OrderShippingMethod_RawSubtotal_Value as the provided OrderShippingMethodRawSubtotalValue0
-func (t *OrderShippingMethod_RawSubtotal_Value) FromOrderShippingMethodRawSubtotalValue0(v OrderShippingMethodRawSubtotalValue0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeOrderShippingMethodRawSubtotalValue0 performs a merge with any union data inside the OrderShippingMethod_RawSubtotal_Value, using the provided OrderShippingMethodRawSubtotalValue0
-func (t *OrderShippingMethod_RawSubtotal_Value) MergeOrderShippingMethodRawSubtotalValue0(v OrderShippingMethodRawSubtotalValue0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JsonMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsOrderShippingMethodRawSubtotalValue1 returns the union data inside the OrderShippingMethod_RawSubtotal_Value as a OrderShippingMethodRawSubtotalValue1
-func (t OrderShippingMethod_RawSubtotal_Value) AsOrderShippingMethodRawSubtotalValue1() (OrderShippingMethodRawSubtotalValue1, error) {
-	var body OrderShippingMethodRawSubtotalValue1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromOrderShippingMethodRawSubtotalValue1 overwrites any union data inside the OrderShippingMethod_RawSubtotal_Value as the provided OrderShippingMethodRawSubtotalValue1
-func (t *OrderShippingMethod_RawSubtotal_Value) FromOrderShippingMethodRawSubtotalValue1(v OrderShippingMethodRawSubtotalValue1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeOrderShippingMethodRawSubtotalValue1 performs a merge with any union data inside the OrderShippingMethod_RawSubtotal_Value, using the provided OrderShippingMethodRawSubtotalValue1
-func (t *OrderShippingMethod_RawSubtotal_Value) MergeOrderShippingMethodRawSubtotalValue1(v OrderShippingMethodRawSubtotalValue1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JsonMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t OrderShippingMethod_RawSubtotal_Value) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *OrderShippingMethod_RawSubtotal_Value) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsOrderShippingMethodRawTaxTotalValue0 returns the union data inside the OrderShippingMethod_RawTaxTotal_Value as a OrderShippingMethodRawTaxTotalValue0
-func (t OrderShippingMethod_RawTaxTotal_Value) AsOrderShippingMethodRawTaxTotalValue0() (OrderShippingMethodRawTaxTotalValue0, error) {
-	var body OrderShippingMethodRawTaxTotalValue0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromOrderShippingMethodRawTaxTotalValue0 overwrites any union data inside the OrderShippingMethod_RawTaxTotal_Value as the provided OrderShippingMethodRawTaxTotalValue0
-func (t *OrderShippingMethod_RawTaxTotal_Value) FromOrderShippingMethodRawTaxTotalValue0(v OrderShippingMethodRawTaxTotalValue0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeOrderShippingMethodRawTaxTotalValue0 performs a merge with any union data inside the OrderShippingMethod_RawTaxTotal_Value, using the provided OrderShippingMethodRawTaxTotalValue0
-func (t *OrderShippingMethod_RawTaxTotal_Value) MergeOrderShippingMethodRawTaxTotalValue0(v OrderShippingMethodRawTaxTotalValue0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JsonMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsOrderShippingMethodRawTaxTotalValue1 returns the union data inside the OrderShippingMethod_RawTaxTotal_Value as a OrderShippingMethodRawTaxTotalValue1
-func (t OrderShippingMethod_RawTaxTotal_Value) AsOrderShippingMethodRawTaxTotalValue1() (OrderShippingMethodRawTaxTotalValue1, error) {
-	var body OrderShippingMethodRawTaxTotalValue1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromOrderShippingMethodRawTaxTotalValue1 overwrites any union data inside the OrderShippingMethod_RawTaxTotal_Value as the provided OrderShippingMethodRawTaxTotalValue1
-func (t *OrderShippingMethod_RawTaxTotal_Value) FromOrderShippingMethodRawTaxTotalValue1(v OrderShippingMethodRawTaxTotalValue1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeOrderShippingMethodRawTaxTotalValue1 performs a merge with any union data inside the OrderShippingMethod_RawTaxTotal_Value, using the provided OrderShippingMethodRawTaxTotalValue1
-func (t *OrderShippingMethod_RawTaxTotal_Value) MergeOrderShippingMethodRawTaxTotalValue1(v OrderShippingMethodRawTaxTotalValue1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JsonMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t OrderShippingMethod_RawTaxTotal_Value) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *OrderShippingMethod_RawTaxTotal_Value) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsOrderShippingMethodRawTotalValue0 returns the union data inside the OrderShippingMethod_RawTotal_Value as a OrderShippingMethodRawTotalValue0
-func (t OrderShippingMethod_RawTotal_Value) AsOrderShippingMethodRawTotalValue0() (OrderShippingMethodRawTotalValue0, error) {
-	var body OrderShippingMethodRawTotalValue0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromOrderShippingMethodRawTotalValue0 overwrites any union data inside the OrderShippingMethod_RawTotal_Value as the provided OrderShippingMethodRawTotalValue0
-func (t *OrderShippingMethod_RawTotal_Value) FromOrderShippingMethodRawTotalValue0(v OrderShippingMethodRawTotalValue0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeOrderShippingMethodRawTotalValue0 performs a merge with any union data inside the OrderShippingMethod_RawTotal_Value, using the provided OrderShippingMethodRawTotalValue0
-func (t *OrderShippingMethod_RawTotal_Value) MergeOrderShippingMethodRawTotalValue0(v OrderShippingMethodRawTotalValue0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JsonMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsOrderShippingMethodRawTotalValue1 returns the union data inside the OrderShippingMethod_RawTotal_Value as a OrderShippingMethodRawTotalValue1
-func (t OrderShippingMethod_RawTotal_Value) AsOrderShippingMethodRawTotalValue1() (OrderShippingMethodRawTotalValue1, error) {
-	var body OrderShippingMethodRawTotalValue1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromOrderShippingMethodRawTotalValue1 overwrites any union data inside the OrderShippingMethod_RawTotal_Value as the provided OrderShippingMethodRawTotalValue1
-func (t *OrderShippingMethod_RawTotal_Value) FromOrderShippingMethodRawTotalValue1(v OrderShippingMethodRawTotalValue1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeOrderShippingMethodRawTotalValue1 performs a merge with any union data inside the OrderShippingMethod_RawTotal_Value, using the provided OrderShippingMethodRawTotalValue1
-func (t *OrderShippingMethod_RawTotal_Value) MergeOrderShippingMethodRawTotalValue1(v OrderShippingMethodRawTotalValue1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JsonMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t OrderShippingMethod_RawTotal_Value) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *OrderShippingMethod_RawTotal_Value) UnmarshalJSON(b []byte) error {
+func (t *Return_RawRefundAmount) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
@@ -33765,6 +33631,9 @@ type ClientInterface interface {
 
 	PostOrdersIdFulfillmentsFulfillmentIdShipments(ctx context.Context, id string, fulfillmentId string, params *PostOrdersIdFulfillmentsFulfillmentIdShipmentsParams, body PostOrdersIdFulfillmentsFulfillmentIdShipmentsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// GetOrdersIdLineItems request
+	GetOrdersIdLineItems(ctx context.Context, id string, params *GetOrdersIdLineItemsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// GetOrdersIdPreview request
 	GetOrdersIdPreview(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
 
@@ -34375,6 +34244,11 @@ type ClientInterface interface {
 	// GetTaxRegionsId request
 	GetTaxRegionsId(ctx context.Context, id string, params *GetTaxRegionsIdParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// PostTaxRegionsIdWithBody request with any body
+	PostTaxRegionsIdWithBody(ctx context.Context, id string, params *PostTaxRegionsIdParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	PostTaxRegionsId(ctx context.Context, id string, params *PostTaxRegionsIdParams, body PostTaxRegionsIdJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// PostUploadsWithBody request with any body
 	PostUploadsWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
@@ -34454,6 +34328,16 @@ type ClientInterface interface {
 	PostActorTypeAuthProviderRegisterWithBody(ctx context.Context, authProvider string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	PostActorTypeAuthProviderRegister(ctx context.Context, authProvider string, body PostActorTypeAuthProviderRegisterJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostActorTypeAuthProviderResetPasswordWithBody request with any body
+	PostActorTypeAuthProviderResetPasswordWithBody(ctx context.Context, authProvider string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	PostActorTypeAuthProviderResetPassword(ctx context.Context, authProvider string, body PostActorTypeAuthProviderResetPasswordJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostActorTypeAuthProviderUpdateWithBody request with any body
+	PostActorTypeAuthProviderUpdateWithBody(ctx context.Context, authProvider string, params *PostActorTypeAuthProviderUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	PostActorTypeAuthProviderUpdate(ctx context.Context, authProvider string, params *PostActorTypeAuthProviderUpdateParams, body PostActorTypeAuthProviderUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 }
 
 func (c *Client) GetApiKeys(ctx context.Context, params *GetApiKeysParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -36714,6 +36598,18 @@ func (c *Client) PostOrdersIdFulfillmentsFulfillmentIdShipmentsWithBody(ctx cont
 
 func (c *Client) PostOrdersIdFulfillmentsFulfillmentIdShipments(ctx context.Context, id string, fulfillmentId string, params *PostOrdersIdFulfillmentsFulfillmentIdShipmentsParams, body PostOrdersIdFulfillmentsFulfillmentIdShipmentsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewPostOrdersIdFulfillmentsFulfillmentIdShipmentsRequest(c.Server, id, fulfillmentId, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) GetOrdersIdLineItems(ctx context.Context, id string, params *GetOrdersIdLineItemsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetOrdersIdLineItemsRequest(c.Server, id, params)
 	if err != nil {
 		return nil, err
 	}
@@ -39460,6 +39356,30 @@ func (c *Client) GetTaxRegionsId(ctx context.Context, id string, params *GetTaxR
 	return c.Client.Do(req)
 }
 
+func (c *Client) PostTaxRegionsIdWithBody(ctx context.Context, id string, params *PostTaxRegionsIdParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostTaxRegionsIdRequestWithBody(c.Server, id, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) PostTaxRegionsId(ctx context.Context, id string, params *PostTaxRegionsIdParams, body PostTaxRegionsIdJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostTaxRegionsIdRequest(c.Server, id, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 func (c *Client) PostUploadsWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewPostUploadsRequestWithBody(c.Server, contentType, body)
 	if err != nil {
@@ -39808,6 +39728,54 @@ func (c *Client) PostActorTypeAuthProviderRegister(ctx context.Context, authProv
 	return c.Client.Do(req)
 }
 
+func (c *Client) PostActorTypeAuthProviderResetPasswordWithBody(ctx context.Context, authProvider string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostActorTypeAuthProviderResetPasswordRequestWithBody(c.Server, authProvider, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) PostActorTypeAuthProviderResetPassword(ctx context.Context, authProvider string, body PostActorTypeAuthProviderResetPasswordJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostActorTypeAuthProviderResetPasswordRequest(c.Server, authProvider, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) PostActorTypeAuthProviderUpdateWithBody(ctx context.Context, authProvider string, params *PostActorTypeAuthProviderUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostActorTypeAuthProviderUpdateRequestWithBody(c.Server, authProvider, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) PostActorTypeAuthProviderUpdate(ctx context.Context, authProvider string, params *PostActorTypeAuthProviderUpdateParams, body PostActorTypeAuthProviderUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostActorTypeAuthProviderUpdateRequest(c.Server, authProvider, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 // NewGetApiKeysRequest generates requests for GetApiKeys
 func NewGetApiKeysRequest(server string, params *GetApiKeysParams) (*http.Request, error) {
 	var err error
@@ -39829,22 +39797,6 @@ func NewGetApiKeysRequest(server string, params *GetApiKeysParams) (*http.Reques
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -40200,22 +40152,6 @@ func NewGetApiKeysIdRequest(server string, id string, params *GetApiKeysIdParams
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -40282,22 +40218,6 @@ func NewPostApiKeysIdRequestWithBody(server string, id string, params *PostApiKe
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -40368,22 +40288,6 @@ func NewPostApiKeysIdRevokeRequestWithBody(server string, id string, params *Pos
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -40453,22 +40357,6 @@ func NewPostApiKeysIdSalesChannelsRequestWithBody(server string, id string, para
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -40519,22 +40407,6 @@ func NewGetCampaignsRequest(server string, params *GetCampaignsParams) (*http.Re
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -40644,22 +40516,6 @@ func NewPostCampaignsRequestWithBody(server string, params *PostCampaignsParams,
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -40752,22 +40608,6 @@ func NewGetCampaignsIdRequest(server string, id string, params *GetCampaignsIdPa
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -40834,22 +40674,6 @@ func NewPostCampaignsIdRequestWithBody(server string, id string, params *PostCam
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -40920,22 +40744,6 @@ func NewPostCampaignsIdPromotionsRequestWithBody(server string, id string, param
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -40986,22 +40794,6 @@ func NewGetClaimsRequest(server string, params *GetClaimsParams) (*http.Request,
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -41255,22 +41047,6 @@ func NewPostClaimsRequestWithBody(server string, params *PostClaimsParams, conte
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -41328,22 +41104,6 @@ func NewGetClaimsIdRequest(server string, id string, params *GetClaimsIdParams) 
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -41459,22 +41219,6 @@ func NewPostClaimsIdClaimItemsRequestWithBody(server string, id string, params *
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -41539,22 +41283,6 @@ func NewDeleteClaimsIdClaimItemsActionIdRequest(server string, id string, action
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -41629,22 +41357,6 @@ func NewPostClaimsIdClaimItemsActionIdRequestWithBody(server string, id string, 
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -41952,22 +41664,6 @@ func NewPostClaimsIdInboundShippingMethodActionIdRequestWithBody(server string, 
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -42037,22 +41733,6 @@ func NewPostClaimsIdOutboundItemsRequestWithBody(server string, id string, param
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -42117,22 +41797,6 @@ func NewDeleteClaimsIdOutboundItemsActionIdRequest(server string, id string, act
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -42208,22 +41872,6 @@ func NewPostClaimsIdOutboundItemsActionIdRequestWithBody(server string, id strin
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -42293,22 +41941,6 @@ func NewPostClaimsIdOutboundShippingMethodRequestWithBody(server string, id stri
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -42373,22 +42005,6 @@ func NewDeleteClaimsIdOutboundShippingMethodActionIdRequest(server string, id st
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -42463,22 +42079,6 @@ func NewPostClaimsIdOutboundShippingMethodActionIdRequestWithBody(server string,
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -42572,22 +42172,6 @@ func NewPostClaimsIdRequestRequest(server string, id string, params *PostClaimsI
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -42636,22 +42220,6 @@ func NewGetCollectionsRequest(server string, params *GetCollectionsParams) (*htt
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -42905,22 +42473,6 @@ func NewPostCollectionsRequestWithBody(server string, params *PostCollectionsPar
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -43013,22 +42565,6 @@ func NewGetCollectionsIdRequest(server string, id string, params *GetCollections
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -43095,22 +42631,6 @@ func NewPostCollectionsIdRequestWithBody(server string, id string, params *PostC
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -43181,22 +42701,6 @@ func NewPostCollectionsIdProductsRequestWithBody(server string, id string, param
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -43247,22 +42751,6 @@ func NewGetCurrenciesRequest(server string, params *GetCurrenciesParams) (*http.
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -43432,22 +42920,6 @@ func NewGetCurrenciesCodeRequest(server string, code string, params *GetCurrenci
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -43496,22 +42968,6 @@ func NewGetCustomerGroupsRequest(server string, params *GetCustomerGroupsParams)
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -43781,22 +43237,6 @@ func NewPostCustomerGroupsRequestWithBody(server string, params *PostCustomerGro
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -43889,22 +43329,6 @@ func NewGetCustomerGroupsIdRequest(server string, id string, params *GetCustomer
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -43971,22 +43395,6 @@ func NewPostCustomerGroupsIdRequestWithBody(server string, id string, params *Po
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -44057,22 +43465,6 @@ func NewPostCustomerGroupsIdCustomersRequestWithBody(server string, id string, p
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -44123,22 +43515,6 @@ func NewGetCustomersRequest(server string, params *GetCustomersParams) (*http.Re
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -44472,22 +43848,6 @@ func NewPostCustomersRequestWithBody(server string, params *PostCustomersParams,
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -44580,22 +43940,6 @@ func NewGetCustomersIdRequest(server string, id string, params *GetCustomersIdPa
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -44663,22 +44007,6 @@ func NewPostCustomersIdRequestWithBody(server string, id string, params *PostCus
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -44736,22 +44064,6 @@ func NewGetCustomersIdAddressesRequest(server string, id string, params *GetCust
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -44996,22 +44308,6 @@ func NewPostCustomersIdAddressesRequestWithBody(server string, id string, params
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -45077,22 +44373,6 @@ func NewDeleteCustomersIdAddressesAddressIdRequest(server string, id string, add
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -45155,22 +44435,6 @@ func NewGetCustomersIdAddressesAddressIdRequest(server string, id string, addres
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -45246,22 +44510,6 @@ func NewPostCustomersIdAddressesAddressIdRequestWithBody(server string, id strin
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -45312,22 +44560,6 @@ func NewGetDraftOrdersRequest(server string, params *GetDraftOrdersParams) (*htt
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -45613,22 +44845,6 @@ func NewPostDraftOrdersRequestWithBody(server string, params *PostDraftOrdersPar
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -45713,22 +44929,6 @@ func NewGetExchangesRequest(server string, params *GetExchangesParams) (*http.Re
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -45982,22 +45182,6 @@ func NewPostExchangesRequestWithBody(server string, params *PostExchangesParams,
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -46055,22 +45239,6 @@ func NewGetExchangesIdRequest(server string, id string, params *GetExchangesIdPa
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -46423,22 +45591,6 @@ func NewPostExchangesIdInboundShippingMethodActionIdRequestWithBody(server strin
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -46508,22 +45660,6 @@ func NewPostExchangesIdOutboundItemsRequestWithBody(server string, id string, pa
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -46588,22 +45724,6 @@ func NewDeleteExchangesIdOutboundItemsActionIdRequest(server string, id string, 
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -46679,22 +45799,6 @@ func NewPostExchangesIdOutboundItemsActionIdRequestWithBody(server string, id st
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -46764,22 +45868,6 @@ func NewPostExchangesIdOutboundShippingMethodRequestWithBody(server string, id s
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -46844,22 +45932,6 @@ func NewDeleteExchangesIdOutboundShippingMethodActionIdRequest(server string, id
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -46934,22 +46006,6 @@ func NewPostExchangesIdOutboundShippingMethodActionIdRequestWithBody(server stri
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -47043,22 +46099,6 @@ func NewPostExchangesIdRequestRequest(server string, id string, params *PostExch
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -47107,22 +46147,6 @@ func NewGetFulfillmentProvidersRequest(server string, params *GetFulfillmentProv
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -47337,22 +46361,6 @@ func NewPostFulfillmentSetsIdServiceZonesRequestWithBody(server string, id strin
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -47459,22 +46467,6 @@ func NewGetFulfillmentSetsIdServiceZonesZoneIdRequest(server string, id string, 
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -47549,22 +46541,6 @@ func NewPostFulfillmentSetsIdServiceZonesZoneIdRequestWithBody(server string, id
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -47627,22 +46603,6 @@ func NewPostFulfillmentsRequestWithBody(server string, params *PostFulfillmentsP
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -47700,22 +46660,6 @@ func NewPostFulfillmentsIdCancelRequest(server string, id string, params *PostFu
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -47784,22 +46728,6 @@ func NewPostFulfillmentsIdShipmentRequestWithBody(server string, id string, para
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -47850,22 +46778,6 @@ func NewGetInventoryItemsRequest(server string, params *GetInventoryItemsParams)
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -48215,22 +47127,6 @@ func NewPostInventoryItemsRequestWithBody(server string, params *PostInventoryIt
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -48323,22 +47219,6 @@ func NewGetInventoryItemsIdRequest(server string, id string, params *GetInventor
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -48406,22 +47286,6 @@ func NewPostInventoryItemsIdRequestWithBody(server string, id string, params *Po
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -48479,22 +47343,6 @@ func NewGetInventoryItemsIdLocationLevelsRequest(server string, id string, param
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -48659,22 +47507,6 @@ func NewPostInventoryItemsIdLocationLevelsRequestWithBody(server string, id stri
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -48787,22 +47619,6 @@ func NewDeleteInventoryItemsIdLocationLevelsLocationIdRequest(server string, id 
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -48877,22 +47693,6 @@ func NewPostInventoryItemsIdLocationLevelsLocationIdRequestWithBody(server strin
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -48943,22 +47743,6 @@ func NewGetInvitesRequest(server string, params *GetInvitesParams) (*http.Reques
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -49196,22 +47980,6 @@ func NewPostInvitesRequestWithBody(server string, params *PostInvitesParams, con
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -49344,22 +48112,6 @@ func NewGetInvitesIdRequest(server string, id string, params *GetInvitesIdParams
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -49416,22 +48168,6 @@ func NewPostInvitesIdResendRequest(server string, id string, params *PostInvites
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -49480,22 +48216,6 @@ func NewGetNotificationsRequest(server string, params *GetNotificationsParams) (
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -49680,22 +48400,6 @@ func NewGetNotificationsIdRequest(server string, id string, params *GetNotificat
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -50226,22 +48930,6 @@ func NewGetOrdersRequest(server string, params *GetOrdersParams) (*http.Request,
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -50522,9 +49210,9 @@ func NewGetOrdersIdRequest(server string, id string, params *GetOrdersIdParams) 
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
+		if params.Fields != nil {
 
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
 				return nil, err
 			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
 				return nil, err
@@ -50538,9 +49226,89 @@ func NewGetOrdersIdRequest(server string, id string, params *GetOrdersIdParams) 
 
 		}
 
-		if params.Fields != nil {
+		if params.Id != nil {
 
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "id", runtime.ParamLocationQuery, *params.Id); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Status != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "status", runtime.ParamLocationQuery, *params.Status); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Version != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "version", runtime.ParamLocationQuery, *params.Version); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.CreatedAt != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "created_at", runtime.ParamLocationQuery, *params.CreatedAt); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.UpdatedAt != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "updated_at", runtime.ParamLocationQuery, *params.UpdatedAt); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.DeletedAt != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "deleted_at", runtime.ParamLocationQuery, *params.DeletedAt); err != nil {
 				return nil, err
 			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
 				return nil, err
@@ -50593,22 +49361,6 @@ func NewPostOrdersIdRequest(server string, id string, params *PostOrdersIdParams
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -50666,22 +49418,6 @@ func NewPostOrdersIdArchiveRequest(server string, id string, params *PostOrdersI
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -50738,22 +49474,6 @@ func NewPostOrdersIdCancelRequest(server string, id string, params *PostOrdersId
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -50809,22 +49529,6 @@ func NewGetOrdersIdChangesRequest(server string, id string, params *GetOrdersIdC
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -50892,22 +49596,6 @@ func NewPostOrdersIdCompleteRequestWithBody(server string, id string, params *Po
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -50977,22 +49665,6 @@ func NewPostOrdersIdFulfillmentsRequestWithBody(server string, id string, params
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -51070,22 +49742,6 @@ func NewPostOrdersIdFulfillmentsFulfillmentIdCancelRequestWithBody(server string
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -51150,22 +49806,6 @@ func NewPostOrdersIdFulfillmentsFulfillmentIdMarkAsDeliveredRequest(server strin
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -51241,22 +49881,6 @@ func NewPostOrdersIdFulfillmentsFulfillmentIdShipmentsRequestWithBody(server str
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -51282,6 +49906,174 @@ func NewPostOrdersIdFulfillmentsFulfillmentIdShipmentsRequestWithBody(server str
 	}
 
 	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGetOrdersIdLineItemsRequest generates requests for GetOrdersIdLineItems
+func NewGetOrdersIdLineItemsRequest(server string, id string, params *GetOrdersIdLineItemsParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/admin/orders/%s/line-items", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Fields != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Id != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "id", runtime.ParamLocationQuery, *params.Id); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.ItemId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "item_id", runtime.ParamLocationQuery, *params.ItemId); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.OrderId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "order_id", runtime.ParamLocationQuery, *params.OrderId); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Version != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "version", runtime.ParamLocationQuery, *params.Version); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "limit", runtime.ParamLocationQuery, *params.Limit); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Offset != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "offset", runtime.ParamLocationQuery, *params.Offset); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Order != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "order", runtime.ParamLocationQuery, *params.Order); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
 
 	return req, nil
 }
@@ -51352,22 +50144,6 @@ func NewPostPaymentCollectionsRequestWithBody(server string, params *PostPayment
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -51472,22 +50248,6 @@ func NewPostPaymentCollectionsIdMarkAsPaidRequestWithBody(server string, id stri
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -51538,22 +50298,6 @@ func NewGetPaymentsRequest(server string, params *GetPaymentsParams) (*http.Requ
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -51780,22 +50524,6 @@ func NewGetPaymentsPaymentProvidersRequest(server string, params *GetPaymentsPay
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -51960,22 +50688,6 @@ func NewGetPaymentsIdRequest(server string, id string, params *GetPaymentsIdPara
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -52042,22 +50754,6 @@ func NewPostPaymentsIdCaptureRequestWithBody(server string, id string, params *P
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -52128,22 +50824,6 @@ func NewPostPaymentsIdRefundRequestWithBody(server string, id string, params *Po
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -52194,22 +50874,6 @@ func NewGetPriceListsRequest(server string, params *GetPriceListsParams) (*http.
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -52447,22 +51111,6 @@ func NewPostPriceListsRequestWithBody(server string, params *PostPriceListsParam
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -52555,22 +51203,6 @@ func NewGetPriceListsIdRequest(server string, id string, params *GetPriceListsId
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -52637,22 +51269,6 @@ func NewPostPriceListsIdRequestWithBody(server string, id string, params *PostPr
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -52770,22 +51386,6 @@ func NewPostPriceListsIdProductsRequestWithBody(server string, id string, params
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -52836,22 +51436,6 @@ func NewGetPricePreferencesRequest(server string, params *GetPricePreferencesPar
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -53057,22 +51641,6 @@ func NewPostPricePreferencesRequestWithBody(server string, params *PostPricePref
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -53165,22 +51733,6 @@ func NewGetPricePreferencesIdRequest(server string, id string, params *GetPriceP
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -53248,22 +51800,6 @@ func NewPostPricePreferencesIdRequestWithBody(server string, id string, params *
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -53314,22 +51850,6 @@ func NewGetProductCategoriesRequest(server string, params *GetProductCategoriesP
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -53679,22 +52199,6 @@ func NewPostProductCategoriesRequestWithBody(server string, params *PostProductC
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -53786,22 +52290,6 @@ func NewGetProductCategoriesIdRequest(server string, id string, params *GetProdu
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -53902,22 +52390,6 @@ func NewPostProductCategoriesIdRequestWithBody(server string, id string, params 
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -53987,22 +52459,6 @@ func NewPostProductCategoriesIdProductsRequestWithBody(server string, id string,
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -54053,22 +52509,6 @@ func NewGetProductTagsRequest(server string, params *GetProductTagsParams) (*htt
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -54306,22 +52746,6 @@ func NewPostProductTagsRequestWithBody(server string, params *PostProductTagsPar
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -54414,22 +52838,6 @@ func NewGetProductTagsIdRequest(server string, id string, params *GetProductTags
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -54497,22 +52905,6 @@ func NewPostProductTagsIdRequestWithBody(server string, id string, params *PostP
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -54563,22 +52955,6 @@ func NewGetProductTypesRequest(server string, params *GetProductTypesParams) (*h
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -54816,22 +53192,6 @@ func NewPostProductTypesRequestWithBody(server string, params *PostProductTypesP
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -54924,22 +53284,6 @@ func NewGetProductTypesIdRequest(server string, id string, params *GetProductTyp
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -55007,22 +53351,6 @@ func NewPostProductTypesIdRequestWithBody(server string, id string, params *Post
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -55073,22 +53401,6 @@ func NewGetProductVariantsRequest(server string, params *GetProductVariantsParam
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -55330,22 +53642,6 @@ func NewGetProductsRequest(server string, params *GetProductsParams) (*http.Requ
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -55743,22 +54039,6 @@ func NewPostProductsRequestWithBody(server string, params *PostProductsParams, c
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -55821,22 +54101,6 @@ func NewPostProductsBatchRequestWithBody(server string, params *PostProductsBatc
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -55887,22 +54151,6 @@ func NewPostProductsExportRequest(server string, params *PostProductsExportParam
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -56068,22 +54316,6 @@ func NewGetProductsIdRequest(server string, id string, params *GetProductsIdPara
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -56151,22 +54383,6 @@ func NewPostProductsIdRequestWithBody(server string, id string, params *PostProd
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -56224,22 +54440,6 @@ func NewGetProductsIdOptionsRequest(server string, id string, params *GetProduct
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -56436,22 +54636,6 @@ func NewPostProductsIdOptionsRequestWithBody(server string, id string, params *P
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -56517,22 +54701,6 @@ func NewDeleteProductsIdOptionsOptionIdRequest(server string, id string, optionI
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -56595,22 +54763,6 @@ func NewGetProductsIdOptionsOptionIdRequest(server string, id string, optionId s
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -56686,22 +54838,6 @@ func NewPostProductsIdOptionsOptionIdRequestWithBody(server string, id string, o
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -56759,22 +54895,6 @@ func NewGetProductsIdVariantsRequest(server string, id string, params *GetProduc
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -57035,22 +55155,6 @@ func NewPostProductsIdVariantsRequestWithBody(server string, id string, params *
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -57119,22 +55223,6 @@ func NewPostProductsIdVariantsBatchRequestWithBody(server string, id string, par
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -57248,22 +55336,6 @@ func NewDeleteProductsIdVariantsVariantIdRequest(server string, id string, varia
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -57326,22 +55398,6 @@ func NewGetProductsIdVariantsVariantIdRequest(server string, id string, variantI
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -57416,22 +55472,6 @@ func NewPostProductsIdVariantsVariantIdRequestWithBody(server string, id string,
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -57509,22 +55549,6 @@ func NewPostProductsIdVariantsVariantIdInventoryItemsRequestWithBody(server stri
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -57596,22 +55620,6 @@ func NewDeleteProductsIdVariantsVariantIdInventoryItemsInventoryItemIdRequest(se
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -57694,22 +55702,6 @@ func NewPostProductsIdVariantsVariantIdInventoryItemsInventoryItemIdRequestWithB
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -57760,22 +55752,6 @@ func NewGetPromotionsRequest(server string, params *GetPromotionsParams) (*http.
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -58028,22 +56004,6 @@ func NewPostPromotionsRequestWithBody(server string, params *PostPromotionsParam
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -58336,22 +56296,6 @@ func NewGetPromotionsIdRequest(server string, id string, params *GetPromotionsId
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -58418,22 +56362,6 @@ func NewPostPromotionsIdRequestWithBody(server string, id string, params *PostPr
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -58504,22 +56432,6 @@ func NewPostPromotionsIdBuyRulesBatchRequestWithBody(server string, id string, p
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -58588,22 +56500,6 @@ func NewPostPromotionsIdRulesBatchRequestWithBody(server string, id string, para
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -58674,22 +56570,6 @@ func NewPostPromotionsIdTargetRulesBatchRequestWithBody(server string, id string
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -58755,22 +56635,6 @@ func NewGetPromotionsIdRuleTypeRequest(server string, id string, ruleType GetPro
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -58819,22 +56683,6 @@ func NewGetRefundReasonsRequest(server string, params *GetRefundReasonsParams) (
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -59008,22 +56856,6 @@ func NewPostRefundReasonsRequestWithBody(server string, params *PostRefundReason
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -59116,22 +56948,6 @@ func NewGetRefundReasonsIdRequest(server string, id string, params *GetRefundRea
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -59199,22 +57015,6 @@ func NewPostRefundReasonsIdRequestWithBody(server string, id string, params *Pos
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -59265,22 +57065,6 @@ func NewGetRegionsRequest(server string, params *GetRegionsParams) (*http.Reques
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -59534,22 +57318,6 @@ func NewPostRegionsRequestWithBody(server string, params *PostRegionsParams, con
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -59642,22 +57410,6 @@ func NewGetRegionsIdRequest(server string, id string, params *GetRegionsIdParams
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -59725,22 +57477,6 @@ func NewPostRegionsIdRequestWithBody(server string, id string, params *PostRegio
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -59791,22 +57527,6 @@ func NewGetReservationsRequest(server string, params *GetReservationsParams) (*h
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -60044,22 +57764,6 @@ func NewPostReservationsRequestWithBody(server string, params *PostReservationsP
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -60152,22 +57856,6 @@ func NewGetReservationsIdRequest(server string, id string, params *GetReservatio
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -60235,22 +57923,6 @@ func NewPostReservationsIdRequestWithBody(server string, id string, params *Post
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -60301,22 +57973,6 @@ func NewGetReturnReasonsRequest(server string, params *GetReturnReasonsParams) (
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -60602,22 +58258,6 @@ func NewPostReturnReasonsRequestWithBody(server string, params *PostReturnReason
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -60710,22 +58350,6 @@ func NewGetReturnReasonsIdRequest(server string, id string, params *GetReturnRea
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -60793,22 +58417,6 @@ func NewPostReturnReasonsIdRequestWithBody(server string, id string, params *Pos
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -60859,22 +58467,6 @@ func NewGetReturnsRequest(server string, params *GetReturnsParams) (*http.Reques
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -61160,22 +58752,6 @@ func NewPostReturnsRequestWithBody(server string, params *PostReturnsParams, con
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -61233,22 +58809,6 @@ func NewGetReturnsIdRequest(server string, id string, params *GetReturnsIdParams
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -61316,22 +58876,6 @@ func NewPostReturnsIdRequestWithBody(server string, id string, params *PostRetur
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -61449,22 +58993,6 @@ func NewPostReturnsIdDismissItemsRequestWithBody(server string, id string, param
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -61529,22 +59057,6 @@ func NewDeleteReturnsIdDismissItemsActionIdRequest(server string, id string, act
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -61619,22 +59131,6 @@ func NewPostReturnsIdDismissItemsActionIdRequestWithBody(server string, id strin
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -61739,22 +59235,6 @@ func NewPostReturnsIdReceiveRequestWithBody(server string, id string, params *Po
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -61824,22 +59304,6 @@ func NewPostReturnsIdReceiveItemsRequestWithBody(server string, id string, param
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -61904,22 +59368,6 @@ func NewDeleteReturnsIdReceiveItemsActionIdRequest(server string, id string, act
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -61995,22 +59443,6 @@ func NewPostReturnsIdReceiveItemsActionIdRequestWithBody(server string, id strin
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -62079,22 +59511,6 @@ func NewPostReturnsIdReceiveConfirmRequestWithBody(server string, id string, par
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -62199,22 +59615,6 @@ func NewPostReturnsIdRequestRequestWithBody(server string, id string, params *Po
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -62284,22 +59684,6 @@ func NewPostReturnsIdRequestItemsRequestWithBody(server string, id string, param
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -62364,22 +59748,6 @@ func NewDeleteReturnsIdRequestItemsActionIdRequest(server string, id string, act
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -62455,22 +59823,6 @@ func NewPostReturnsIdRequestItemsActionIdRequestWithBody(server string, id strin
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -62540,22 +59892,6 @@ func NewPostReturnsIdShippingMethodRequestWithBody(server string, id string, par
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -62620,22 +59956,6 @@ func NewDeleteReturnsIdShippingMethodActionIdRequest(server string, id string, a
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -62711,22 +60031,6 @@ func NewPostReturnsIdShippingMethodActionIdRequestWithBody(server string, id str
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -62777,22 +60081,6 @@ func NewGetSalesChannelsRequest(server string, params *GetSalesChannelsParams) (
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -63094,22 +60382,6 @@ func NewPostSalesChannelsRequestWithBody(server string, params *PostSalesChannel
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -63202,22 +60474,6 @@ func NewGetSalesChannelsIdRequest(server string, id string, params *GetSalesChan
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -63284,22 +60540,6 @@ func NewPostSalesChannelsIdRequestWithBody(server string, id string, params *Pos
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -63370,22 +60610,6 @@ func NewPostSalesChannelsIdProductsRequestWithBody(server string, id string, par
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -63436,22 +60660,6 @@ func NewGetShippingOptionsRequest(server string, params *GetShippingOptionsParam
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -63753,22 +60961,6 @@ func NewPostShippingOptionsRequestWithBody(server string, params *PostShippingOp
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -63861,22 +61053,6 @@ func NewGetShippingOptionsIdRequest(server string, id string, params *GetShippin
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -63943,22 +61119,6 @@ func NewPostShippingOptionsIdRequestWithBody(server string, id string, params *P
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -64029,22 +61189,6 @@ func NewPostShippingOptionsIdRulesBatchRequestWithBody(server string, id string,
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -64095,22 +61239,6 @@ func NewGetShippingProfilesRequest(server string, params *GetShippingProfilesPar
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -64364,22 +61492,6 @@ func NewPostShippingProfilesRequestWithBody(server string, params *PostShippingP
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -64472,22 +61584,6 @@ func NewGetShippingProfilesIdRequest(server string, id string, params *GetShippi
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -64555,22 +61651,6 @@ func NewPostShippingProfilesIdRequestWithBody(server string, id string, params *
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -64621,22 +61701,6 @@ func NewGetStockLocationsRequest(server string, params *GetStockLocationsParams)
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -64906,22 +61970,6 @@ func NewPostStockLocationsRequestWithBody(server string, params *PostStockLocati
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -65014,22 +62062,6 @@ func NewGetStockLocationsIdRequest(server string, id string, params *GetStockLoc
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -65096,22 +62128,6 @@ func NewPostStockLocationsIdRequestWithBody(server string, id string, params *Po
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -65182,22 +62198,6 @@ func NewPostStockLocationsIdFulfillmentProvidersRequestWithBody(server string, i
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -65266,22 +62266,6 @@ func NewPostStockLocationsIdFulfillmentSetsRequestWithBody(server string, id str
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -65352,22 +62336,6 @@ func NewPostStockLocationsIdSalesChannelsRequestWithBody(server string, id strin
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -65418,22 +62386,6 @@ func NewGetStoresRequest(server string, params *GetStoresParams) (*http.Request,
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -65619,22 +62571,6 @@ func NewGetStoresIdRequest(server string, id string, params *GetStoresIdParams) 
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -65702,22 +62638,6 @@ func NewPostStoresIdRequestWithBody(server string, id string, params *PostStores
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -65768,22 +62688,6 @@ func NewGetTaxRatesRequest(server string, params *GetTaxRatesParams) (*http.Requ
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -66085,22 +62989,6 @@ func NewPostTaxRatesRequestWithBody(server string, params *PostTaxRatesParams, c
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -66193,22 +63081,6 @@ func NewGetTaxRatesIdRequest(server string, id string, params *GetTaxRatesIdPara
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -66275,22 +63147,6 @@ func NewPostTaxRatesIdRequestWithBody(server string, id string, params *PostTaxR
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -66361,22 +63217,6 @@ func NewPostTaxRatesIdRulesRequestWithBody(server string, id string, params *Pos
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -66442,22 +63282,6 @@ func NewDeleteTaxRatesIdRulesRuleIdRequest(server string, id string, ruleId stri
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -66506,22 +63330,6 @@ func NewGetTaxRegionsRequest(server string, params *GetTaxRegionsParams) (*http.
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -66807,22 +63615,6 @@ func NewPostTaxRegionsRequestWithBody(server string, params *PostTaxRegionsParam
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -66915,22 +63707,6 @@ func NewGetTaxRegionsIdRequest(server string, id string, params *GetTaxRegionsId
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -66954,6 +63730,75 @@ func NewGetTaxRegionsIdRequest(server string, id string, params *GetTaxRegionsId
 	if err != nil {
 		return nil, err
 	}
+
+	return req, nil
+}
+
+// NewPostTaxRegionsIdRequest calls the generic PostTaxRegionsId builder with application/json body
+func NewPostTaxRegionsIdRequest(server string, id string, params *PostTaxRegionsIdParams, body PostTaxRegionsIdJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewPostTaxRegionsIdRequestWithBody(server, id, params, "application/json", bodyReader)
+}
+
+// NewPostTaxRegionsIdRequestWithBody generates requests for PostTaxRegionsId with any type of body
+func NewPostTaxRegionsIdRequestWithBody(server string, id string, params *PostTaxRegionsIdParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/admin/tax-regions/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Fields != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
 
 	return req, nil
 }
@@ -67061,22 +63906,6 @@ func NewGetUploadsIdRequest(server string, id string, params *GetUploadsIdParams
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -67125,22 +63954,6 @@ func NewGetUsersRequest(server string, params *GetUsersParams) (*http.Request, e
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -67367,22 +64180,6 @@ func NewGetUsersMeRequest(server string, params *GetUsersMeParams) (*http.Reques
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -67473,22 +64270,6 @@ func NewGetUsersIdRequest(server string, id string, params *GetUsersIdParams) (*
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -67556,22 +64337,6 @@ func NewPostUsersIdRequestWithBody(server string, id string, params *PostUsersId
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		if params.Fields != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
@@ -67622,22 +64387,6 @@ func NewGetWorkflowsExecutionsRequest(server string, params *GetWorkflowsExecuti
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -67774,22 +64523,6 @@ func NewGetWorkflowsExecutionsIdRequest(server string, id string, params *GetWor
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -68028,22 +64761,6 @@ func NewGetWorkflowsExecutionsWorkflowIdTransactionIdRequest(server string, work
 
 	if params != nil {
 		queryValues := queryURL.Query()
-
-		if params.Expand != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expand", runtime.ParamLocationQuery, *params.Expand); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
 
 		if params.Fields != nil {
 
@@ -68317,6 +65034,118 @@ func NewPostActorTypeAuthProviderRegisterRequestWithBody(server string, authProv
 	queryURL, err := serverURL.Parse(operationPath)
 	if err != nil {
 		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewPostActorTypeAuthProviderResetPasswordRequest calls the generic PostActorTypeAuthProviderResetPassword builder with application/json body
+func NewPostActorTypeAuthProviderResetPasswordRequest(server string, authProvider string, body PostActorTypeAuthProviderResetPasswordJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewPostActorTypeAuthProviderResetPasswordRequestWithBody(server, authProvider, "application/json", bodyReader)
+}
+
+// NewPostActorTypeAuthProviderResetPasswordRequestWithBody generates requests for PostActorTypeAuthProviderResetPassword with any type of body
+func NewPostActorTypeAuthProviderResetPasswordRequestWithBody(server string, authProvider string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "auth_provider", runtime.ParamLocationPath, authProvider)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/auth/user/%s/reset-password", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewPostActorTypeAuthProviderUpdateRequest calls the generic PostActorTypeAuthProviderUpdate builder with application/json body
+func NewPostActorTypeAuthProviderUpdateRequest(server string, authProvider string, params *PostActorTypeAuthProviderUpdateParams, body PostActorTypeAuthProviderUpdateJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewPostActorTypeAuthProviderUpdateRequestWithBody(server, authProvider, params, "application/json", bodyReader)
+}
+
+// NewPostActorTypeAuthProviderUpdateRequestWithBody generates requests for PostActorTypeAuthProviderUpdate with any type of body
+func NewPostActorTypeAuthProviderUpdateRequestWithBody(server string, authProvider string, params *PostActorTypeAuthProviderUpdateParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "auth_provider", runtime.ParamLocationPath, authProvider)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/auth/user/%s/update", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "token", runtime.ParamLocationQuery, params.Token); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
+				}
+			}
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
 	}
 
 	req, err := http.NewRequest("POST", queryURL.String(), body)
@@ -68877,6 +65706,9 @@ type ClientWithResponsesInterface interface {
 	PostOrdersIdFulfillmentsFulfillmentIdShipmentsWithBodyWithResponse(ctx context.Context, id string, fulfillmentId string, params *PostOrdersIdFulfillmentsFulfillmentIdShipmentsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostOrdersIdFulfillmentsFulfillmentIdShipmentsResponse, error)
 
 	PostOrdersIdFulfillmentsFulfillmentIdShipmentsWithResponse(ctx context.Context, id string, fulfillmentId string, params *PostOrdersIdFulfillmentsFulfillmentIdShipmentsParams, body PostOrdersIdFulfillmentsFulfillmentIdShipmentsJSONRequestBody, reqEditors ...RequestEditorFn) (*PostOrdersIdFulfillmentsFulfillmentIdShipmentsResponse, error)
+
+	// GetOrdersIdLineItemsWithResponse request
+	GetOrdersIdLineItemsWithResponse(ctx context.Context, id string, params *GetOrdersIdLineItemsParams, reqEditors ...RequestEditorFn) (*GetOrdersIdLineItemsResponse, error)
 
 	// GetOrdersIdPreviewWithResponse request
 	GetOrdersIdPreviewWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetOrdersIdPreviewResponse, error)
@@ -69488,6 +66320,11 @@ type ClientWithResponsesInterface interface {
 	// GetTaxRegionsIdWithResponse request
 	GetTaxRegionsIdWithResponse(ctx context.Context, id string, params *GetTaxRegionsIdParams, reqEditors ...RequestEditorFn) (*GetTaxRegionsIdResponse, error)
 
+	// PostTaxRegionsIdWithBodyWithResponse request with any body
+	PostTaxRegionsIdWithBodyWithResponse(ctx context.Context, id string, params *PostTaxRegionsIdParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostTaxRegionsIdResponse, error)
+
+	PostTaxRegionsIdWithResponse(ctx context.Context, id string, params *PostTaxRegionsIdParams, body PostTaxRegionsIdJSONRequestBody, reqEditors ...RequestEditorFn) (*PostTaxRegionsIdResponse, error)
+
 	// PostUploadsWithBodyWithResponse request with any body
 	PostUploadsWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostUploadsResponse, error)
 
@@ -69567,6 +66404,16 @@ type ClientWithResponsesInterface interface {
 	PostActorTypeAuthProviderRegisterWithBodyWithResponse(ctx context.Context, authProvider string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostActorTypeAuthProviderRegisterResponse, error)
 
 	PostActorTypeAuthProviderRegisterWithResponse(ctx context.Context, authProvider string, body PostActorTypeAuthProviderRegisterJSONRequestBody, reqEditors ...RequestEditorFn) (*PostActorTypeAuthProviderRegisterResponse, error)
+
+	// PostActorTypeAuthProviderResetPasswordWithBodyWithResponse request with any body
+	PostActorTypeAuthProviderResetPasswordWithBodyWithResponse(ctx context.Context, authProvider string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostActorTypeAuthProviderResetPasswordResponse, error)
+
+	PostActorTypeAuthProviderResetPasswordWithResponse(ctx context.Context, authProvider string, body PostActorTypeAuthProviderResetPasswordJSONRequestBody, reqEditors ...RequestEditorFn) (*PostActorTypeAuthProviderResetPasswordResponse, error)
+
+	// PostActorTypeAuthProviderUpdateWithBodyWithResponse request with any body
+	PostActorTypeAuthProviderUpdateWithBodyWithResponse(ctx context.Context, authProvider string, params *PostActorTypeAuthProviderUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostActorTypeAuthProviderUpdateResponse, error)
+
+	PostActorTypeAuthProviderUpdateWithResponse(ctx context.Context, authProvider string, params *PostActorTypeAuthProviderUpdateParams, body PostActorTypeAuthProviderUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*PostActorTypeAuthProviderUpdateResponse, error)
 }
 
 type GetApiKeysResponse struct {
@@ -73243,6 +70090,36 @@ func (r PostOrdersIdFulfillmentsFulfillmentIdShipmentsResponse) Status() string 
 
 // StatusCode returns HTTPResponse.StatusCode
 func (r PostOrdersIdFulfillmentsFulfillmentIdShipmentsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type GetOrdersIdLineItemsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *struct {
+		// OrderItems The order's order items.
+		OrderItems []AdminOrderItem `json:"order_items"`
+	}
+	JSON400 *N400Error
+	JSON404 *NotFoundError
+	JSON409 *InvalidStateError
+	JSON422 *InvalidRequestError
+	JSON500 *N500Error
+}
+
+// Status returns HTTPResponse.Status
+func (r GetOrdersIdLineItemsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetOrdersIdLineItemsResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -77745,6 +74622,33 @@ func (r GetTaxRegionsIdResponse) StatusCode() int {
 	return 0
 }
 
+type PostTaxRegionsIdResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *AdminTaxRegionResponse
+	JSON400      *N400Error
+	JSON404      *NotFoundError
+	JSON409      *InvalidStateError
+	JSON422      *InvalidRequestError
+	JSON500      *N500Error
+}
+
+// Status returns HTTPResponse.Status
+func (r PostTaxRegionsIdResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PostTaxRegionsIdResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
 type PostUploadsResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -78381,6 +75285,62 @@ func (r PostActorTypeAuthProviderRegisterResponse) Status() string {
 
 // StatusCode returns HTTPResponse.StatusCode
 func (r PostActorTypeAuthProviderRegisterResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type PostActorTypeAuthProviderResetPasswordResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON400      *N400Error
+	JSON404      *NotFoundError
+	JSON409      *InvalidStateError
+	JSON422      *InvalidRequestError
+	JSON500      *N500Error
+}
+
+// Status returns HTTPResponse.Status
+func (r PostActorTypeAuthProviderResetPasswordResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PostActorTypeAuthProviderResetPasswordResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type PostActorTypeAuthProviderUpdateResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *struct {
+		// Success Whether the password was reset successfully.
+		Success bool `json:"success"`
+	}
+	JSON400 *N400Error
+	JSON404 *NotFoundError
+	JSON409 *InvalidStateError
+	JSON422 *InvalidRequestError
+	JSON500 *N500Error
+}
+
+// Status returns HTTPResponse.Status
+func (r PostActorTypeAuthProviderUpdateResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PostActorTypeAuthProviderUpdateResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -80025,6 +76985,15 @@ func (c *ClientWithResponses) PostOrdersIdFulfillmentsFulfillmentIdShipmentsWith
 		return nil, err
 	}
 	return ParsePostOrdersIdFulfillmentsFulfillmentIdShipmentsResponse(rsp)
+}
+
+// GetOrdersIdLineItemsWithResponse request returning *GetOrdersIdLineItemsResponse
+func (c *ClientWithResponses) GetOrdersIdLineItemsWithResponse(ctx context.Context, id string, params *GetOrdersIdLineItemsParams, reqEditors ...RequestEditorFn) (*GetOrdersIdLineItemsResponse, error) {
+	rsp, err := c.GetOrdersIdLineItems(ctx, id, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetOrdersIdLineItemsResponse(rsp)
 }
 
 // GetOrdersIdPreviewWithResponse request returning *GetOrdersIdPreviewResponse
@@ -82005,6 +78974,23 @@ func (c *ClientWithResponses) GetTaxRegionsIdWithResponse(ctx context.Context, i
 	return ParseGetTaxRegionsIdResponse(rsp)
 }
 
+// PostTaxRegionsIdWithBodyWithResponse request with arbitrary body returning *PostTaxRegionsIdResponse
+func (c *ClientWithResponses) PostTaxRegionsIdWithBodyWithResponse(ctx context.Context, id string, params *PostTaxRegionsIdParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostTaxRegionsIdResponse, error) {
+	rsp, err := c.PostTaxRegionsIdWithBody(ctx, id, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostTaxRegionsIdResponse(rsp)
+}
+
+func (c *ClientWithResponses) PostTaxRegionsIdWithResponse(ctx context.Context, id string, params *PostTaxRegionsIdParams, body PostTaxRegionsIdJSONRequestBody, reqEditors ...RequestEditorFn) (*PostTaxRegionsIdResponse, error) {
+	rsp, err := c.PostTaxRegionsId(ctx, id, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostTaxRegionsIdResponse(rsp)
+}
+
 // PostUploadsWithBodyWithResponse request with arbitrary body returning *PostUploadsResponse
 func (c *ClientWithResponses) PostUploadsWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostUploadsResponse, error) {
 	rsp, err := c.PostUploadsWithBody(ctx, contentType, body, reqEditors...)
@@ -82257,6 +79243,40 @@ func (c *ClientWithResponses) PostActorTypeAuthProviderRegisterWithResponse(ctx 
 		return nil, err
 	}
 	return ParsePostActorTypeAuthProviderRegisterResponse(rsp)
+}
+
+// PostActorTypeAuthProviderResetPasswordWithBodyWithResponse request with arbitrary body returning *PostActorTypeAuthProviderResetPasswordResponse
+func (c *ClientWithResponses) PostActorTypeAuthProviderResetPasswordWithBodyWithResponse(ctx context.Context, authProvider string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostActorTypeAuthProviderResetPasswordResponse, error) {
+	rsp, err := c.PostActorTypeAuthProviderResetPasswordWithBody(ctx, authProvider, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostActorTypeAuthProviderResetPasswordResponse(rsp)
+}
+
+func (c *ClientWithResponses) PostActorTypeAuthProviderResetPasswordWithResponse(ctx context.Context, authProvider string, body PostActorTypeAuthProviderResetPasswordJSONRequestBody, reqEditors ...RequestEditorFn) (*PostActorTypeAuthProviderResetPasswordResponse, error) {
+	rsp, err := c.PostActorTypeAuthProviderResetPassword(ctx, authProvider, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostActorTypeAuthProviderResetPasswordResponse(rsp)
+}
+
+// PostActorTypeAuthProviderUpdateWithBodyWithResponse request with arbitrary body returning *PostActorTypeAuthProviderUpdateResponse
+func (c *ClientWithResponses) PostActorTypeAuthProviderUpdateWithBodyWithResponse(ctx context.Context, authProvider string, params *PostActorTypeAuthProviderUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostActorTypeAuthProviderUpdateResponse, error) {
+	rsp, err := c.PostActorTypeAuthProviderUpdateWithBody(ctx, authProvider, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostActorTypeAuthProviderUpdateResponse(rsp)
+}
+
+func (c *ClientWithResponses) PostActorTypeAuthProviderUpdateWithResponse(ctx context.Context, authProvider string, params *PostActorTypeAuthProviderUpdateParams, body PostActorTypeAuthProviderUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*PostActorTypeAuthProviderUpdateResponse, error) {
+	rsp, err := c.PostActorTypeAuthProviderUpdate(ctx, authProvider, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostActorTypeAuthProviderUpdateResponse(rsp)
 }
 
 // ParseGetApiKeysResponse parses an HTTP response from a GetApiKeysWithResponse call
@@ -90246,6 +87266,70 @@ func ParsePostOrdersIdFulfillmentsFulfillmentIdShipmentsResponse(rsp *http.Respo
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest AdminOrderResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest N400Error
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest NotFoundError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest InvalidStateError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest InvalidRequestError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest N500Error
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetOrdersIdLineItemsResponse parses an HTTP response from a GetOrdersIdLineItemsWithResponse call
+func ParseGetOrdersIdLineItemsResponse(rsp *http.Response) (*GetOrdersIdLineItemsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetOrdersIdLineItemsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// OrderItems The order's order items.
+			OrderItems []AdminOrderItem `json:"order_items"`
+		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -100017,6 +97101,67 @@ func ParseGetTaxRegionsIdResponse(rsp *http.Response) (*GetTaxRegionsIdResponse,
 	return response, nil
 }
 
+// ParsePostTaxRegionsIdResponse parses an HTTP response from a PostTaxRegionsIdWithResponse call
+func ParsePostTaxRegionsIdResponse(rsp *http.Response) (*PostTaxRegionsIdResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PostTaxRegionsIdResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest AdminTaxRegionResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest N400Error
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest NotFoundError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest InvalidStateError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest InvalidRequestError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest N500Error
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
 // ParsePostUploadsResponse parses an HTTP response from a PostUploadsWithResponse call
 func ParsePostUploadsResponse(rsp *http.Response) (*PostUploadsResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -101350,6 +98495,124 @@ func ParsePostActorTypeAuthProviderRegisterResponse(rsp *http.Response) (*PostAc
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest AuthResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest N400Error
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest NotFoundError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest InvalidStateError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest InvalidRequestError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest N500Error
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParsePostActorTypeAuthProviderResetPasswordResponse parses an HTTP response from a PostActorTypeAuthProviderResetPasswordWithResponse call
+func ParsePostActorTypeAuthProviderResetPasswordResponse(rsp *http.Response) (*PostActorTypeAuthProviderResetPasswordResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PostActorTypeAuthProviderResetPasswordResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest N400Error
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest NotFoundError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest InvalidStateError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest InvalidRequestError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest N500Error
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParsePostActorTypeAuthProviderUpdateResponse parses an HTTP response from a PostActorTypeAuthProviderUpdateWithResponse call
+func ParsePostActorTypeAuthProviderUpdateResponse(rsp *http.Response) (*PostActorTypeAuthProviderUpdateResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PostActorTypeAuthProviderUpdateResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Success Whether the password was reset successfully.
+			Success bool `json:"success"`
+		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
