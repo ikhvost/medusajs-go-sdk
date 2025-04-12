@@ -9,7 +9,7 @@ Please note that this SDK is specifically designed to be compatible with MedusaJ
 This repository depends on oapi-codegen to generate the Go SDK.
 
 ```bash
-go install github.com/deepmap/oapi-codegen/cmd/oapi-codegen@latest
+go install github.com/oapi-codegen/oapi-codegen/v2/cmd/oapi-codegen@latest
 ```
 
 ## Generate the SDK
@@ -17,5 +17,5 @@ go install github.com/deepmap/oapi-codegen/cmd/oapi-codegen@latest
 Once you have oapi-codegen installed, you can use it to generate the Go SDK from the OpenAPI specification file for MedusaJS.
 
 ```bash
-go run github.com/deepmap/oapi-codegen/cmd/oapi-codegen --config oapi-config.yaml ./openapi.yaml
+go run github.com/oapi-codegen/oapi-codegen/v2/cmd/oapi-codegen --config oapi-config.yaml ./openapi.yaml
 ```
